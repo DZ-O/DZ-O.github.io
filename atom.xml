@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>BeiKJie</title>
+  
+  <subtitle>Dozen`Blog</subtitle>
+  <link href="https://daizhen.top/atom.xml" rel="self"/>
+  
+  <link href="https://daizhen.top/"/>
+  <updated>2021-10-04T07:42:28.520Z</updated>
+  <id>https://daizhen.top/</id>
+  
+  <author>
+    <name>Dozen</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://daizhen.top/2021/10/04/hello-world/"/>
+    <id>https://daizhen.top/2021/10/04/hello-world/</id>
+    <published>2021-10-04T06:20:29.294Z</published>
+    <updated>2021-10-04T07:42:28.520Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
