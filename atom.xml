@@ -3,11 +3,11 @@
   <title>BeiKJie</title>
   
   <subtitle>Dozen`Blog</subtitle>
-  <link href="https://daizhen.top/atom.xml" rel="self"/>
+  <link href="https://dz-o.github.io/atom.xml" rel="self"/>
   
-  <link href="https://daizhen.top/"/>
+  <link href="https://dz-o.github.io/"/>
   <updated>2021-10-04T07:42:28.520Z</updated>
-  <id>https://daizhen.top/</id>
+  <id>https://dz-o.github.io/</id>
   
   <author>
     <name>Dozen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://daizhen.top/2021/10/04/hello-world/"/>
-    <id>https://daizhen.top/2021/10/04/hello-world/</id>
+    <link href="https://dz-o.github.io/2021/10/04/hello-world/"/>
+    <id>https://dz-o.github.io/2021/10/04/hello-world/</id>
     <published>2021-10-04T06:20:29.294Z</published>
     <updated>2021-10-04T07:42:28.520Z</updated>
     
