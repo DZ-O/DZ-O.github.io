@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>基于Django的个人博客</title>
+      <link href="/2021/10/05/DjiangoBlog/"/>
+      <url>/2021/10/05/DjiangoBlog/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基于Django的个人博客"><a href="#基于Django的个人博客" class="headerlink" title="基于Django的个人博客"></a>基于Django的个人博客</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Django </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2021/10/04/hello-world/"/>
       <url>/2021/10/04/hello-world/</url>
