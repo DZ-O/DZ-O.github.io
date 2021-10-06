@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://daizhen.top/2021/10/05/DjiangoBlog/</loc>
+    
+    <lastmod>2021-10-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://daizhen.top/2021/10/04/hello-world/</loc>
+    
+    <lastmod>2021-10-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://daizhen.top/404/index.html</loc>
+    
+    <lastmod>2021-10-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://daizhen.top/friends/index.html</loc>
+    
+    <lastmod>2021-10-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://daizhen.top/contact/index.html</loc>
+    
+    <lastmod>2021-10-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://daizhen.top/about/index.html</loc>
+    
+    <lastmod>2021-10-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://daizhen.top/tags/index.html</loc>
+    
+    <lastmod>2021-10-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://daizhen.top/categories/index.html</loc>
+    
+    <lastmod>2021-10-04</lastmod>
+    
+  </url>
+  
+
+  <url>
+    <loc>https://daizhen.top/</loc>
+    <lastmod>2021-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://daizhen.top/tags/Django/</loc>
+    <lastmod>2021-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://daizhen.top/tags/python/</loc>
+    <lastmod>2021-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://daizhen.top/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2021-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>
