@@ -30,6 +30,16 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?5fecf928cd98108f0234eb26df92a6e0";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        
 <style type="text/css" lang="css">
     #loading-container{
         position: fixed;
@@ -297,6 +307,11 @@
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li id="fullscreen_li" class="fullscreen nav-show">
+    <a href="javascript:void(0);" class="modal-trigger waves-effect waves-light">
+      <i id="fullscreen" class="fa fa-expand-arrows-alt" title="全屏" style="zoom: 0.65;"></i>
     </a>
   </li>
 </ul>
@@ -901,5 +916,50 @@ $(function () {
     </script>
     <!--浏览器搞笑标题-->
 <script type="text/javascript" src="/js/FunnyTitle.js"></script>
+<script>
+    function enterfullscreen() {
+      //进入全屏
 
+      var docElm = document.documentElement
+      //W3C
+      if (docElm.requestFullscreen) {
+        docElm.requestFullscreen()
+      }
+      //FireFox
+      else if (docElm.mozRequestFullScreen) {
+        docElm.mozRequestFullScreen()
+      }
+      //Chrome等
+      else if (docElm.webkitRequestFullScreen) {
+        docElm.webkitRequestFullScreen()
+      }
+      //IE11
+      else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen()
+      }
+      $('#fullscreen').removeClass('fa-expand-arrows-alt').addClass('fa-desktop')
+    }
+
+    function exitfullscreen() {
+      //退出全屏
+      // $("#fullscreen").html("切换全屏");
+
+      if (document.exitFullscreen) {
+        document.exitFullscreen()
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen()
+      } else if (document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen()
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen()
+      }
+      $('#fullscreen').removeClass('fa-desktop').addClass('fa-expand-arrows-alt')
+    }
+
+    let b = false
+    $('#fullscreen_li ').on('click', function () {
+      b = !b
+      b ? enterfullscreen() : exitfullscreen()
+    })
+  </script>
 </html>
