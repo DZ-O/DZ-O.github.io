@@ -6,7 +6,7 @@
   <link href="https://daizhen.top/atom.xml" rel="self"/>
   
   <link href="https://daizhen.top/"/>
-  <updated>2021-10-13T13:50:59.286Z</updated>
+  <updated>2021-11-04T13:48:14.513Z</updated>
   <id>https://daizhen.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java 集合</title>
+    <link href="https://daizhen.top/2021/11/03/%E9%9B%86%E5%90%88/"/>
+    <id>https://daizhen.top/2021/11/03/%E9%9B%86%E5%90%88/</id>
+    <published>2021-11-03T09:59:21.000Z</published>
+    <updated>2021-11-04T13:48:14.513Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Java集合结构&quot;&gt;&lt;a href=&quot;#Java集合结构&quot; class=&quot;headerlink&quot; title=&quot;Java集合结构&quot;&gt;&lt;/a&gt;Java集合结构&lt;/h1&gt;&lt;h2 id=&quot;集合概述&quot;&gt;&lt;a href=&quot;#集合概述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java基础" scheme="https://daizhen.top/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="Java" scheme="https://daizhen.top/tags/Java/"/>
+    
+    <category term="集合" scheme="https://daizhen.top/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
   
   <entry>
     <title>java面向对象</title>
