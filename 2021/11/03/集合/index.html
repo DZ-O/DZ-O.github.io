@@ -600,14 +600,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.9k
+                    8.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    36 分
                 </div>
                 
 
@@ -965,7 +965,7 @@ public class CollectionTest02 {
 </li>
 <li><p>ArrayList集合的扩容：</p>
 <p>​    增长到原容量的1.5倍。</p>
-<p>​    ArrayList集合底层是数组，怎么优化？</p>
+<p>​    <strong><em>ArrayList集合底层是数组，怎么优化？</em></strong></p>
 <p>​          尽可能少的扩容。因为数组扩容效率比较低，建议在使用ArrayList集合的时候预估计元素的个数，给定一个初始化容量。</p>
 </li>
 <li><p>数组优点：</p>
@@ -976,8 +976,8 @@ public class CollectionTest02 {
 </li>
 <li><p>向数组末尾添加元素，效率很高，不受影响。</p>
 </li>
-<li><p>面试官经常问的一个问题？</p>
-<p>​    这么多的集合中，你用哪个集合最多？</p>
+<li><p>面试官经常问的一个问题</p>
+<p>​    <strong><em>这么多的集合中，你用哪个集合最多？</em></strong></p>
 <p>​      答：ArrayList集合。因为往数组末尾添加元素，效率不受影响。另外，我们检索/查找某个元素的操作比较多。</p>
 </li>
 <li><p>ArrayList集合是非线程安全的。（不是线程安全的集合。）</p>
@@ -1010,7 +1010,7 @@ public class CollectionTest02 {
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="LinkedList集合"><a href="#LinkedList集合" class="headerlink" title="LinkedList集合"></a><strong>LinkedList集合</strong></h1><p>LinkedList集合的特点∶</p>
 <ol>
-<li><p>底层是一个双向链表结构;查询慢,增删快</p>
+<li><p>底层是一个链表结构;查询慢,增删快</p>
 </li>
 <li><p>里边包含了大量操作首尾元素的方法</p>
 <p>注意:使用Linkedlist集合特有的方法,不能使用多态</p>
@@ -1130,7 +1130,7 @@ public class CollectionTest02 {
 </li>
 <li><p>Vector中所有的方法都是线程同步的，都带有synchronized关键字，是线程安全的。效率比较低，使用较少了。</p>
 </li>
-<li><p>怎么将一个线程不安全的ArrayList集合转换成线程安全的呢？</p>
+<li><p><strong><em>怎么将一个线程不安全的ArrayList集合转换成线程安全的呢？</em></strong></p>
 <p>使用集合工具类：<code>java.util.Collections</code>;</p>
 <p>​    java.util.Collection 是集合接口。</p>
 <p>​    java.util.Collections 是集合工具类。</p>
@@ -1220,7 +1220,171 @@ public class HashSetTest01 {
     }
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h1><h1 id="HashMap集合"><a href="#HashMap集合" class="headerlink" title="HashMap集合"></a>HashMap集合</h1><p>HashMap集合：</p>
+<hr>
+<h1 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h1><ol>
+<li>Map集合和Collection集合没有关系。</li>
+<li>Map集合以key和value的这种键值对的方式存储元素。</li>
+<li>key和value都是存储java对象的内存地址。</li>
+<li>所有Map集合的key特点:无序不可重复的。Map集合的key和Set集合存储元素特点相同。</li>
+</ol>
+<h2 id="Map常用方法"><a href="#Map常用方法" class="headerlink" title="Map常用方法"></a>Map常用方法</h2><p>​    <code>V put(K key, V value)</code> 向Map集合中添加键值对</p>
+<p>​    <code>V get(Object key)</code> 通过key获取value</p>
+<p>​    <code>void clear()</code>   清空Map集合</p>
+<p>​    <code>boolean containsKey(Object key)</code> 判断Map中是否包含某个key</p>
+<p>​    <code>boolean containsValue(Object value)</code> 判断Map中是否包含某个value</p>
+<p>​    <code>boolean isEmpty()</code>  判断Map集合中元素个数是否为0</p>
+<p>​    <code>V remove(Object key)</code> 通过key删除键值对</p>
+<p>​    <code>int size()</code> 获取Map集合中键值对的个数。</p>
+<p>​    <code>Collection&lt;V&gt; values()</code> 获取Map集合中所有的value，返回一个Collection</p>
+<p>​    <code>Set&lt;K&gt; keySet()</code> 获取Map集合所有的key（所有的键是一个set集合）</p>
+<p>​     <code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code>  将Map集合转换成Set集合,假设现在有一个Map集合，如下所示：</p>
+<p>​    </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">key</th>
+<th style="text-align:center">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">zhangsan</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">lisi</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">wangwu</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">zhaoliu</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code>Set set = map1.entrySet();</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">set集合对象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1=zhangsan</td>
+</tr>
+<tr>
+<td style="text-align:center">2=lisi</td>
+</tr>
+<tr>
+<td style="text-align:center">3=wangwu</td>
+</tr>
+<tr>
+<td style="text-align:center">4=zhaoliu</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>【注意：Map集合通过entrySet()方法转换成的这个Set集合，Set集合中元素的类型是 Map.Entry<k,v>】</k,v></p>
+<p>【Map.Entry和String一样，都是一种类型的名字，只不过：Map.Entry是静态内部类，是Map中的静态内部类】</p>
+<p> 4=zhaoliu —-&gt; 这个东西是个什么？ Map.Entry</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class MapTest01 {
+    public static void main(String[] args) {
+        // 创建Map集合对象
+        Map&lt;Integer, String&gt; map = new HashMap&lt;&gt;();
+        // 向Map集合中添加键值对
+        map.put(1, "zhangsan"); // 1在这里进行了自动装箱。
+        map.put(2, "lisi");
+        map.put(3, "wangwu");
+        map.put(4, "zhaoliu");
+        // 通过key获取value
+        String value = map.get(2);
+        System.out.println(value);
+        // 获取键值对的数量
+        System.out.println("键值对的数量：" + map.size());
+        // 通过key删除key-value
+        map.remove(2);
+        System.out.println("键值对的数量：" + map.size());
+        // 判断是否包含某个key
+        // contains方法底层调用的都是equals进行比对的，所以自定义的类型需要重写equals方法。
+        System.out.println(map.containsKey(new Integer(4))); // true
+        // 判断是否包含某个value
+        System.out.println(map.containsValue(new String("wangwu"))); // true
+
+        // 获取所有的value
+        Collection&lt;String&gt; values = map.values();
+        // foreach
+        for(String s : values){
+            System.out.println(s);
+        }
+
+        // 清空map集合
+        map.clear();
+        System.out.println("键值对的数量：" + map.size());
+        // 判断是否为空
+        System.out.println(map.isEmpty()); // true
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Map集合遍历"><a href="#Map集合遍历" class="headerlink" title="Map集合遍历"></a>Map集合遍历</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class MapTest02 {
+    public static void main(String[] args) {
+
+        // 第一种方式：获取所有的key，通过遍历key，来遍历value
+        Map&lt;Integer, String&gt; map = new HashMap&lt;&gt;();
+        map.put(1, "zhangsan");
+        map.put(2, "lisi");
+        map.put(3, "wangwu");
+        map.put(4, "zhaoliu");
+        // 遍历Map集合
+        // 获取所有的key，所有的key是一个Set集合
+        Set&lt;Integer&gt; keys = map.keySet();
+        // 遍历key，通过key获取value
+        // 迭代器可以
+        /*Iterator&lt;Integer&gt; it = keys.iterator();
+        while(it.hasNext()){
+            // 取出其中一个key
+            Integer key = it.next();
+            // 通过key获取value
+            String value = map.get(key);
+            System.out.println(key + "=" + value);
+        }*/
+        // foreach也可以
+        for(Integer key : keys){
+            System.out.println(key + "=" + map.get(key));
+        }
+
+        // 第二种方式：Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()
+        // 以上这个方法是把Map集合直接全部转换成Set集合。
+        // Set集合中元素的类型是：Map.Entry
+        Set&lt;Map.Entry&lt;Integer,String&gt;&gt; set = map.entrySet();
+        // 遍历Set集合，每一次取出一个Node
+        // 迭代器
+        /*Iterator&lt;Map.Entry&lt;Integer,String&gt;&gt; it2 = set.iterator();
+        while(it2.hasNext()){
+            Map.Entry&lt;Integer,String&gt; node = it2.next();
+            Integer key = node.getKey();
+            String value = node.getValue();
+            System.out.println(key + "=" + value);
+        }*/
+
+        // foreach
+        // 这种方式效率比较高，因为获取key和value都是直接从node对象中获取的属性值。
+        // 这种方式比较适合于大数据量。
+        for(Map.Entry&lt;Integer,String&gt; node : set){
+            System.out.println(node.getKey() + "---&gt;" + node.getValue());
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="HashMap集合"><a href="#HashMap集合" class="headerlink" title="HashMap集合"></a>HashMap集合</h1><p>HashMap集合：</p>
 <ol>
 <li><p>HashMap集合底层是哈希表/散列表的数据结构。</p>
 </li>
@@ -1234,45 +1398,53 @@ public class HashSetTest01 {
 <ol>
 <li>HashMap集合底层的源代码：</li>
 </ol>
-<p>​    public class HashMap{</p>
-<p>​      // HashMap底层实际上就是一个数组。（一维数组）</p>
-<p>​      Node<k,v>[] table;</k,v></p>
-<p>​      // 静态的内部类HashMap.Node</p>
-<p>​      static class Node<k,v> {</k,v></p>
-<p>​        final int hash; // 哈希值（哈希值是key的hashCode()方法的执行结果。hash值通过哈希函数/算法，可以转换存储成数组的下标。）</p>
-<p>​        final K key; // 存储到Map集合中的那个key</p>
-<p>​        V value; // 存储到Map集合中的那个value</p>
-<p>​        Node<k,v> next; // 下一个节点的内存地址。</k,v></p>
-<p>​      }</p>
-<p>​    }</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HashMap{
+
+  // HashMap底层实际上就是一个数组。（一维数组）
+
+  Node&lt;K,V&gt;[] table;
+
+  // 静态的内部类HashMap.Node
+
+  static class Node&lt;K,V&gt; {
+
+    final int hash; // 哈希值（哈希值是key的hashCode()方法的执行结果。hash值通过哈希函数/算法，可以转换存储成数组的下标。）
+
+    final K key; // 存储到Map集合中的那个key
+
+    V value; // 存储到Map集合中的那个value
+
+    Node&lt;K,V&gt; next; // 下一个节点的内存地址。
+
+  }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​    哈希表/散列表：一维数组，这个数组中每一个元素是一个单向链表。（数组和链表的结合体。）</p>
 <ol>
 <li>最主要掌握的是：</li>
 </ol>
-<p>​    map.put(k,v)</p>
-<p>​    v = map.get(k)</p>
+<p>​    <code>map.put(k,v)</code></p>
+<p>​    <code>v = map.get(k)</code></p>
 <p>​    以上这两个方法的实现原理，是必须掌握的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211112174942687.png" alt="image-20211112174942687"></p>
 <ol>
 <li>HashMap集合的key部分特点：</li>
 </ol>
-<p>​    无序，不可重复。</p>
-<p>​    为什么无序？ 因为不一定挂到哪个单向链表上。</p>
-<p>​    不可重复是怎么保证的？ equals方法来保证HashMap集合的key不可重复。</p>
-<p>​    如果key重复了，value会覆盖。</p>
-<p>​    放在HashMap集合key部分的元素其实就是放到HashSet集合中了。</p>
-<p>​    所以HashSet集合中的元素也需要同时重写hashCode()+equals()方法。</p>
+<p>​        无序，不可重复。</p>
+<p>​        为什么无序？ 因为不一定挂到哪个单向链表上。</p>
+<p>​        不可重复是怎么保证的？ equals方法来保证HashMap集合的key不可重复。</p>
+<p>​        如果key重复了，value会覆盖。</p>
+<p>​        放在HashMap集合key部分的元素其实就是放到HashSet集合中了。</p>
+<p>​        所以HashSet集合中的元素也需要同时重写hashCode()+equals()方法。</p>
 <ol>
 <li>哈希表HashMap使用不当时无法发挥性能！</li>
 </ol>
-<p>​    假设将所有的hashCode()方法返回值固定为某个值，那么会导致底层哈希表变成了</p>
-<p>​    纯单向链表。这种情况我们成为：散列分布不均匀。</p>
-<p>​    什么是散列分布均匀？</p>
-<p>​      假设有100个元素，10个单向链表，那么每个单向链表上有10个节点，这是最好的，</p>
-<p>​      是散列分布均匀的。</p>
-<p>​    假设将所有的hashCode()方法返回值都设定为不一样的值，可以吗，有什么问题？</p>
-<p>​      不行，因为这样的话导致底层哈希表就成为一维数组了，没有链表的概念了。</p>
-<p>​      也是散列分布不均匀。</p>
-<p>​    散列分布均匀需要你重写hashCode()方法时有一定的技巧。</p>
+<p>​        假设将所有的hashCode()方法返回值固定为某个值，那么会导致底层哈希表变成了纯单向链表。这种情况我们成为：散列分布不均匀。</p>
+<p>​        <strong><em>什么是散列分布均匀？</em></strong></p>
+<p>​              假设有100个元素，10个单向链表，那么每个单向链表上有10个节点，这是最好的，是散列分布均匀的。</p>
+<p>​        <strong><em>假设将所有的hashCode()方法返回值都设定为不一样的值，可以吗，有什么问题？</em></strong></p>
+<p>​              不行，因为这样的话导致底层哈希表就成为一维数组了，没有链表的概念了。也是散列分布不均匀。</p>
+<p>​        散列分布均匀需要你重写hashCode()方法时有一定的技巧。</p>
 <ol>
 <li><p>重点：放在HashMap集合key部分的元素，以及放在HashSet集合中的元素，需要同时重写hashCode和equals方法。</p>
 <ol>
@@ -1280,10 +1452,398 @@ public class HashSetTest01 {
 </ol>
 </li>
 </ol>
-<p>​    这个默认加载因子是当HashMap集合底层数组的容量达到75%的时候，数组开始扩容。</p>
-<p>​    重点，记住：HashMap集合初始化容量必须是2的倍数，这也是官方推荐的，</p>
-<p>​    这是因为达到散列均匀，为了提高HashMap集合的存取效率，所必须的。</p>
-<p>未完待续………</p>
+<p>​        这个默认加载因子是当HashMap集合底层数组的容量达到75%的时候，数组开始扩容。</p>
+<blockquote>
+<p>重点，记住：HashMap集合初始化容量必须是2的倍数，这也是官方推荐的， 这是因为达到散列均匀，为了提高HashMap集合的存取效率，所必须的。 </p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HashMapTest01 {
+    public static void main(String[] args) {
+        // 测试HashMap集合key部分的元素特点
+        // Integer是key，它的hashCode和equals都重写了。
+        Map&lt;Integer,String&gt; map = new HashMap&lt;&gt;();
+        map.put(1111, "zhangsan");
+        map.put(6666, "lisi");
+        map.put(7777, "wangwu");
+        map.put(2222, "zhaoliu");
+        map.put(2222, "king"); //key重复的时候value会自动覆盖。
+
+        System.out.println(map.size()); // 4
+
+        // 遍历Map集合
+        Set&lt;Map.Entry&lt;Integer,String&gt;&gt; set = map.entrySet();
+        for(Map.Entry&lt;Integer,String&gt; entry : set){
+            // 验证结果：HashMap集合key部分元素：无序不可重复。
+            System.out.println(entry.getKey() + "=" + entry.getValue());
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><strong><em>HashMap集合key部分允许null吗？</em></strong></p>
+<p>  允许,但是要注意：HashMap集合的key null值只能有一个。</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HashMapTest03 {
+    public static void main(String[] args) {
+
+        Map map = new HashMap();
+
+        // HashMap集合允许key为null
+        map.put(null, null);
+        System.out.println(map.size()); // 1
+
+        // key重复的话value是覆盖！
+        map.put(null, 100);
+        System.out.println(map.size()); //1
+
+        // 通过key获取value
+        System.out.println(map.get(null)); // 100
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h1><p><strong><em>Hashtable的key可以为null吗？</em></strong></p>
+<p>​    Hashtable的key和value都是不能为null的。</p>
+<p>​    HashMap集合的key和value都是可以为null的。</p>
+<p>Hashtable方法都带有synchronized：线程安全的。线程安全有其它的方案，这个Hashtable对线程的处理导致效率较低，使用较少了。</p>
+<p>Hashtable和HashMap一样，底层都是哈希表数据结构。</p>
+<p>Hashtable的初始化容量是11，默认加载因子是：0.75</p>
+<p>Hashtable的扩容是：原容量 * 2 + 1</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HashtableTest01 {
+    public static void main(String[] args) {
+        Map map = new Hashtable();
+	//java.lang.Nul1PointerException
+        map.put(null, "123");
+        map.put(100, null);
+
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Properties属性类"><a href="#Properties属性类" class="headerlink" title="Properties属性类"></a>Properties属性类</h1><p>Properties是一个Map集合，继承Hashtable，Properties的key和value都是String类型。</p>
+<p>Properties被称为属性类对象。</p>
+<p>Properties是线程安全的。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class PropertiesTest01 {
+    public static void main(String[] args) {
+
+        // 创建一个Properties对象
+        Properties pro = new Properties();
+
+        // 需要掌握Properties的两个方法，一个存，一个取。
+        pro.setProperty("url", "jdbc:mysql://localhost:3306/bjpowernode");
+        pro.setProperty("driver","com.mysql.jdbc.Driver");
+        pro.setProperty("username", "root");
+        pro.setProperty("password", "123");
+
+        // 通过key获取value
+        String url = pro.getProperty("url");
+        String driver = pro.getProperty("driver");
+        String username = pro.getProperty("username");
+        String password = pro.getProperty("password");
+
+        System.out.println(url);
+        System.out.println(driver);
+        System.out.println(username);
+        System.out.println(password);
+
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="TreeSet集合"><a href="#TreeSet集合" class="headerlink" title="TreeSet集合"></a>TreeSet集合</h1><p>TreeSet集合存储元素特点：</p>
+<ol>
+<li><p>无序不可重复的，但是存储的元素可以自动按照大小顺序排序！称为：可排序集合。</p>
+</li>
+<li><p>无序：这里的无序指的是存进去的顺序和取出来的顺序不同。并且没有下标。</p>
+</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class TreeSetTest01 {
+    public static void main(String[] args) {
+        // 创建集合对象
+        Set&lt;String&gt; strs = new TreeSet&lt;&gt;();
+        // 添加元素
+        strs.add("A");
+        strs.add("B");
+        strs.add("Z");
+        strs.add("Y");
+        strs.add("Z");
+        strs.add("K");
+        strs.add("M");
+        // 遍历
+        /*
+            A
+            B
+            K
+            M
+            Y
+            Z
+        从小到大自动排序！
+         */
+        for(String s : strs){
+            System.out.println(s);
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<ol>
+<li><p>TreeSet集合底层实际上是一个TreeMap</p>
+</li>
+<li><p>TreeMap集合底层是一个二叉树。</p>
+</li>
+<li><p>放到TreeSet集合中的元素，等同于放到TreeMap集合key部分了。</p>
+</li>
+<li><p>TreeSet集合中的元素：无序不可重复，但是可以按照元素的大小顺序自动排序。称为：可排序集合。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="集合元素排序"><a href="#集合元素排序" class="headerlink" title="集合元素排序"></a>集合元素排序</h3><p><strong><em>对自定义的类型来说，TreeSet可以排序吗？</em></strong></p>
+<p>  以下程序中对于Person类型来说，无法排序。因为没有指定Person对象之间的比较规则。谁大谁小并没有说明啊。</p>
+<p> 以下程序运行的时候出现了这个异常：</p>
+<p>​    <code>java.lang.ClassCastException:</code></p>
+<p>​          <code>class com.bjpowernode.javase.collection.Person</code></p>
+<p>​          <code>cannot be cast to class java.lang.Comparable</code></p>
+<p>  出现这个异常的原因是Person类没有实现<code>java.lang.Comparable</code>接口。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class TreeSetTest03 {
+    public static void main(String[] args) {
+        Person p1 = new Person(32);
+        //System.out.println(p1);
+        Person p2 = new Person(20);
+        Person p3 = new Person(30);
+        Person p4 = new Person(25);
+
+        // 创建TreeSet集合
+        TreeSet&lt;Person&gt; persons = new TreeSet&lt;&gt;();
+        // 添加元素
+        persons.add(p1);
+        persons.add(p2);
+        persons.add(p3);
+        persons.add(p4);
+
+        // 遍历
+        for (Person p : persons){
+            System.out.println(p);
+        }
+    }
+}
+
+class Person {
+    int age;
+    public Person(int age){
+        this.age = age;
+    }
+
+    // 重写toString()方法
+    public String toString(){
+        return "Person[age="+age+"]";
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实现Comparable接口实现自定义类型排序："><a href="#实现Comparable接口实现自定义类型排序：" class="headerlink" title="实现Comparable接口实现自定义类型排序："></a>实现Comparable接口实现自定义类型排序：</h3><p>自定义类型实现Comparable接口，并重写Comparable接口的compareTo方法，自定义排序规则。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.javase.collection;
+
+import java.util.TreeSet;
+
+/*
+先按照年龄升序，如果年龄一样的再按照姓名升序。
+ */
+public class TreeSetTest05 {
+    public static void main(String[] args) {
+        TreeSet&lt;Vip&gt; vips = new TreeSet&lt;&gt;();
+        vips.add(new Vip("zhangsi", 20));
+        vips.add(new Vip("zhangsan", 20));
+        vips.add(new Vip("king", 18));
+        vips.add(new Vip("soft", 17));
+        for(Vip vip : vips){
+            System.out.println(vip);
+        }
+    }
+}
+
+class Vip implements Comparable&lt;Vip&gt;{
+    String name;
+    int age;
+
+    public Vip(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Vip{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+    /*
+    compareTo方法的返回值很重要：
+        返回0表示相同，value会覆盖。
+        返回&gt;0，会继续在右子树上找。【10 - 9 = 1 ，1 &gt; 0的说明左边这个数字比较大。所以在右子树上找。】
+        返回&lt;0，会继续在左子树上找。
+     */
+    @Override
+    public int compareTo(Vip v) {
+        // 写排序规则，按照什么进行比较。
+        if(this.age == v.age){
+            // 年龄相同时按照名字排序。
+            // 姓名是String类型，可以直接比。调用compareTo来完成比较。
+            return this.name.compareTo(v.name);
+        } else {
+            // 年龄不一样
+            return this.age - v.age;
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用比较器的方式"><a href="#使用比较器的方式" class="headerlink" title="使用比较器的方式"></a>使用比较器的方式</h3><p>单独在这里编写一个比较器,比较器实现<code>java.util.Comparator</code>接口。（Comparable是java.lang包下的。Comparator是java.util包下的。）</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.javase.collection;
+
+import java.util.Comparator;
+import java.util.TreeSet;
+
+/*
+TreeSet集合中元素可排序的第二种方式：使用比较器的方式。
+*/
+public class TreeSetTest06 {
+    public static void main(String[] args) {
+        // 创建TreeSet集合的时候，需要使用这个比较器。
+        // TreeSet&lt;WuGui&gt; wuGuis = new TreeSet&lt;&gt;();//这样不行，没有通过构造方法传递一个比较器进去。
+
+        // 给构造方法传递一个比较器。
+        //TreeSet&lt;WuGui&gt; wuGuis = new TreeSet&lt;&gt;(new WuGuiComparator());
+
+        // 大家可以使用匿名内部类的方式（这个类没有名字。直接new接口。）
+        TreeSet&lt;WuGui&gt; wuGuis = new TreeSet&lt;&gt;(new Comparator&lt;WuGui&gt;() {
+            @Override
+            public int compare(WuGui o1, WuGui o2) {
+                return o1.age - o2.age;
+            }
+        });
+
+        wuGuis.add(new WuGui(1000));
+        wuGuis.add(new WuGui(800));
+        wuGuis.add(new WuGui(810));
+
+        for(WuGui wuGui : wuGuis){
+            System.out.println(wuGui);
+        }
+    }
+}
+
+// 乌龟
+class WuGui{
+
+    int age;
+
+    public WuGui(int age){
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "小乌龟[" +
+                "age=" + age +
+                ']';
+    }
+}
+
+// 单独在这里编写一个比较器
+// 比较器实现java.util.Comparator接口。（Comparable是java.lang包下的。Comparator是java.util包下的。）
+/*
+class WuGuiComparator implements Comparator&lt;WuGui&gt; {
+
+    @Override
+    public int compare(WuGui o1, WuGui o2) {
+        // 指定比较规则
+        // 按照年龄排序
+        return o1.age - o2.age;
+    }
+}
+ */
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>最终的结论：<br>    放到TreeSet或者TreeMap集合key部分的元素要想做到排序,包括两种方式：</p>
+<p>​        第一种：放在集合中的元素实现<code>java.lang.Comparable</code>接口。</p>
+<p>​        第二种：在构造TreeSet或者TreeMap集合的时候给它传一个比较器对象。</p>
+<p><strong><em>Comparable和Comparator怎么选择呢？</em></strong></p>
+<p>​    当比较规则不会发生改变的时候，或者说当比较规则只有1个的时候，建议实现Comparable接口。</p>
+<p>​    如果比较规则有多个，并且需要多个比较规则之间频繁切换，建议使用Comparator接口。</p>
+<p>​    Comparator接口的设计符合<em>OCP</em>原则。</p>
+</blockquote>
+<h1 id="Collections集合工具类"><a href="#Collections集合工具类" class="headerlink" title="Collections集合工具类"></a>Collections集合工具类</h1><p><code>java.util.Collection</code> 集合接口</p>
+<p><code>java.util.Collections</code> 集合工具类，方便集合的操作。</p>
+<h3 id="常用方法：-1"><a href="#常用方法：-1" class="headerlink" title="常用方法："></a>常用方法：</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.javase.collection;
+
+import java.util.*;
+
+/*
+java.util.Collection 集合接口
+java.util.Collections 集合工具类，方便集合的操作。
+ */
+public class CollectionsTest {
+    public static void main(String[] args) {
+
+        // ArrayList集合不是线程安全的。
+        List&lt;String&gt; list = new ArrayList&lt;&gt;();
+
+        // 变成线程安全的
+        Collections.synchronizedList(list);
+
+        // 排序
+        list.add("abf");
+        list.add("abx");
+        list.add("abc");
+        list.add("abe");
+
+        Collections.sort(list);
+        for(String s : list){
+            System.out.println(s);
+        }
+
+        List&lt;WuGui2&gt; wuGuis = new ArrayList&lt;&gt;();
+        wuGuis.add(new WuGui2(1000));
+        wuGuis.add(new WuGui2(8000));
+        wuGuis.add(new WuGui2(500));
+        // 注意：对List集合中元素排序，需要保证List集合中的元素实现了：Comparable接口。
+        Collections.sort(wuGuis);
+        for(WuGui2 wg : wuGuis){
+            System.out.println(wg);
+        }
+
+        // 对Set集合怎么排序呢？
+        Set&lt;String&gt; set = new HashSet&lt;&gt;();
+        set.add("king");
+        set.add("kingsoft");
+        set.add("king2");
+        set.add("king1");
+        // 将Set集合转换成List集合
+        List&lt;String&gt; myList = new ArrayList&lt;&gt;(set);
+        Collections.sort(myList);
+        for(String s : myList) {
+            System.out.println(s);
+        }
+
+        // 这种方式也可以排序。
+        //Collections.sort(list集合, 比较器对象);
+    }
+}
+
+class WuGui2 implements Comparable&lt;WuGui2&gt;{
+    int age;
+    public WuGui2(int age){
+        this.age = age;
+    }
+
+    @Override
+    public int compareTo(WuGui2 o) {
+        return this.age - o.age;
+    }
+
+    @Override
+    public String toString() {
+        return "WuGui2{" +
+                "age=" + age +
+                '}';
+    }
+}
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -2155,7 +2715,7 @@ public class HashSetTest01 {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">13.1k</span>
+                        class="white-color">16k</span>
             
             
             
