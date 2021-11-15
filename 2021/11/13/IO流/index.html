@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, python,Django,java,Heox,Matery,后端">
+    <meta name="keywords" content="IO流, python,Django,java,Heox,Matery,后端">
     <meta name="description" content="闲里偷忙第一人，懒癌重度患者">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | BeiKJie</title>
+    <title>IO流 | BeiKJie</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -438,12 +438,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">IO流</h1>
                 </div>
             </div>
         </div>
@@ -560,12 +560,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/IO%E6%B5%81/">
+                                <span class="chip bg-color">IO流</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaSE/" class="post-category">
+                                JavaSE
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -574,7 +591,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-04
+                    2021-11-13
                 </div>
                 
 
@@ -583,14 +600,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    5.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    22 分
                 </div>
                 
 
@@ -613,15 +630,739 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new "My New Post"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="IO流概述"><a href="#IO流概述" class="headerlink" title="IO流概述"></a>IO流概述</h1><p><strong><em>IO流，什么是IO？</em></strong></p>
+<p>​    I : Input ；  O : Output</p>
+<p>通过IO可以完成硬盘文件的读和写。</p>
+<h3 id="IO流的分类？"><a href="#IO流的分类？" class="headerlink" title="IO流的分类？"></a>IO流的分类？</h3><p>有多种分类方式：</p>
+<p>​    一种方式是按照流的方向进行分类：</p>
+<p>​        以内存作为参照物，</p>
+<p>​            往内存中去，叫做输入(Input)。或者叫做读(Read)。</p>
+<p>​            从内存中出来，叫做输出(Output)。或者叫做写(Write)。</p>
+<p>​        另一种方式是按照读取数据方式不同进行分类：<br>​          有的流是按照字节的方式读取数据，一次读取1个字节byte，等同于一次读取8个二进制位。这种流是万能的，什么类型的文件都可以读取。包括：文本文件，图片，声音文件，视频文件等….<br>​                假设文件file1.txt，采用字节流的话是这样读的：<br>​                  a中国bc张三fe<br>​                  第一次读：一个字节，正好读到’a’<br>​                  第二次读：一个字节，正好读到’中’字符的一半。<br>​                  第三次读：一个字节，正好读到’中’字符的另外一半。</p>
+<p>​            有的流是按照字符的方式读取数据的，一次读取一个字符，这种流是为了方便读取普通文本文件而存在的，这种流不能读取：图片、声音、视频等文件。只能读取纯文本文件，连word文件都无法读取。<br>​                假设文件file1.txt，采用字符流的话是这样读的：<br>​                  a中国bc张三fe<br>​                  第一次读：’a’字符（’a’字符在windows系统中占用1个字节。）<br>​                  第二次读：’中’字符（’中’字符在windows系统中占用2个字节。）</p>
+<blockquote>
+<p>综上所述：流的分类<br>    输入流、输出流<br>    字节流、字符流</p>
+</blockquote>
+<h3 id="java-IO流这块有四大家族："><a href="#java-IO流这块有四大家族：" class="headerlink" title="java IO流这块有四大家族："></a>java IO流这块有四大家族：</h3><p><em>四大家族的首领：</em></p>
+<p>​    <code>java.io.InputStream</code> 字节输入流</p>
+<p>​    <code>java.io.OutputStream</code> 字节输出流</p>
+<p>​    <code>java.io.Reader</code>   字符输入流</p>
+<p>​    <code>java.io.Writer</code>   字符输出流</p>
+<p>四大家族的首领都是抽象类。(abstract class)</p>
+<p><em>所有的流都实现了：</em></p>
+<p>​    java.io.Closeable接口，都是可关闭的，都有close()方法。</p>
+<p>​    流毕竟是一个管道，这个是内存和硬盘之间的通道，用完之后一定要关闭，不然会耗费(占用)很多资源。养成好习惯，用完流一定要关闭。</p>
+<p><em>所有的输出流都实现了：</em></p>
+<p>​    java.io.Flushable接口，都是可刷新的，都有flush()方法。</p>
+<p>​    养成一个好习惯，输出流在最终输出之后，一定要记得flush()刷新一下。这个刷新表示将通道/管道当中剩余未输出的数据,强行输出完（清空管道！）刷新的作用就是清空管道。</p>
+<p>​    <strong>注意：如果没有flush()可能会导致丢失数据。</strong></p>
+<blockquote>
+<p>注意：在java中只要“类名”以Stream结尾的都是字节流。以“Reader/Writer”结尾的都是字符流。</p>
+</blockquote>
+<h3 id="java-io包下需要掌握的流有16个"><a href="#java-io包下需要掌握的流有16个" class="headerlink" title="java.io包下需要掌握的流有16个"></a>java.io包下需要掌握的流有16个</h3><p>  <em>文件专属：</em></p>
+<p>​        <code>java.io.FileInputStream</code>（掌握）</p>
+<p>​        <code>java.io.FileOutputStream</code>（掌握）</p>
+<p>​        <code>java.io.FileReader</code></p>
+<p>​        <code>java.io.FileWriter</code></p>
+<p>  <em>转换流：（将字节流转换成字符流）</em></p>
+<p>​        <code>java.io.InputStreamReader</code></p>
+<p>​        <code>java.io.OutputStreamWriter</code></p>
+<p>  <em>缓冲流专属：</em></p>
+<p>​        <code>java.io.BufferedReader</code></p>
+<p>​        <code>java.io.BufferedWriter</code></p>
+<p>​        <code>java.io.BufferedInputStream</code></p>
+<p>​        <code>java.io.BufferedOutputStream</code></p>
+<p>  <em>数据流专属：</em></p>
+<p>​        <code>java.io.DataInputStream</code></p>
+<p>​        <code>java.io.DataOutputStream</code></p>
+<p>  <em>标准输出流：</em></p>
+<pre><code>    `java.io~.PrintWriter`
+</code></pre><p>​        <code>java.io.PrintStream</code>（掌握）</p>
+<p>  <em>对象专属流：</em></p>
+<p>​        <code>java.io.ObjectInputStream</code>（掌握）</p>
+<p>​        <code>java.io.ObjectOutputStream</code>（掌握）</p>
+<h1 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h1><h2 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h2><p>java.io.FileInputStream:</p>
+<ol>
+<li><p>文件字节输入流，万能的，任何类型的文件都可以采用这个流来读。</p>
+</li>
+<li><p>字节的方式，完成输入的操作，完成读的操作（硬盘—-&gt; 内存）</p>
+</li>
+</ol>
+<h3 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h3><p><code>FileInputStream(File file)</code> : 构造方法，通过打开与File类对象代表的实际文件的链接来创建FileInputStream流对象。<code>file</code> - 为了进行读取而打开的文件。</p>
+<p>​    抛出异常：</p>
+<p>​        <code>FileNotFoundException</code> - 如果该文件不存在，或者它是一个目录，而不是一个常规文件，抑或因为其他某些原因而无法打开进行读取。</p>
+<p>​        <code>SecurityException</code> - 如果存在安全管理器，且其 <code>checkRead</code> 方法拒绝对文件进行读取访问。</p>
+<p><code>void close()</code>：关闭此文件输入流并释放与此流有关的所有系统资源。如果此流有一个与之关联的通道，则关闭该通道。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误。</p>
+<p><code>int read()</code>: 从此输入流中读取一个数据字节。如果没有输入可用，则此方法将阻塞。</p>
+<p>​    返回：下一个数据字节;如果已到达文件末尾，则返回-1。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class FileInputStreamTest02 {
+    public static void main(String[] args) {
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream("D:\\course\\JavaProjects\\02-JavaSE\\temp");
+
+            /*while(true) {
+                int readData = fis.read();
+                if(readData == -1) {
+                    break;
+                }
+                System.out.println(readData);
+            }*/
+
+            // 改造while循环
+            int readData = 0;
+            while((readData = fis.read()) != -1){
+                System.out.println(readData);
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>分析这个程序的缺点：<br>    一次读取一个字节byte，这样内存和硬盘交互太频繁，基本上时间/资源都耗费<br>    在交互上面了。能不能一次读取多个字节呢？可以。</p>
+</blockquote>
+<p><code>int read(byte[] b)</code>:从此输入流中将最多 <code>b.length</code> 个字节的数据读入一个 byte 数组中。在某些输入可用之前，此方法将阻塞。</p>
+<pre><code> 返回：读入缓冲区的字节总数，如果因为已经到达文件末尾而没有更多的数据，则返回 `-1`。
+
+ 抛出：`IOException` - 如果发生 I/O 错误。
+</code></pre><p>一次最多读取 b.length 个字节。减少硬盘和内存的交互，提高程序的执行效率。往byte[]数组当中读。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class FileInputStreamTest03 {
+    public static void main(String[] args) {
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream("chapter23/src/com/bjpowernode/java/io/tempfile4");
+
+            // 开始读，采用byte数组，一次读取多个字节。最多读取“数组.length”个字节。
+            byte[] bytes = new byte[4]; // 准备一个4个长度的byte数组，一次最多读取4个字节。
+            // 这个方法的返回值是：读取到的字节数量。（不是字节本身）
+            int readCount = fis.read(bytes);
+            System.out.println(readCount); // 第一次读到了4个字节。
+            // 将字节数组全部转换成字符串
+            //System.out.println(new String(bytes)); // abcd
+            // 不应该全部都转换，应该是读取了多少个字节，转换多少个。
+            System.out.println(new String(bytes,0, readCount));
+
+            readCount = fis.read(bytes); // 第二次只能读取到2个字节。
+            System.out.println(readCount); // 2
+            // 将字节数组全部转换成字符串
+            //System.out.println(new String(bytes)); // efcd
+            // 不应该全部都转换，应该是读取了多少个字节，转换多少个。
+            System.out.println(new String(bytes,0, readCount));
+
+            readCount = fis.read(bytes); // 1个字节都没有读取到返回-1
+            System.out.println(readCount); // -1
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>int available()</code>： 返回下一次对此输入流调用的方法可以不受阻塞地从此输入流读取（或跳过）的估计剩余字节数。下一次调用可能是同一个线程，也可能是另                                一个线程。一次读取或跳过此数量个字节不会发生阻塞，但读取或跳过的字节可能小于该数。</p>
+<p>​        在某些情况下，非阻塞的读取（或跳过）操作在执行很慢时看起来受阻塞，例如，在网速缓慢的网络上读取大文件时。</p>
+<p>​    抛出：<code>IOException</code> - 如果此文件输入流已通过调用 <code>close</code> 关闭，或者发生 I/O 错误。</p>
+<p><code>long skip(long n)</code>： 从输入流中跳过并丢弃 <code>n</code> 个字节的数据。</p>
+<p>​    参数：<code>n</code> - 要跳过的字节数。</p>
+<p>​    返回：实际跳过的字节数。</p>
+<p>​    抛出：<code>IOException</code> - 如果 n 为负，如果该流不支持查找操作，或者发生 I/O 错误。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+/*
+FileInputStream类的其它常用方法：
+    int available()：返回流当中剩余的没有读到的字节数量
+    long skip(long n)：跳过几个字节不读。
+ */
+public class FileInputStreamTest05 {
+    public static void main(String[] args) {
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream("tempfile");
+            System.out.println("总字节数量：" + fis.available());
+            // 读1个字节
+            //int readByte = fis.read();
+            // 还剩下可以读的字节数量是：5
+            //System.out.println("剩下多少个字节没有读：" + fis.available());
+            // 这个方法有什么用？
+            //byte[] bytes = new byte[fis.available()]; // 这种方式不太适合太大的文件，因为byte[]数组不能太大。
+            // 不需要循环了。
+            // 直接读一次就行了。
+            //int readCount = fis.read(bytes); // 6
+            //System.out.println(new String(bytes)); // abcdef
+
+            // skip跳过几个字节不读取，这个方法也可能以后会用！
+            fis.skip(3);
+            System.out.println(fis.read()); //100
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h2><p>文件字节输出流，负责写。从内存到硬盘。</p>
+<h3 id="常用方法：-1"><a href="#常用方法：-1" class="headerlink" title="常用方法："></a>常用方法：</h3><p><code>FileOutputStream(File file)</code>：构造方法，创建一个向指定 <code>File</code> 对象表示的文件中写入数据的文件输出流。创建一个新 <code>FileDescriptor</code> 对象来表示此文件连                                                    接。</p>
+<p>​    抛出：</p>
+<p>​        <code>FileNotFoundException</code> - 如果该文件存在，但它是一个目录，而不是一个常规文件；或者该文件不存在，但无法创建它；抑或因为其他某些原因而无法打开</p>
+<p>​        <code>SecurityException</code> - 如果存在安全管理器，且其 <code>checkWrite</code> 方法拒绝对文件进行写入访问。</p>
+<p><code>FileOutputStream(String name, boolean append)</code>： 构造方法，创建一个向具有指定 <code>name</code> 的文件中写入数据的输出文件流。如果第二个参数为 <code>true</code>，则将字                                                                                    节写入文件末尾处，而不是写入文件开始处。创建一个新 <code>FileDescriptor</code> 对象来表示此文件连接。</p>
+<p>​    参数：</p>
+<p>​        <code>name</code> - 与系统有关的文件名</p>
+<p>​        <code>append</code> - 如果为 <code>true</code>，则将字节写入文件末尾处，而不是写入文件开始处</p>
+<p>​    抛出：</p>
+<p>​        <code>FileNotFoundException</code> - 如果该文件存在，但它是一个目录，而不是一个常规文件；或者该文件不存在，但无法创建它；抑或因为其他某些原因而无法打开</p>
+<p>​        <code>SecurityException</code> - 如果存在安全管理器，且其 <code>checkWrite</code> 方法拒绝对文件进行写入访问。</p>
+<p><code>void close()</code>： 关闭此文件输出流并释放与此流有关的所有系统资源。此文件输出流不能再用于写入字节。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误。</p>
+<p><code>void write(byte[] b)</code>：将 <code>b.length</code> 个字节从指定 byte 数组写入此文件输出流中。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误。</p>
+<p><code>void write(byte[] b,int off,int len)</code>： 将指定 byte 数组中从偏移量 <code>off</code> 开始的 <code>len</code> 个字节写入此文件输出流。</p>
+<p>​    参数：</p>
+<p>​            <code>b</code> - 数据。</p>
+<pre><code>         `off` - 数据中的起始偏移量。
+</code></pre><p>​            <code>len</code> - 要写入的字节数。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误。</p>
+<p><code>void flush()</code>： 刷新此输出流并强制写出所有缓冲的输出字节。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FileOutputStreamTest01 {
+    public static void main(String[] args) {
+        FileOutputStream fos = null;
+        try {
+            // myfile文件不存在的时候会自动新建！
+            // 这种方式谨慎使用，这种方式会先将原文件清空，然后重新写入。
+            //fos = new FileOutputStream("myfile");
+            //fos = new FileOutputStream("chapter23/src/tempfile3");
+
+            // 以追加的方式在文件末尾写入。不会清空原文件内容。
+            fos = new FileOutputStream("chapter23/src/tempfile3", true);
+            // 开始写。
+            byte[] bytes = {97, 98, 99, 100};
+            // 将byte数组全部写出！
+            fos.write(bytes); // abcd
+            // 将byte数组的一部分写出！
+            fos.write(bytes, 0, 2); // 再写出ab
+
+            // 字符串
+            String s = "我是一个中国人，我骄傲！！！";
+            // 将字符串转换成byte数组。
+            byte[] bs = s.getBytes();
+            // 写
+            fos.write(bs);
+
+            // 写完之后，最后一定要刷新
+            fos.flush();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="文件复制"><a href="#文件复制" class="headerlink" title="文件复制"></a>文件复制</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/*
+使用FileInputStream + FileOutputStream完成文件的拷贝。
+拷贝的过程应该是一边读，一边写。
+使用以上的字节流拷贝文件的时候，文件类型随意，万能的。什么样的文件都能拷贝。
+ */
+public class Copy01 {
+    public static void main(String[] args) {
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        try {
+            // 创建一个输入流对象
+            fis = new FileInputStream("D:\\course\\02-JavaSE\\video\\chapter01\\动力节点-JavaSE-杜聚宾-001-文件扩展名的显示.avi");
+            // 创建一个输出流对象
+            fos = new FileOutputStream("C:\\动力节点-JavaSE-杜聚宾-001-文件扩展名的显示.avi");
+
+            // 最核心的：一边读，一边写
+            byte[] bytes = new byte[1024 * 1024]; // 1MB（一次最多拷贝1MB。）
+            int readCount = 0;
+            while((readCount = fis.read(bytes)) != -1) {
+                fos.write(bytes, 0, readCount);
+            }
+
+            // 刷新，输出流最后要刷新
+            fos.flush();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            // 分开try，不要一起try。
+            // 一起try的时候，其中一个出现异常，可能会影响到另一个流的关闭。
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h2><p>文件字符输入流，只能读取普通文本。读取文本内容时，比较方便，快捷。</p>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p><code>FileReader(String fileName)</code>：构造方法， 在给定从中读取数据的文件名的情况下创建一个新 <code>FileReader</code>。</p>
+<p>​    抛出：<code>FileNotFoundException</code> - 如果指定文件不存在，或者它是一个目录，而不是一个常规文件，抑或因为其他某些原因而无法打开进行读取。</p>
+<p><code>int read()</code>：读取单个字符。</p>
+<p>​    返回：读取的字符，如果已到达流的末尾，则返回 -1</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
+<p><code>int read(char[] cbuf）</code>：来自父类<code>Reader</code>，将字符读入数组</p>
+<p>​     返回：读取的字符数，如果已到达流的末尾，则返回 -1</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
+<p><code>int read(char[] cbuf,int offset,int length)</code>： 将字符读入数组中的某一部分</p>
+<p>​    参数：</p>
+<p>​        <code>cbuf</code> - 目标缓冲区</p>
+<p>​        <code>offset</code> - 从其处开始存储字符的偏移量</p>
+<p>​        <code>length</code> - 要读取的最大字符数</p>
+<p>​    返回：读取的字符数，如果已到达流的末尾，则返回 -1</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
+<p><code>long skip(long n)</code>： 跳过字符。在某个字符可用、发生 I/O 错误或者已到达流的末尾前，此方法一直阻塞。</p>
+<p>​    参数：<code>n</code> - 要跳过的字符数</p>
+<p>​    返回：实际跳过的字符数</p>
+<p>​    抛出：</p>
+<p>​        <code>IllegalArgumentException</code> - 如果 <code>n</code> 为负。</p>
+<p>​        <code>IOException</code> - 如果发生 I/O 错误</p>
+<p><code>void close()</code>： 关闭该流并释放与之关联的所有资源。在关闭该流后，再调用 read()、ready()、mark()、reset() 或 skip() 将抛出 IOException。关闭以前关闭的                            流无效。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReaderTest {
+    public static void main(String[] args) {
+        FileReader reader = null;
+        try {
+            // 创建文件字符输入流
+            reader = new FileReader("tempfile");
+
+            //准备一个char数组
+            char[] chars = new char[4];
+            // 往char数组中读
+            reader.read(chars); // 按照字符的方式读取：第一次e，第二次f，第三次 风....
+            for(char c : chars) {
+                System.out.println(c);
+            }
+
+            /*// 开始读
+            char[] chars = new char[4]; // 一次读取4个字符
+            int readCount = 0;
+            while((readCount = reader.read(chars)) != -1) {
+                System.out.print(new String(chars,0,readCount));
+            }*/
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h2><p>文件字符输出流。写。只能输出普通文本。</p>
+<h3 id="常用方法：-2"><a href="#常用方法：-2" class="headerlink" title="常用方法："></a>常用方法：</h3><p><code>FileWriter(File file)</code>：构造方法，根据给定的 File 对象构造一个 FileWriter 对象。</p>
+<p>​    抛出：<code>IOException</code> - 如果该文件存在，但它是一个目录，而不是一个常规文件；或者该文件不存在，但无法创建它；抑或因为其他某些原因而无法打开它</p>
+<p><code>void write(int c)</code>： 写入单个字符。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
+<p><code>void write(char[] cbuf)</code>： 写入字符数组。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
+<p><code>void write(String str)</code>： 写入字符串。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
+<p><code>void flush()</code>：刷新该流的缓冲。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
+<p><code>void close()</code>： 关闭此流，但要先刷新它。在关闭该流之后，再调用 write() 或 flush() 将导致抛出 IOException。关闭以前关闭的流无效。</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileWriterTest {
+    public static void main(String[] args) {
+        FileWriter out = null;
+        try {
+            // 创建文件字符输出流对象
+            //out = new FileWriter("file");
+            out = new FileWriter("file", true);
+
+            // 开始写。
+            char[] chars = {'我','是','中','国','人'};
+            out.write(chars);
+            out.write(chars, 2, 3);
+
+            out.write("我是一名java软件工程师！");
+            // 写出一个换行符。
+            out.write("\n");
+            out.write("hello world!");
+
+            // 刷新
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (out != null) {
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="普通文本文件复制"><a href="#普通文本文件复制" class="headerlink" title="普通文本文件复制"></a>普通文本文件复制</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+/*
+使用FileReader FileWriter进行拷贝的话，只能拷贝“普通文本”文件。
+ */
+public class Copy02 {
+    public static void main(String[] args) {
+        FileReader in = null;
+        FileWriter out = null;
+        try {
+            // 读
+            in = new FileReader("chapter23/src/com/bjpowernode/java/io/Copy02.java");
+            // 写
+            out = new FileWriter("Copy02.java");
+
+            // 一边读一边写：
+            char[] chars = new char[1024 * 512]; // 1MB
+            int readCount = 0;
+            while((readCount = in.read(chars)) != -1){
+                out.write(chars, 0, readCount);
+            }
+
+            // 刷新
+            out.flush();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (out != null) {
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h1><h2 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h2><p> 带有缓冲区的字符输入流。使用这个流的时候不需要自定义char数组，或者说不需要自定义byte数组。自带缓冲。</p>
+<h3 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h3><p><code>BufferedReader(Reader in)</code>： 构造方法，创建一个使用默认大小输入缓冲区的缓冲字符输入流。</p>
+<p>​    参数：<code>in</code> - 一个 Reader</p>
+<p><code>String readLine()</code>： 读取一个文本行。通过下列字符之一即可认为某行已终止：换行 (‘\n’)、回车 (‘\r’) 或回车后直接跟着换行。</p>
+<p>​    返回：包含该行内容的字符串，不包含任何行终止符，如果已到达流末尾，则返回 null</p>
+<p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class BufferedReaderTest01 {
+    public static void main(String[] args) throws Exception{
+
+        FileReader reader = new FileReader("Copy02.java");
+        // 当一个流的构造方法中需要一个流的时候，这个被传进来的流叫做：节点流。
+        // 外部负责包装的这个流，叫做：包装流，还有一个名字叫做：处理流。
+        // 像当前这个程序来说：FileReader就是一个节点流。BufferedReader就是包装流/处理流。
+        BufferedReader br = new BufferedReader(reader);
+
+        // 读一行
+        /*String firstLine = br.readLine();
+        System.out.println(firstLine);
+
+        String secondLine = br.readLine();
+        System.out.println(secondLine);
+
+        String line3 = br.readLine();
+        System.out.println(line3);*/
+
+        // br.readLine()方法读取一个文本行，但不带换行符。
+        String s = null;
+        while((s = br.readLine()) != null){
+            System.out.print(s);
+        }
+
+        // 关闭流
+        // 对于包装流来说，只需要关闭最外层流就行，里面的节点流会自动关闭。（可以看源代码。）
+        br.close();
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="转换流转换"><a href="#转换流转换" class="headerlink" title="转换流转换"></a>转换流转换</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+/*
+    转换流：InputStreamReader
+ */
+public class BufferedReaderTest02 {
+    public static void main(String[] args) throws Exception{
+
+        /*// 字节流
+        FileInputStream in = new FileInputStream("Copy02.java");
+
+        // 通过转换流转换（InputStreamReader将字节流转换成字符流。）
+        // in是节点流。reader是包装流。
+        InputStreamReader reader = new InputStreamReader(in);
+
+        // 这个构造方法只能传一个字符流。不能传字节流。
+        // reader是节点流。br是包装流。
+        BufferedReader br = new BufferedReader(reader);*/
+
+        // 合并
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("Copy02.java")));
+
+        String line = null;
+        while((line = br.readLine()) != null){
+            System.out.println(line);
+        }
+
+        // 关闭最外层
+        br.close();
+    }
+}
+```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h2><p>BufferedWriter：带有缓冲的字符输出流。<br>OutputStreamWriter：转换流</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.OutputStreamWriter;
+
+public class BufferedWriterTest {
+    public static void main(String[] args) throws Exception{
+        // 带有缓冲区的字符输出流
+        //BufferedWriter out = new BufferedWriter(new FileWriter("copy"));
+
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("copy", true)));
+        // 开始写。
+        out.write("hello world!");
+        out.write("\n");
+        out.write("hello kitty!");
+        // 刷新
+        out.flush();
+        // 关闭最外层
+        out.close();
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h1><h2 id="DataOutputStream"><a href="#DataOutputStream" class="headerlink" title="DataOutputStream"></a>DataOutputStream</h2><p><code>java.io.DataOutputStream</code>：数据字节输字节输出流。</p>
+<p>这个流可以将数据连同数据的类型一并写入文件。</p>
+<p>注意：这个文件不是普通文本文档。（这个文件使用记事本打不开。）</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+
+
+public class DataOutputStreamTest {
+    public static void main(String[] args) throws Exception{
+        // 创建数据专属的字节输出流
+        DataOutputStream dos = new DataOutputStream(new FileOutputStream("data"));
+        // 写数据
+        byte b = 100;
+        short s = 200;
+        int i = 300;
+        long l = 400L;
+        float f = 3.0F;
+        double d = 3.14;
+        boolean sex = false;
+        char c = 'a';
+        // 写
+        dos.writeByte(b); // 把数据以及数据的类型一并写入到文件当中。
+        dos.writeShort(s);
+        dos.writeInt(i);
+        dos.writeLong(l);
+        dos.writeFloat(f);
+        dos.writeDouble(d);
+        dos.writeBoolean(sex);
+        dos.writeChar(c);
+
+        // 刷新
+        dos.flush();
+        // 关闭最外层
+        dos.close();
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="DataInputStream"><a href="#DataInputStream" class="headerlink" title="DataInputStream"></a>DataInputStream</h2><p>数据字节输入流。</p>
+<p>DataOutputStream写的文件，只能使用DataInputStream去读。并且读的时候你需要提前知道写入的顺序。</p>
+<p>读的顺序需要和写的顺序一致。才可以正常取出数据。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+
+
+public class DataInputStreamTest01 {
+    public static void main(String[] args) throws Exception{
+        DataInputStream dis = new DataInputStream(new FileInputStream("data"));
+        // 开始读
+        byte b = dis.readByte();
+        short s = dis.readShort();
+        int i = dis.readInt();
+        long l = dis.readLong();
+        float f = dis.readFloat();
+        double d = dis.readDouble();
+        boolean sex = dis.readBoolean();
+        char c = dis.readChar();
+
+        System.out.println(b);
+        System.out.println(s);
+        System.out.println(i + 1000);
+        System.out.println(l);
+        System.out.println(f);
+        System.out.println(d);
+        System.out.println(sex);
+        System.out.println(c);
+
+        dis.close();
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="标准输出流"><a href="#标准输出流" class="headerlink" title="标准输出流"></a>标准输出流</h1><h2 id="PrintStream"><a href="#PrintStream" class="headerlink" title="PrintStream"></a>PrintStream</h2><p><code>java.io.PrintStream</code>：标准的字节输出流。默认输出到控制台。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
+public class PrintStreamTest {
+    public static void main(String[] args) throws Exception{
+
+        // 联合起来写
+        System.out.println("hello world!");
+
+        // 分开写
+        PrintStream ps = System.out;
+        ps.println("hello zhangsan");
+        ps.println("hello lisi");
+        ps.println("hello wangwu");
+
+        // 可以改变标准输出流的输出方向吗？ 可以
+        // 标准输出流不再指向控制台，指向“log”文件。
+        PrintStream printStream = new PrintStream(new FileOutputStream("log"));
+        // 修改输出方向，将输出方向修改到"log"文件。
+        System.setOut(printStream);
+        // 再输出
+        System.out.println("hello world");
+        System.out.println("hello kitty");
+        System.out.println("hello zhangsan");
+
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><em>注意</em>：标准输出流不需要手动close()关闭。</p>
+</blockquote>
+<p>未完待续…………</p>
 
                 
             </div>
@@ -648,7 +1389,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://daizhen.top/2021/10/04/hello-world/">https://daizhen.top/2021/10/04/hello-world/</a>
+                    <a href="https://daizhen.top/2021/11/13/IO%E6%B5%81/">https://daizhen.top/2021/11/13/IO%E6%B5%81/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -685,7 +1426,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/IO%E6%B5%81/">
+                                    <span class="chip bg-color">IO流</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1189,31 +1938,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/05/DjiangoBlog/">
+                <a href="/2021/11/14/File%E7%B1%BB/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/3.jpg" class="responsive-img" alt="基于Django的个人博客">
+                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/4.jpg" class="responsive-img" alt="File类">
                         
-                        <span class="card-title">基于Django的个人博客</span>
+                        <span class="card-title">File类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基于Django的个人博客，前端方面能力有限，所以前端样式比较普通,望包涵
+                            Java File类的基本使用
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                    后端开发
+                            <a href="/categories/JavaSE/" class="post-category">
+                                    JavaSE
                                 </a>
                             
                             
@@ -1223,12 +1972,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Django/">
-                        <span class="chip bg-color">Django</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/File%E6%96%87%E4%BB%B6%E7%B1%BB/">
+                        <span class="chip bg-color">File文件类</span>
                     </a>
                     
                 </div>
@@ -1239,37 +1988,52 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/04/hello-world/">
+                <a href="/2021/11/03/%E9%9B%86%E5%90%88/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/5.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/6.jpg" class="responsive-img" alt="java 集合">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">java 集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Java集合
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-03
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Dozen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaSE/" class="post-category">
+                                    JavaSE
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9B%86%E5%90%88/">
+                        <span class="chip bg-color">集合</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
