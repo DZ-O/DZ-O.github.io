@@ -40,6 +40,7 @@
         })();
         </script>
         
+        
 <style type="text/css" lang="css">
     #loading-container{
         position: fixed;
@@ -170,11 +171,11 @@
     };
     loaded();
 })()
- </script><meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="BeiKJie" type="application/atom+xml">
+ </script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="BeiKJie" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -600,14 +601,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.4k
+                    8.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    36 分
                 </div>
                 
 
@@ -634,7 +635,7 @@
 <p>​    集合是一个容器，是一个载体,可以一次容纳多个对象。在实际开发中，假设连接数据库，数据库当中有10条记录，那么假设把这10条记录查询出来，在java程序中会将10条数据封装成10个java对象，然后将10个java对象放到某一个集合当中，将集合传到前端，然后遍历集合，将一个数据一个数据展现出来。</p>
 </li>
 <li><p>集合不能直接存储基本数据类型，另外集合也不能直接存储java对象，集合当中存储的都是java对象的内存地址。(或者说集合中存储的是引用。)</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">list.add (100) ; //自动装箱integer
+<pre class="line-numbers language-java"><code class="language-java">list<span class="token punctuation">.</span><span class="token function">add</span> <span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//自动装箱integer</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ol>
@@ -675,7 +676,7 @@
 <li>Properties: 是线程安全的，并且 key 和value只能存储字符串String。</li>
 <li>TreeMap: 底层是二叉树。TreeMap集合的 key可以自动按照大小顺序排序。</li>
 </ul>
-<h1 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h1><h2 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h2><pre class="line-numbers language-lang-java"><code class="language-lang-java">/*关于java.util.Collection接口中常用的方法。
+<h1 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h1><h2 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*关于java.util.Collection接口中常用的方法。
     1、Collection中能存放什么元素？
         没有使用“泛型”之前，Collection中可以存储Object的所有子类型。
         使用了“泛型”之后，Collection中只能存储某个具体的类型。
@@ -690,68 +691,68 @@
         boolean remove(Object o) 删除集合中的某个元素。
         boolean isEmpty()  判断该集合中元素的个数是否为0
         Object[] toArray()  调用这个方法可以把集合转换成数组。【作为了解，使用不多。】
- */
-public class CollectionTest01 {
-    public static void main(String[] args) {
-        // 创建一个集合对象
-        //Collection c = new Collection(); // 接口是抽象的，无法实例化。
-        // 多态
-        Collection c = new ArrayList();
-        // 测试Collection接口中的常用方法
-        c.add(1200); // 自动装箱(java5的新特性。),实际上是放进去了一个对象的内存地址。Integer x = new Integer(1200);
-        c.add(3.14); // 自动装箱
-        c.add(new Object());
-        c.add(new Student());
-        c.add(true); // 自动装箱
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CollectionTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建一个集合对象</span>
+        <span class="token comment" spellcheck="true">//Collection c = new Collection(); // 接口是抽象的，无法实例化。</span>
+        <span class="token comment" spellcheck="true">// 多态</span>
+        Collection c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 测试Collection接口中的常用方法</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1200</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 自动装箱(java5的新特性。),实际上是放进去了一个对象的内存地址。Integer x = new Integer(1200);</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3.14</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 自动装箱</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 自动装箱</span>
 
-        // 获取集合中元素的个数
-        System.out.println("集合中元素个数是：" + c.size()); // 5
+        <span class="token comment" spellcheck="true">// 获取集合中元素的个数</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"集合中元素个数是："</span> <span class="token operator">+</span> c<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 5</span>
 
-        // 清空集合
-        c.clear();
-        System.out.println("集合中元素个数是：" + c.size()); // 0
+        <span class="token comment" spellcheck="true">// 清空集合</span>
+        c<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"集合中元素个数是："</span> <span class="token operator">+</span> c<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 0</span>
 
-        // 再向集合中添加元素
-        c.add("hello"); // "hello"对象的内存地址放到了集合当中。
-        c.add("world");
-        c.add("浩克");
-        c.add("绿巨人");
-        c.add(1);
+        <span class="token comment" spellcheck="true">// 再向集合中添加元素</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "hello"对象的内存地址放到了集合当中。</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"浩克"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"绿巨人"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 判断集合中是否包含"绿巨人"
-        boolean flag = c.contains("绿巨人");
-        System.out.println(flag); // true
-        boolean flag2 = c.contains("绿巨人2");
-        System.out.println(flag2); // false
-        System.out.println(c.contains(1)); // true
+        <span class="token comment" spellcheck="true">// 判断集合中是否包含"绿巨人"</span>
+        <span class="token keyword">boolean</span> flag <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"绿巨人"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+        <span class="token keyword">boolean</span> flag2 <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"绿巨人2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>flag2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 
-        System.out.println("集合中元素个数是：" + c.size()); // 5
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"集合中元素个数是："</span> <span class="token operator">+</span> c<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 5</span>
 
-        // 删除集合中某个元素
-        c.remove(1);
-        System.out.println("集合中元素个数是：" + c.size()); // 4
+        <span class="token comment" spellcheck="true">// 删除集合中某个元素</span>
+        c<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"集合中元素个数是："</span> <span class="token operator">+</span> c<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4</span>
 
-        // 判断集合是否为空（集合中是否存在元素）
-        System.out.println(c.isEmpty()); // false
-        // 清空
-        c.clear();
-        System.out.println(c.isEmpty()); // true（true表示集合中没有元素了！）
+        <span class="token comment" spellcheck="true">// 判断集合是否为空（集合中是否存在元素）</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
+        <span class="token comment" spellcheck="true">// 清空</span>
+        c<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true（true表示集合中没有元素了！）</span>
 
-        c.add("abc");
-        c.add("def");
-        c.add(100);
-        c.add("helloworld!");
-        c.add(new Student());
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"def"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"helloworld!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 转换成数组（了解，使用不多。）
-        Object[] objs = c.toArray();
-        for(int i = 0; i < objs.length; i++){
-            // 遍历数组
-            Object o = objs[i];
-            System.out.println(o);
-        }
-    }
-}
+        <span class="token comment" spellcheck="true">// 转换成数组（了解，使用不多。）</span>
+        Object<span class="token punctuation">[</span><span class="token punctuation">]</span> objs <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> objs<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 遍历数组</span>
+            Object o <span class="token operator">=</span> objs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Iterator迭代器"><a href="#Iterator迭代器" class="headerlink" title="Iterator迭代器"></a>Iterator迭代器</h2><p><strong>迭代</strong>∶即Collection集合元素的通用获取方式。在取元素之前先要判断集合中有没有元素,如果有，就把这个元素取出来，继续在判断，如果还有就再取出出来。一直把集合中的所有元素全部取出。这种取出方式专业术语称为迭代。</p>
 <p>在程序开发中，经常需要遍历集合中的所有元素。针对这种需求，JDK专门提供了一个接口<code>java.util.Iterator</code>。Iterator 接口也是Java集合中的一员，但它与Collection 、Map接口有所不同，Collection,接口与Map接口主要用于存储元素，而Iterator主要用于迭代访问(即遍历) Collection 中的元素，因此Iterator对象也被称为迭代器。</p>
@@ -770,47 +771,47 @@ public class CollectionTest01 {
 <blockquote>
 <p>注意：Iterator<e>接口也是有泛型的,迭代器的泛型跟着集合走,集合是什么泛型,迭代器就是什么泛型</e></p>
 </blockquote>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.javase.collection;
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>javase<span class="token punctuation">.</span>collection<span class="token punctuation">;</span>
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Collection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Iterator<span class="token punctuation">;</span>
 
-/**
+<span class="token comment" spellcheck="true">/**
  * 关于集合遍历/迭代专题。（重点：五颗星*****）
- */
-public class CollectionTest02 {
-    public static void main(String[] args) {
-        // 注意：以下讲解的遍历方式/迭代方式，是所有Collection通用的一种方式。
-        // 在Map集合中不能用。在所有的Collection以及子类中使用。
-        // 创建集合对象
-        Collection c = new ArrayList(); // 后面的集合无所谓，主要是看前面的Collection接口，怎么遍历/迭代。
-        // 添加元素
-        c.add("abc");
-        c.add("def");
-        c.add(100);
-        c.add(new Object());
-        // 对集合Collection进行遍历/迭代
-        // 第一步：获取集合对象的迭代器对象Iterator
-        Iterator it = c.iterator();
-        // 第二步：通过以上获取的迭代器对象开始迭代/遍历集合。
-        /*
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CollectionTest02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 注意：以下讲解的遍历方式/迭代方式，是所有Collection通用的一种方式。</span>
+        <span class="token comment" spellcheck="true">// 在Map集合中不能用。在所有的Collection以及子类中使用。</span>
+        <span class="token comment" spellcheck="true">// 创建集合对象</span>
+        Collection c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 后面的集合无所谓，主要是看前面的Collection接口，怎么遍历/迭代。</span>
+        <span class="token comment" spellcheck="true">// 添加元素</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"def"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 对集合Collection进行遍历/迭代</span>
+        <span class="token comment" spellcheck="true">// 第一步：获取集合对象的迭代器对象Iterator</span>
+        Iterator it <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 第二步：通过以上获取的迭代器对象开始迭代/遍历集合。</span>
+        <span class="token comment" spellcheck="true">/*
             以下两个方法是迭代器对象Iterator中的方法：
                 boolean hasNext()如果仍有元素可以迭代，则返回 true。
                 Object next() 返回迭代的下一个元素。
-         */
-        while(it.hasNext()){
+         */</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            Object obj <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">// 一直取，不判断，会出现异常：java.util.NoSuchElementException</span>
+        <span class="token comment" spellcheck="true">/*while(true){
             Object obj = it.next();
             System.out.println(obj);
-        }
+        }*/</span>
 
-        // 一直取，不判断，会出现异常：java.util.NoSuchElementException
-        /*while(true){
-            Object obj = it.next();
-            System.out.println(obj);
-        }*/
-
-        /* while(it.hasNext()){
+        <span class="token comment" spellcheck="true">/* while(it.hasNext()){
             // 存进去是什么类型，取出来还是什么类型。
             Object obj = it.next();
             if(obj instanceof Integer){
@@ -819,9 +820,9 @@ public class CollectionTest02 {
             // 只不过在输出的时候会转换成字符串。因为这里println会调用toString()方法。
             System.out.println(obj);
         }
-*/
-    }
-}
+*/</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211104205114174.png" alt="迭代集合原理"></p>
 <blockquote>
@@ -831,52 +832,52 @@ public class CollectionTest02 {
 <p>​        <code>c.remove(o);</code> 迭代过程中不能这样。会出现：<code>java.util.ConcurrentModificationException</code></p>
 <p>​     重点：在迭代元素的过程当中，一定要使用迭代器Iterator的remove方法，删除元素，不要使用集合自带的remove方法删除元素。</p>
 </blockquote>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class CollectionTest06 {
-    public static void main(String[] args) {
-        // 创建集合
-        Collection c = new ArrayList();
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CollectionTest06</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建集合</span>
+        Collection c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 注意：此时获取的迭代器，指向的是那是集合中没有元素状态下的迭代器。
-        // 一定要注意：集合结构只要发生改变，迭代器必须重新获取。
-        // 当集合结构发生了改变，迭代器没有重新获取时，调用next()方法时：java.util.ConcurrentModificationException
-        Iterator it = c.iterator();
+        <span class="token comment" spellcheck="true">// 注意：此时获取的迭代器，指向的是那是集合中没有元素状态下的迭代器。</span>
+        <span class="token comment" spellcheck="true">// 一定要注意：集合结构只要发生改变，迭代器必须重新获取。</span>
+        <span class="token comment" spellcheck="true">// 当集合结构发生了改变，迭代器没有重新获取时，调用next()方法时：java.util.ConcurrentModificationException</span>
+        Iterator it <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 添加元素
-        c.add(1); // Integer类型
-        c.add(2);
-        c.add(3);
+        <span class="token comment" spellcheck="true">// 添加元素</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Integer类型</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 获取迭代器
-        //Iterator it = c.iterator();
-        /*while(it.hasNext()){
+        <span class="token comment" spellcheck="true">// 获取迭代器</span>
+        <span class="token comment" spellcheck="true">//Iterator it = c.iterator();</span>
+        <span class="token comment" spellcheck="true">/*while(it.hasNext()){
             // 编写代码时next()方法返回值类型必须是Object。
             // Integer i = it.next();
             Object obj = it.next();
             System.out.println(obj);
-        }*/
+        }*/</span>
 
-        Collection c2 = new ArrayList();
-        c2.add("abc");
-        c2.add("def");
-        c2.add("xyz");
+        Collection c2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c2<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c2<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"def"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c2<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"xyz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        Iterator it2 = c2.iterator();
-        while(it2.hasNext()){
-            Object o = it2.next();
-            // 删除元素
-            // 删除元素之后，集合的结构发生了变化，应该重新去获取迭代器
-            // 但是，循环下一次的时候并没有重新获取迭代器，所以会出现异常：java.util.ConcurrentModificationException
-            // 出异常根本原因是：集合中元素删除了，但是没有更新迭代器（迭代器不知道集合变化了）
-            //c2.remove(o); // 直接通过集合去删除元素，没有通知迭代器。（导致迭代器的快照和原集合状态不同。）
-            // 使用迭代器来删除可以吗？
-            // 迭代器去删除时，会自动更新迭代器，并且更新集合（删除集合中的元素）。
-            it2.remove(); // 删除的一定是迭代器指向的当前元素。
-            System.out.println(o);
-        }
+        Iterator it2 <span class="token operator">=</span> c2<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>it2<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            Object o <span class="token operator">=</span> it2<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 删除元素</span>
+            <span class="token comment" spellcheck="true">// 删除元素之后，集合的结构发生了变化，应该重新去获取迭代器</span>
+            <span class="token comment" spellcheck="true">// 但是，循环下一次的时候并没有重新获取迭代器，所以会出现异常：java.util.ConcurrentModificationException</span>
+            <span class="token comment" spellcheck="true">// 出异常根本原因是：集合中元素删除了，但是没有更新迭代器（迭代器不知道集合变化了）</span>
+            <span class="token comment" spellcheck="true">//c2.remove(o); // 直接通过集合去删除元素，没有通知迭代器。（导致迭代器的快照和原集合状态不同。）</span>
+            <span class="token comment" spellcheck="true">// 使用迭代器来删除可以吗？</span>
+            <span class="token comment" spellcheck="true">// 迭代器去删除时，会自动更新迭代器，并且更新集合（删除集合中的元素）。</span>
+            it2<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 删除的一定是迭代器指向的当前元素。</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        System.out.println(c2.size()); //0
-    }
-}
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c2<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h1><p>List集合存储元素特点：有序可重复</p>
 <p>​    有序：List集合中的元素有下标。</p>
@@ -890,65 +891,65 @@ public class CollectionTest02 {
 <p>​      <code>int indexOf(Object o)</code>：返回此列表中第一次出现的指定元素的索引;如果此列表不包含该元素，则返回-1。</p>
 <p>​      <code>int lastIndexOf(Object o)</code>：返回此列表中最后出现的指定元素的索引;如果列表不包含此元素，则返回-1。</p>
 <p>​      <code>E remove(int index)</code>：移除列表中指定位置的元素。</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class ListTest01 {
-    public static void main(String[] args) {
-        // 创建List类型的集合。
-        //List myList = new LinkedList();
-        //List myList = new Vector();
-        List myList = new ArrayList();
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ListTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建List类型的集合。</span>
+        <span class="token comment" spellcheck="true">//List myList = new LinkedList();</span>
+        <span class="token comment" spellcheck="true">//List myList = new Vector();</span>
+        List myList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 添加元素
-        myList.add("A"); // 默认都是向集合末尾添加元素。
-        myList.add("B");
-        myList.add("C");
-        myList.add("C");
-        myList.add("D");
+        <span class="token comment" spellcheck="true">// 添加元素</span>
+        myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 默认都是向集合末尾添加元素。</span>
+        myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"D"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        //在列表的指定位置插入指定元素（第一个参数是下标）
-        // 这个方法使用不多，因为对于ArrayList集合来说效率比较低。
-        myList.add(1, "KING");
+        <span class="token comment" spellcheck="true">//在列表的指定位置插入指定元素（第一个参数是下标）</span>
+        <span class="token comment" spellcheck="true">// 这个方法使用不多，因为对于ArrayList集合来说效率比较低。</span>
+        myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"KING"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 迭代
-        Iterator it = myList.iterator();
-        while(it.hasNext()){
-            Object elt = it.next();
-            System.out.println(elt);
-        }
+        <span class="token comment" spellcheck="true">// 迭代</span>
+        Iterator it <span class="token operator">=</span> myList<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            Object elt <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>elt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        // 根据下标获取元素
-        Object firstObj = myList.get(0);
-        System.out.println(firstObj);
+        <span class="token comment" spellcheck="true">// 根据下标获取元素</span>
+        Object firstObj <span class="token operator">=</span> myList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>firstObj<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 因为有下标，所以List集合有自己比较特殊的遍历方式
-        // 通过下标遍历。【List集合特有的方式，Set没有。】
-        for(int i = 0; i < myList.size(); i++){
-            Object obj = myList.get(i);
-            System.out.println(obj);
-        }
+        <span class="token comment" spellcheck="true">// 因为有下标，所以List集合有自己比较特殊的遍历方式</span>
+        <span class="token comment" spellcheck="true">// 通过下标遍历。【List集合特有的方式，Set没有。】</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> myList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            Object obj <span class="token operator">=</span> myList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        // 获取指定对象第一次出现处的索引。
-        System.out.println(myList.indexOf("C")); // 3
+        <span class="token comment" spellcheck="true">// 获取指定对象第一次出现处的索引。</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>myList<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3</span>
 
-        // 获取指定对象最后一次出现处的索引。
-        System.out.println(myList.lastIndexOf("C")); // 4
+        <span class="token comment" spellcheck="true">// 获取指定对象最后一次出现处的索引。</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>myList<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4</span>
 
-        // 删除指定下标位置的元素
-        // 删除下标为0的元素
-        myList.remove(0);
-        System.out.println(myList.size()); // 5
+        <span class="token comment" spellcheck="true">// 删除指定下标位置的元素</span>
+        <span class="token comment" spellcheck="true">// 删除下标为0的元素</span>
+        myList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>myList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 5</span>
 
-        System.out.println("====================================");
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"===================================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 修改指定位置的元素
-        myList.set(2, "Soft");
+        <span class="token comment" spellcheck="true">// 修改指定位置的元素</span>
+        myList<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"Soft"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 遍历集合
-        for(int i = 0; i < myList.size(); i++){
-            Object obj = myList.get(i);
-            System.out.println(obj);
-        }
-    }
-}
+        <span class="token comment" spellcheck="true">// 遍历集合</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> myList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            Object obj <span class="token operator">=</span> myList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h1><blockquote>
 <ol>
@@ -982,30 +983,30 @@ public class CollectionTest02 {
 </li>
 </ol>
 </blockquote>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class ArrayListTest02 {
-    public static void main(String[] args) {
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayListTest02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        // 默认初始化容量10
-        List myList1 = new ArrayList();
+        <span class="token comment" spellcheck="true">// 默认初始化容量10</span>
+        List myList1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 指定初始化容量100
-        List myList2 = new ArrayList(100);
+        <span class="token comment" spellcheck="true">// 指定初始化容量100</span>
+        List myList2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 创建一个HashSet集合
-        Collection c = new HashSet();
-        // 添加元素到Set集合
-        c.add(100);
-        c.add(200);
-        c.add(900);
-        c.add(50);
+        <span class="token comment" spellcheck="true">// 创建一个HashSet集合</span>
+        Collection c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 添加元素到Set集合</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">900</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 通过这个构造方法就可以将HashSet集合转换成List集合。
-        List myList3 = new ArrayList(c);
-        for(int i = 0; i < myList3.size(); i++){
-            System.out.println(myList3.get(i));
-        }
-    }
-}
+        <span class="token comment" spellcheck="true">// 通过这个构造方法就可以将HashSet集合转换成List集合。</span>
+        List myList3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> myList3<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>myList3<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="LinkedList集合"><a href="#LinkedList集合" class="headerlink" title="LinkedList集合"></a><strong>LinkedList集合</strong></h1><p>LinkedList集合的特点∶</p>
 <ol>
@@ -1037,86 +1038,86 @@ public class CollectionTest02 {
 <li><code>public E pop()</code>: 从此列表所表示的堆栈处弹出一个元素。</li>
 <li><code>public boolean isEmpty()</code>: 如果列表不包含元素，则返回true。</li>
 </ul>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class LinkedListDemo {
-    public static void main(String[] args) {
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedListDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        show03();
-    }
+        <span class="token function">show03</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    private static void show03() {
-        LinkedList<String> linkedList = new LinkedList<>();
-        linkedList.add("a");
-        linkedList.add("b");
-        linkedList.add("c");
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">show03</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        LinkedList<span class="token operator">&lt;</span>String<span class="token operator">></span> linkedList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-//        String s = linkedList.removeFirst();
-        String s = linkedList.pop();
-        System.out.println(s);
-        String s1 = linkedList.removeLast();
-        System.out.println(s1);
-        System.out.println(linkedList);
-    }
+<span class="token comment" spellcheck="true">//        String s = linkedList.removeFirst();</span>
+        String s <span class="token operator">=</span> linkedList<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String s1 <span class="token operator">=</span> linkedList<span class="token punctuation">.</span><span class="token function">removeLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>linkedList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    private static void show02() {
-        LinkedList<String> linkedList = new LinkedList<>();
-        linkedList.add("a");
-        linkedList.add("b");
-        linkedList.add("c");
-        String first = linkedList.getFirst();
-        System.out.println(first);
-        String last = linkedList.getLast();
-        System.out.println(last);
-        String tow = linkedList.get(1);
-        System.out.println(tow);
-    }
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">show02</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        LinkedList<span class="token operator">&lt;</span>String<span class="token operator">></span> linkedList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String first <span class="token operator">=</span> linkedList<span class="token punctuation">.</span><span class="token function">getFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String last <span class="token operator">=</span> linkedList<span class="token punctuation">.</span><span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>last<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String tow <span class="token operator">=</span> linkedList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>tow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    private static void show01() {
-        LinkedList<String> linkedList = new LinkedList<>();
-        linkedList.add("a");
-        linkedList.add("b");
-        linkedList.add("c");
-        linkedList.addLast("com");   // 等效于 add（）
-        System.out.println(linkedList);
-//        linkedList.addFirst("www");
-        linkedList.push("www");
-        System.out.println(linkedList);
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">show01</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        LinkedList<span class="token operator">&lt;</span>String<span class="token operator">></span> linkedList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">addLast</span><span class="token punctuation">(</span><span class="token string">"com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 等效于 add（）</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>linkedList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//        linkedList.addFirst("www");</span>
+        linkedList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"www"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>linkedList<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    }
-}
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class LinkedListTest01 {
-    public static void main(String[] args) {
-        // LinkedList集合底层也是有下标的。
-        // 注意：ArrayList之所以检索效率比较高，不是单纯因为下标的原因。是因为底层数组发挥的作用。
-        // LinkedList集合照样有下标，但是检索/查找某个元素的时候效率比较低，因为只能从头节点开始一个一个遍历。
-        List list = new LinkedList();
-        list.add("a");
-        list.add("b");
-        list.add("c");
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedListTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// LinkedList集合底层也是有下标的。</span>
+        <span class="token comment" spellcheck="true">// 注意：ArrayList之所以检索效率比较高，不是单纯因为下标的原因。是因为底层数组发挥的作用。</span>
+        <span class="token comment" spellcheck="true">// LinkedList集合照样有下标，但是检索/查找某个元素的时候效率比较低，因为只能从头节点开始一个一个遍历。</span>
+        List list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        for(int i = 0; i <list.size(); i++){
-            Object obj = list.get(i);
-            System.out.println(obj);
-        }
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>list<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            Object obj <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        // LinkedList集合有初始化容量吗？没有。
-        // 最初这个链表中没有任何元素。first和last引用都是null。
-        // 不管是LinkedList还是ArrayList，以后写代码时不需要关心具体是哪个集合。
-        // 因为我们要面向接口编程，调用的方法都是接口中的方法。
-        //List list2 = new ArrayList(); // 这样写表示底层你用了数组。
-        List list2 = new LinkedList(); // 这样写表示底层你用了双向链表。
+        <span class="token comment" spellcheck="true">// LinkedList集合有初始化容量吗？没有。</span>
+        <span class="token comment" spellcheck="true">// 最初这个链表中没有任何元素。first和last引用都是null。</span>
+        <span class="token comment" spellcheck="true">// 不管是LinkedList还是ArrayList，以后写代码时不需要关心具体是哪个集合。</span>
+        <span class="token comment" spellcheck="true">// 因为我们要面向接口编程，调用的方法都是接口中的方法。</span>
+        <span class="token comment" spellcheck="true">//List list2 = new ArrayList(); // 这样写表示底层你用了数组。</span>
+        List list2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这样写表示底层你用了双向链表。</span>
 
-        // 以下这些方法你面向的都是接口编程。
-        list2.add("123");
-        list2.add("456");
-        list2.add("789");
+        <span class="token comment" spellcheck="true">// 以下这些方法你面向的都是接口编程。</span>
+        list2<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list2<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list2<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"789"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        for(int i = 0; i < list2.size(); i++){
-            System.out.println(list2.get(i));
-        }
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> list2<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list2<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-    }
-}
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="Vector集合"><a href="#Vector集合" class="headerlink" title="Vector集合"></a>Vector集合</h1><ol>
 <li><p>底层也是一个数组。</p>
@@ -1136,77 +1137,77 @@ public class CollectionTest02 {
 <p>​    java.util.Collections 是集合工具类。</p>
 </li>
 </ol>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class VectorTest {
-    public static void main(String[] args) {
-        // 创建一个Vector集合
-        List vector = new Vector();
-        //Vector vector = new Vector();
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">VectorTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建一个Vector集合</span>
+        List vector <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//Vector vector = new Vector();</span>
 
-        // 添加元素
-        // 默认容量10个。
-        vector.add(1);
-        vector.add(2);
-        vector.add(3);
-        vector.add(4);
-        vector.add(5);
-        vector.add(6);
-        vector.add(7);
-        vector.add(8);
-        vector.add(9);
-        vector.add(10);
+        <span class="token comment" spellcheck="true">// 添加元素</span>
+        <span class="token comment" spellcheck="true">// 默认容量10个。</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 满了之后扩容（扩容之后的容量是20.）
-        vector.add(11);
+        <span class="token comment" spellcheck="true">// 满了之后扩容（扩容之后的容量是20.）</span>
+        vector<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        Iterator it = vector.iterator();
-        while(it.hasNext()){
-            Object obj = it.next();
-            System.out.println(obj);
-        }
+        Iterator it <span class="token operator">=</span> vector<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            Object obj <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        // 这个可能以后要使用！！！！
-        List myList = new ArrayList(); // 非线程安全的。
+        <span class="token comment" spellcheck="true">// 这个可能以后要使用！！！！</span>
+        List myList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 非线程安全的。</span>
 
-        // 变成线程安全的
-        Collections.synchronizedList(myList); 
+        <span class="token comment" spellcheck="true">// 变成线程安全的</span>
+        Collections<span class="token punctuation">.</span><span class="token function">synchronizedList</span><span class="token punctuation">(</span>myList<span class="token punctuation">)</span><span class="token punctuation">;</span> 
 
-        // myList集合就是线程安全的了。
-        myList.add("111");
-        myList.add("222");
-        myList.add("333");
-    }
-}
+        <span class="token comment" spellcheck="true">// myList集合就是线程安全的了。</span>
+        myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"111"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"222"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"333"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="HashSet集合"><a href="#HashSet集合" class="headerlink" title="HashSet集合"></a>HashSet集合</h1><p>HashSet集合在new的时候,底层实际上new了一个HashMap集合。向Hashset集合中存储元紊,实际上是存储到HashMap集合中了。</p>
 <p>HashMap集合是一个哈希表数据结构Hashset集合初始化容量16</p>
 <p>初始化容量建议是2的倍数。</p>
 <p>扩容: 扩容之后是原容量2倍。</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.javase.collection;
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>javase<span class="token punctuation">.</span>collection<span class="token punctuation">;</span>
 
-import java.util.HashSet;
-import java.util.Set;
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashSet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Set<span class="token punctuation">;</span>
 
-/*
+<span class="token comment" spellcheck="true">/*
 HashSet集合：
     无序不可重复。
- */
-public class HashSetTest01 {
-    public static void main(String[] args) {
-        // 演示一下HashSet集合特点
-        Set<String> strs = new HashSet<>();
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashSetTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 演示一下HashSet集合特点</span>
+        Set<span class="token operator">&lt;</span>String<span class="token operator">></span> strs <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 添加元素
-        strs.add("hello3");
-        strs.add("hello4");
-        strs.add("hello1");
-        strs.add("hello2");
-        strs.add("hello3");
-        strs.add("hello3");
-        strs.add("hello3");
-        strs.add("hello3");
+        <span class="token comment" spellcheck="true">// 添加元素</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"hello3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"hello4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"hello1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"hello2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"hello3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"hello3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"hello3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"hello3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 遍历
-        /*
+        <span class="token comment" spellcheck="true">// 遍历</span>
+        <span class="token comment" spellcheck="true">/*
         hello1
         hello4
         hello2
@@ -1214,12 +1215,12 @@ public class HashSetTest01 {
         1、存储时顺序和取出的顺序不同。
         2、不可重复。
         3、放到HashSet集合中的元素实际上是放到HashMap集合的key部分了。
-         */
-        for(String s : strs){
-            System.out.println(s);
-        }
-    }
-}
+         */</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>String s <span class="token operator">:</span> strs<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <h1 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h1><ol>
@@ -1297,93 +1298,93 @@ public class HashSetTest01 {
 <p>【Map.Entry和String一样，都是一种类型的名字，只不过：Map.Entry是静态内部类，是Map中的静态内部类】</p>
 <p> 4=zhaoliu —-&gt; 这个东西是个什么？ Map.Entry</p>
 </blockquote>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class MapTest01 {
-    public static void main(String[] args) {
-        // 创建Map集合对象
-        Map<Integer, String> map = new HashMap<>();
-        // 向Map集合中添加键值对
-        map.put(1, "zhangsan"); // 1在这里进行了自动装箱。
-        map.put(2, "lisi");
-        map.put(3, "wangwu");
-        map.put(4, "zhaoliu");
-        // 通过key获取value
-        String value = map.get(2);
-        System.out.println(value);
-        // 获取键值对的数量
-        System.out.println("键值对的数量：" + map.size());
-        // 通过key删除key-value
-        map.remove(2);
-        System.out.println("键值对的数量：" + map.size());
-        // 判断是否包含某个key
-        // contains方法底层调用的都是equals进行比对的，所以自定义的类型需要重写equals方法。
-        System.out.println(map.containsKey(new Integer(4))); // true
-        // 判断是否包含某个value
-        System.out.println(map.containsValue(new String("wangwu"))); // true
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建Map集合对象</span>
+        Map<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> String<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 向Map集合中添加键值对</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1在这里进行了自动装箱。</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"lisi"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"wangwu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">"zhaoliu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 通过key获取value</span>
+        String value <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 获取键值对的数量</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"键值对的数量："</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 通过key删除key-value</span>
+        map<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"键值对的数量："</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 判断是否包含某个key</span>
+        <span class="token comment" spellcheck="true">// contains方法底层调用的都是equals进行比对的，所以自定义的类型需要重写equals方法。</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">containsKey</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+        <span class="token comment" spellcheck="true">// 判断是否包含某个value</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">containsValue</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"wangwu"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 
-        // 获取所有的value
-        Collection<String> values = map.values();
-        // foreach
-        for(String s : values){
-            System.out.println(s);
-        }
+        <span class="token comment" spellcheck="true">// 获取所有的value</span>
+        Collection<span class="token operator">&lt;</span>String<span class="token operator">></span> values <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// foreach</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>String s <span class="token operator">:</span> values<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        // 清空map集合
-        map.clear();
-        System.out.println("键值对的数量：" + map.size());
-        // 判断是否为空
-        System.out.println(map.isEmpty()); // true
-    }
-}
+        <span class="token comment" spellcheck="true">// 清空map集合</span>
+        map<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"键值对的数量："</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 判断是否为空</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Map集合遍历"><a href="#Map集合遍历" class="headerlink" title="Map集合遍历"></a>Map集合遍历</h2><pre class="line-numbers language-lang-java"><code class="language-lang-java">public class MapTest02 {
-    public static void main(String[] args) {
+<h2 id="Map集合遍历"><a href="#Map集合遍历" class="headerlink" title="Map集合遍历"></a>Map集合遍历</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapTest02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        // 第一种方式：获取所有的key，通过遍历key，来遍历value
-        Map<Integer, String> map = new HashMap<>();
-        map.put(1, "zhangsan");
-        map.put(2, "lisi");
-        map.put(3, "wangwu");
-        map.put(4, "zhaoliu");
-        // 遍历Map集合
-        // 获取所有的key，所有的key是一个Set集合
-        Set<Integer> keys = map.keySet();
-        // 遍历key，通过key获取value
-        // 迭代器可以
-        /*Iterator<Integer> it = keys.iterator();
+        <span class="token comment" spellcheck="true">// 第一种方式：获取所有的key，通过遍历key，来遍历value</span>
+        Map<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> String<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"lisi"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"wangwu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">"zhaoliu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 遍历Map集合</span>
+        <span class="token comment" spellcheck="true">// 获取所有的key，所有的key是一个Set集合</span>
+        Set<span class="token operator">&lt;</span>Integer<span class="token operator">></span> keys <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 遍历key，通过key获取value</span>
+        <span class="token comment" spellcheck="true">// 迭代器可以</span>
+        <span class="token comment" spellcheck="true">/*Iterator&lt;Integer> it = keys.iterator();
         while(it.hasNext()){
             // 取出其中一个key
             Integer key = it.next();
             // 通过key获取value
             String value = map.get(key);
             System.out.println(key + "=" + value);
-        }*/
-        // foreach也可以
-        for(Integer key : keys){
-            System.out.println(key + "=" + map.get(key));
-        }
+        }*/</span>
+        <span class="token comment" spellcheck="true">// foreach也可以</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>Integer key <span class="token operator">:</span> keys<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key <span class="token operator">+</span> <span class="token string">"="</span> <span class="token operator">+</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        // 第二种方式：Set<Map.Entry<K,V>> entrySet()
-        // 以上这个方法是把Map集合直接全部转换成Set集合。
-        // Set集合中元素的类型是：Map.Entry
-        Set<Map.Entry<Integer,String>> set = map.entrySet();
-        // 遍历Set集合，每一次取出一个Node
-        // 迭代器
-        /*Iterator<Map.Entry<Integer,String>> it2 = set.iterator();
+        <span class="token comment" spellcheck="true">// 第二种方式：Set&lt;Map.Entry&lt;K,V>> entrySet()</span>
+        <span class="token comment" spellcheck="true">// 以上这个方法是把Map集合直接全部转换成Set集合。</span>
+        <span class="token comment" spellcheck="true">// Set集合中元素的类型是：Map.Entry</span>
+        Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">>></span> set <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 遍历Set集合，每一次取出一个Node</span>
+        <span class="token comment" spellcheck="true">// 迭代器</span>
+        <span class="token comment" spellcheck="true">/*Iterator&lt;Map.Entry&lt;Integer,String>> it2 = set.iterator();
         while(it2.hasNext()){
-            Map.Entry<Integer,String> node = it2.next();
+            Map.Entry&lt;Integer,String> node = it2.next();
             Integer key = node.getKey();
             String value = node.getValue();
             System.out.println(key + "=" + value);
-        }*/
+        }*/</span>
 
-        // foreach
-        // 这种方式效率比较高，因为获取key和value都是直接从node对象中获取的属性值。
-        // 这种方式比较适合于大数据量。
-        for(Map.Entry<Integer,String> node : set){
-            System.out.println(node.getKey() + "--->" + node.getValue());
-        }
-    }
-}
+        <span class="token comment" spellcheck="true">// foreach</span>
+        <span class="token comment" spellcheck="true">// 这种方式效率比较高，因为获取key和value都是直接从node对象中获取的属性值。</span>
+        <span class="token comment" spellcheck="true">// 这种方式比较适合于大数据量。</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">></span> node <span class="token operator">:</span> set<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"--->"</span> <span class="token operator">+</span> node<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="HashMap集合"><a href="#HashMap集合" class="headerlink" title="HashMap集合"></a>HashMap集合</h1><p>HashMap集合：</p>
 <ol>
@@ -1399,27 +1400,27 @@ public class HashSetTest01 {
 <ol>
 <li>HashMap集合底层的源代码：</li>
 </ol>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">    public class HashMap{
+<pre class="line-numbers language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMap</span><span class="token punctuation">{</span>
 
-      // HashMap底层实际上就是一个数组。（一维数组）
+      <span class="token comment" spellcheck="true">// HashMap底层实际上就是一个数组。（一维数组）</span>
 
-      Node<K,V>[] table;
+      Node<span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span><span class="token punctuation">[</span><span class="token punctuation">]</span> table<span class="token punctuation">;</span>
 
-      // 静态的内部类HashMap.Node
+      <span class="token comment" spellcheck="true">// 静态的内部类HashMap.Node</span>
 
-      static class Node<K,V> {
+      <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> <span class="token punctuation">{</span>
 
-        final int hash; // 哈希值（哈希值是key的hashCode()方法的执行结果。hash值通过哈希函数/算法，可以转换存储成数组的下标。）
+        <span class="token keyword">final</span> <span class="token keyword">int</span> hash<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 哈希值（哈希值是key的hashCode()方法的执行结果。hash值通过哈希函数/算法，可以转换存储成数组的下标。）</span>
 
-        final K key; // 存储到Map集合中的那个key
+        <span class="token keyword">final</span> K key<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 存储到Map集合中的那个key</span>
 
-        V value; // 存储到Map集合中的那个value
+        V value<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 存储到Map集合中的那个value</span>
 
-        Node<K,V> next; // 下一个节点的内存地址。
+        Node<span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 下一个节点的内存地址。</span>
 
-      }
+      <span class="token punctuation">}</span>
 
-    }
+    <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​    哈希表/散列表：一维数组，这个数组中每一个元素是一个单向链表。（数组和链表的结合体。）</p>
 <ol>
@@ -1458,49 +1459,49 @@ public class HashSetTest01 {
 <blockquote>
 <p>重点，记住：HashMap集合初始化容量必须是2的倍数，这也是官方推荐的， 这是因为达到散列均匀，为了提高HashMap集合的存取效率，所必须的。 </p>
 </blockquote>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class HashMapTest01 {
-    public static void main(String[] args) {
-        // 测试HashMap集合key部分的元素特点
-        // Integer是key，它的hashCode和equals都重写了。
-        Map<Integer,String> map = new HashMap<>();
-        map.put(1111, "zhangsan");
-        map.put(6666, "lisi");
-        map.put(7777, "wangwu");
-        map.put(2222, "zhaoliu");
-        map.put(2222, "king"); //key重复的时候value会自动覆盖。
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 测试HashMap集合key部分的元素特点</span>
+        <span class="token comment" spellcheck="true">// Integer是key，它的hashCode和equals都重写了。</span>
+        Map<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">1111</span><span class="token punctuation">,</span> <span class="token string">"zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">6666</span><span class="token punctuation">,</span> <span class="token string">"lisi"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">7777</span><span class="token punctuation">,</span> <span class="token string">"wangwu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">2222</span><span class="token punctuation">,</span> <span class="token string">"zhaoliu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">2222</span><span class="token punctuation">,</span> <span class="token string">"king"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//key重复的时候value会自动覆盖。</span>
 
-        System.out.println(map.size()); // 4
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4</span>
 
-        // 遍历Map集合
-        Set<Map.Entry<Integer,String>> set = map.entrySet();
-        for(Map.Entry<Integer,String> entry : set){
-            // 验证结果：HashMap集合key部分元素：无序不可重复。
-            System.out.println(entry.getKey() + "=" + entry.getValue());
-        }
-    }
-}
+        <span class="token comment" spellcheck="true">// 遍历Map集合</span>
+        Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">>></span> set <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">></span> entry <span class="token operator">:</span> set<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 验证结果：HashMap集合key部分元素：无序不可重复。</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"="</span> <span class="token operator">+</span> entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong><em>HashMap集合key部分允许null吗？</em></strong></p>
 <p>  允许,但是要注意：HashMap集合的key null值只能有一个。</p>
 </blockquote>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class HashMapTest03 {
-    public static void main(String[] args) {
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapTest03</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        Map map = new HashMap();
+        Map map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // HashMap集合允许key为null
-        map.put(null, null);
-        System.out.println(map.size()); // 1
+        <span class="token comment" spellcheck="true">// HashMap集合允许key为null</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
 
-        // key重复的话value是覆盖！
-        map.put(null, 100);
-        System.out.println(map.size()); //1
+        <span class="token comment" spellcheck="true">// key重复的话value是覆盖！</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//1</span>
 
-        // 通过key获取value
-        System.out.println(map.get(null)); // 100
-    }
-}
+        <span class="token comment" spellcheck="true">// 通过key获取value</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 100</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h1><p><strong><em>Hashtable的key可以为null吗？</em></strong></p>
 <p>​    Hashtable的key和value都是不能为null的。</p>
@@ -1509,44 +1510,44 @@ public class HashSetTest01 {
 <p>Hashtable和HashMap一样，底层都是哈希表数据结构。</p>
 <p>Hashtable的初始化容量是11，默认加载因子是：0.75</p>
 <p>Hashtable的扩容是：原容量 * 2 + 1</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class HashtableTest01 {
-    public static void main(String[] args) {
-        Map map = new Hashtable();
-    //java.lang.Nul1PointerException
-        map.put(null, "123");
-        map.put(100, null);
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashtableTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Map map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hashtable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//java.lang.Nul1PointerException</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    }
-}
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="Properties属性类"><a href="#Properties属性类" class="headerlink" title="Properties属性类"></a>Properties属性类</h1><p>Properties是一个Map集合，继承Hashtable，Properties的key和value都是String类型。</p>
 <p>Properties被称为属性类对象。</p>
 <p>Properties是线程安全的。</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class PropertiesTest01 {
-    public static void main(String[] args) {
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PropertiesTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        // 创建一个Properties对象
-        Properties pro = new Properties();
+        <span class="token comment" spellcheck="true">// 创建一个Properties对象</span>
+        Properties pro <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 需要掌握Properties的两个方法，一个存，一个取。
-        pro.setProperty("url", "jdbc:mysql://localhost:3306/bjpowernode");
-        pro.setProperty("driver","com.mysql.jdbc.Driver");
-        pro.setProperty("username", "root");
-        pro.setProperty("password", "123");
+        <span class="token comment" spellcheck="true">// 需要掌握Properties的两个方法，一个存，一个取。</span>
+        pro<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"url"</span><span class="token punctuation">,</span> <span class="token string">"jdbc:mysql://localhost:3306/bjpowernode"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pro<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"driver"</span><span class="token punctuation">,</span><span class="token string">"com.mysql.jdbc.Driver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pro<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">,</span> <span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pro<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 通过key获取value
-        String url = pro.getProperty("url");
-        String driver = pro.getProperty("driver");
-        String username = pro.getProperty("username");
-        String password = pro.getProperty("password");
+        <span class="token comment" spellcheck="true">// 通过key获取value</span>
+        String url <span class="token operator">=</span> pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"url"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String driver <span class="token operator">=</span> pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"driver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String username <span class="token operator">=</span> pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String password <span class="token operator">=</span> pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        System.out.println(url);
-        System.out.println(driver);
-        System.out.println(username);
-        System.out.println(password);
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    }
-}
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="TreeSet集合"><a href="#TreeSet集合" class="headerlink" title="TreeSet集合"></a>TreeSet集合</h1><p>TreeSet集合存储元素特点：</p>
 <ol>
@@ -1555,20 +1556,20 @@ public class HashSetTest01 {
 <li><p>无序：这里的无序指的是存进去的顺序和取出来的顺序不同。并且没有下标。</p>
 </li>
 </ol>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class TreeSetTest01 {
-    public static void main(String[] args) {
-        // 创建集合对象
-        Set<String> strs = new TreeSet<>();
-        // 添加元素
-        strs.add("A");
-        strs.add("B");
-        strs.add("Z");
-        strs.add("Y");
-        strs.add("Z");
-        strs.add("K");
-        strs.add("M");
-        // 遍历
-        /*
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建集合对象</span>
+        Set<span class="token operator">&lt;</span>String<span class="token operator">></span> strs <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 添加元素</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Z"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Y"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Z"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"K"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        strs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"M"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 遍历</span>
+        <span class="token comment" spellcheck="true">/*
             A
             B
             K
@@ -1576,12 +1577,12 @@ public class HashSetTest01 {
             Y
             Z
         从小到大自动排序！
-         */
-        for(String s : strs){
-            System.out.println(s);
-        }
-    }
-}
+         */</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>String s <span class="token operator">:</span> strs<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <ol>
@@ -1602,155 +1603,155 @@ public class HashSetTest01 {
 <p>​          <code>class com.bjpowernode.javase.collection.Person</code></p>
 <p>​          <code>cannot be cast to class java.lang.Comparable</code></p>
 <p>  出现这个异常的原因是Person类没有实现<code>java.lang.Comparable</code>接口。</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class TreeSetTest03 {
-    public static void main(String[] args) {
-        Person p1 = new Person(32);
-        //System.out.println(p1);
-        Person p2 = new Person(20);
-        Person p3 = new Person(30);
-        Person p4 = new Person(25);
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetTest03</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Person p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//System.out.println(p1);</span>
+        Person p2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Person p3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Person p4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 创建TreeSet集合
-        TreeSet<Person> persons = new TreeSet<>();
-        // 添加元素
-        persons.add(p1);
-        persons.add(p2);
-        persons.add(p3);
-        persons.add(p4);
+        <span class="token comment" spellcheck="true">// 创建TreeSet集合</span>
+        TreeSet<span class="token operator">&lt;</span>Person<span class="token operator">></span> persons <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 添加元素</span>
+        persons<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        persons<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>p2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        persons<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>p3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        persons<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>p4<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 遍历
-        for (Person p : persons){
-            System.out.println(p);
-        }
-    }
-}
+        <span class="token comment" spellcheck="true">// 遍历</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Person p <span class="token operator">:</span> persons<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class Person {
-    int age;
-    public Person(int age){
-        this.age = age;
-    }
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    // 重写toString()方法
-    public String toString(){
-        return "Person[age="+age+"]";
-    }
-}
+    <span class="token comment" spellcheck="true">// 重写toString()方法</span>
+    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Person[age="</span><span class="token operator">+</span>age<span class="token operator">+</span><span class="token string">"]"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="实现Comparable接口实现自定义类型排序："><a href="#实现Comparable接口实现自定义类型排序：" class="headerlink" title="实现Comparable接口实现自定义类型排序："></a>实现Comparable接口实现自定义类型排序：</h3><p>自定义类型实现Comparable接口，并重写Comparable接口的compareTo方法，自定义排序规则。</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.javase.collection;
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>javase<span class="token punctuation">.</span>collection<span class="token punctuation">;</span>
 
-import java.util.TreeSet;
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>TreeSet<span class="token punctuation">;</span>
 
-/*
+<span class="token comment" spellcheck="true">/*
 先按照年龄升序，如果年龄一样的再按照姓名升序。
- */
-public class TreeSetTest05 {
-    public static void main(String[] args) {
-        TreeSet<Vip> vips = new TreeSet<>();
-        vips.add(new Vip("zhangsi", 20));
-        vips.add(new Vip("zhangsan", 20));
-        vips.add(new Vip("king", 18));
-        vips.add(new Vip("soft", 17));
-        for(Vip vip : vips){
-            System.out.println(vip);
-        }
-    }
-}
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetTest05</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        TreeSet<span class="token operator">&lt;</span>Vip<span class="token operator">></span> vips <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vips<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Vip</span><span class="token punctuation">(</span><span class="token string">"zhangsi"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vips<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Vip</span><span class="token punctuation">(</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vips<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Vip</span><span class="token punctuation">(</span><span class="token string">"king"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vips<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Vip</span><span class="token punctuation">(</span><span class="token string">"soft"</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>Vip vip <span class="token operator">:</span> vips<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>vip<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class Vip implements Comparable<Vip>{
-    String name;
-    int age;
+<span class="token keyword">class</span> <span class="token class-name">Vip</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token operator">&lt;</span>Vip<span class="token operator">></span><span class="token punctuation">{</span>
+    String name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
-    public Vip(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    <span class="token keyword">public</span> <span class="token function">Vip</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public String toString() {
-        return "Vip{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Vip{"</span> <span class="token operator">+</span>
+                <span class="token string">"name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", age="</span> <span class="token operator">+</span> age <span class="token operator">+</span>
+                <span class="token string">'}'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    /*
+    <span class="token comment" spellcheck="true">/*
     compareTo方法的返回值很重要：
         返回0表示相同，value会覆盖。
         返回>0，会继续在右子树上找。【10 - 9 = 1 ，1 > 0的说明左边这个数字比较大。所以在右子树上找。】
-        返回<0，会继续在左子树上找。
-     */
-    @Override
-    public int compareTo(Vip v) {
-        // 写排序规则，按照什么进行比较。
-        if(this.age == v.age){
-            // 年龄相同时按照名字排序。
-            // 姓名是String类型，可以直接比。调用compareTo来完成比较。
-            return this.name.compareTo(v.name);
-        } else {
-            // 年龄不一样
-            return this.age - v.age;
-        }
-    }
-}
+        返回&lt;0，会继续在左子树上找。
+     */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span>Vip v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 写排序规则，按照什么进行比较。</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">==</span> v<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 年龄相同时按照名字排序。</span>
+            <span class="token comment" spellcheck="true">// 姓名是String类型，可以直接比。调用compareTo来完成比较。</span>
+            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 年龄不一样</span>
+            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">-</span> v<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="使用比较器的方式"><a href="#使用比较器的方式" class="headerlink" title="使用比较器的方式"></a>使用比较器的方式</h3><p>单独在这里编写一个比较器,比较器实现<code>java.util.Comparator</code>接口。（Comparable是java.lang包下的。Comparator是java.util包下的。）</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.javase.collection;
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>javase<span class="token punctuation">.</span>collection<span class="token punctuation">;</span>
 
-import java.util.Comparator;
-import java.util.TreeSet;
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Comparator<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>TreeSet<span class="token punctuation">;</span>
 
-/*
+<span class="token comment" spellcheck="true">/*
 TreeSet集合中元素可排序的第二种方式：使用比较器的方式。
-*/
-public class TreeSetTest06 {
-    public static void main(String[] args) {
-        // 创建TreeSet集合的时候，需要使用这个比较器。
-        // TreeSet<WuGui> wuGuis = new TreeSet<>();//这样不行，没有通过构造方法传递一个比较器进去。
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetTest06</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建TreeSet集合的时候，需要使用这个比较器。</span>
+        <span class="token comment" spellcheck="true">// TreeSet&lt;WuGui> wuGuis = new TreeSet&lt;>();//这样不行，没有通过构造方法传递一个比较器进去。</span>
 
-        // 给构造方法传递一个比较器。
-        //TreeSet<WuGui> wuGuis = new TreeSet<>(new WuGuiComparator());
+        <span class="token comment" spellcheck="true">// 给构造方法传递一个比较器。</span>
+        <span class="token comment" spellcheck="true">//TreeSet&lt;WuGui> wuGuis = new TreeSet&lt;>(new WuGuiComparator());</span>
 
-        // 大家可以使用匿名内部类的方式（这个类没有名字。直接new接口。）
-        TreeSet<WuGui> wuGuis = new TreeSet<>(new Comparator<WuGui>() {
-            @Override
-            public int compare(WuGui o1, WuGui o2) {
-                return o1.age - o2.age;
-            }
-        });
+        <span class="token comment" spellcheck="true">// 大家可以使用匿名内部类的方式（这个类没有名字。直接new接口。）</span>
+        TreeSet<span class="token operator">&lt;</span>WuGui<span class="token operator">></span> wuGuis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Comparator</span><span class="token operator">&lt;</span>WuGui<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>WuGui o1<span class="token punctuation">,</span> WuGui o2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> o1<span class="token punctuation">.</span>age <span class="token operator">-</span> o2<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        wuGuis.add(new WuGui(1000));
-        wuGuis.add(new WuGui(800));
-        wuGuis.add(new WuGui(810));
+        wuGuis<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WuGui</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        wuGuis<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WuGui</span><span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        wuGuis<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WuGui</span><span class="token punctuation">(</span><span class="token number">810</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        for(WuGui wuGui : wuGuis){
-            System.out.println(wuGui);
-        }
-    }
-}
+        <span class="token keyword">for</span><span class="token punctuation">(</span>WuGui wuGui <span class="token operator">:</span> wuGuis<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>wuGui<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// 乌龟
-class WuGui{
+<span class="token comment" spellcheck="true">// 乌龟</span>
+<span class="token keyword">class</span> <span class="token class-name">WuGui</span><span class="token punctuation">{</span>
 
-    int age;
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
-    public WuGui(int age){
-        this.age = age;
-    }
+    <span class="token keyword">public</span> <span class="token function">WuGui</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public String toString() {
-        return "小乌龟[" +
-                "age=" + age +
-                ']';
-    }
-}
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"小乌龟["</span> <span class="token operator">+</span>
+                <span class="token string">"age="</span> <span class="token operator">+</span> age <span class="token operator">+</span>
+                <span class="token string">']'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// 单独在这里编写一个比较器
-// 比较器实现java.util.Comparator接口。（Comparable是java.lang包下的。Comparator是java.util包下的。）
-/*
-class WuGuiComparator implements Comparator<WuGui> {
+<span class="token comment" spellcheck="true">// 单独在这里编写一个比较器</span>
+<span class="token comment" spellcheck="true">// 比较器实现java.util.Comparator接口。（Comparable是java.lang包下的。Comparator是java.util包下的。）</span>
+<span class="token comment" spellcheck="true">/*
+class WuGuiComparator implements Comparator&lt;WuGui> {
 
     @Override
     public int compare(WuGui o1, WuGui o2) {
@@ -1759,7 +1760,7 @@ class WuGuiComparator implements Comparator<WuGui> {
         return o1.age - o2.age;
     }
 }
- */
+ */</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>最终的结论：<br>    放到TreeSet或者TreeMap集合key部分的元素要想做到排序,包括两种方式：</p>
@@ -1772,80 +1773,80 @@ class WuGuiComparator implements Comparator<WuGui> {
 </blockquote>
 <h1 id="Collections集合工具类"><a href="#Collections集合工具类" class="headerlink" title="Collections集合工具类"></a>Collections集合工具类</h1><p><code>java.util.Collection</code> 集合接口</p>
 <p><code>java.util.Collections</code> 集合工具类，方便集合的操作。</p>
-<h3 id="常用方法：-1"><a href="#常用方法：-1" class="headerlink" title="常用方法："></a>常用方法：</h3><pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.javase.collection;
+<h3 id="常用方法：-1"><a href="#常用方法：-1" class="headerlink" title="常用方法："></a>常用方法：</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>javase<span class="token punctuation">.</span>collection<span class="token punctuation">;</span>
 
-import java.util.*;
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
 
-/*
+<span class="token comment" spellcheck="true">/*
 java.util.Collection 集合接口
 java.util.Collections 集合工具类，方便集合的操作。
- */
-public class CollectionsTest {
-    public static void main(String[] args) {
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CollectionsTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        // ArrayList集合不是线程安全的。
-        List<String> list = new ArrayList<>();
+        <span class="token comment" spellcheck="true">// ArrayList集合不是线程安全的。</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 变成线程安全的
-        Collections.synchronizedList(list);
+        <span class="token comment" spellcheck="true">// 变成线程安全的</span>
+        Collections<span class="token punctuation">.</span><span class="token function">synchronizedList</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 排序
-        list.add("abf");
-        list.add("abx");
-        list.add("abc");
-        list.add("abe");
+        <span class="token comment" spellcheck="true">// 排序</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abf"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        Collections.sort(list);
-        for(String s : list){
-            System.out.println(s);
-        }
+        Collections<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>String s <span class="token operator">:</span> list<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        List<WuGui2> wuGuis = new ArrayList<>();
-        wuGuis.add(new WuGui2(1000));
-        wuGuis.add(new WuGui2(8000));
-        wuGuis.add(new WuGui2(500));
-        // 注意：对List集合中元素排序，需要保证List集合中的元素实现了：Comparable接口。
-        Collections.sort(wuGuis);
-        for(WuGui2 wg : wuGuis){
-            System.out.println(wg);
-        }
+        List<span class="token operator">&lt;</span>WuGui2<span class="token operator">></span> wuGuis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        wuGuis<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WuGui2</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        wuGuis<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WuGui2</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        wuGuis<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WuGui2</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 注意：对List集合中元素排序，需要保证List集合中的元素实现了：Comparable接口。</span>
+        Collections<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>wuGuis<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>WuGui2 wg <span class="token operator">:</span> wuGuis<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>wg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        // 对Set集合怎么排序呢？
-        Set<String> set = new HashSet<>();
-        set.add("king");
-        set.add("kingsoft");
-        set.add("king2");
-        set.add("king1");
-        // 将Set集合转换成List集合
-        List<String> myList = new ArrayList<>(set);
-        Collections.sort(myList);
-        for(String s : myList) {
-            System.out.println(s);
-        }
+        <span class="token comment" spellcheck="true">// 对Set集合怎么排序呢？</span>
+        Set<span class="token operator">&lt;</span>String<span class="token operator">></span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        set<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"king"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        set<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"kingsoft"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        set<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"king2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        set<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"king1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 将Set集合转换成List集合</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> myList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collections<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>myList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>String s <span class="token operator">:</span> myList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        // 这种方式也可以排序。
-        //Collections.sort(list集合, 比较器对象);
-    }
-}
+        <span class="token comment" spellcheck="true">// 这种方式也可以排序。</span>
+        <span class="token comment" spellcheck="true">//Collections.sort(list集合, 比较器对象);</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class WuGui2 implements Comparable<WuGui2>{
-    int age;
-    public WuGui2(int age){
-        this.age = age;
-    }
+<span class="token keyword">class</span> <span class="token class-name">WuGui2</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token operator">&lt;</span>WuGui2<span class="token operator">></span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">WuGui2</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public int compareTo(WuGui2 o) {
-        return this.age - o.age;
-    }
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span>WuGui2 o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">-</span> o<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    @Override
-    public String toString() {
-        return "WuGui2{" +
-                "age=" + age +
-                '}';
-    }
-}
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"WuGui2{"</span> <span class="token operator">+</span>
+                <span class="token string">"age="</span> <span class="token operator">+</span> age <span class="token operator">+</span>
+                <span class="token string">'}'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
@@ -2716,7 +2717,7 @@ class WuGui2 implements Comparable<WuGui2>{
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.2k</span>
+                        class="white-color">29.5k</span>
             
             
             
@@ -2997,13 +2998,13 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 <script type="text/javascript">
     //只在桌面版网页启用特效
     var windowWidth = $(window).width();

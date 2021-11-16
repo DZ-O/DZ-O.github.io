@@ -40,6 +40,7 @@
         })();
         </script>
         
+        
 <style type="text/css" lang="css">
     #loading-container{
         position: fixed;
@@ -170,11 +171,11 @@
     };
     loaded();
 })()
- </script><meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="BeiKJie" type="application/atom+xml">
+ </script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="BeiKJie" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -664,49 +665,49 @@
 <p>抛出：<code>SecurityException</code> - 如果存在安全管理器，且其 <code>SecurityManager.checkRead(java.lang.String)</code> 方法不允许验证指定目录和所有必需的父目录是否存            在；或者 <code>SecurityManager.checkWrite(java.lang.String)</code> 方法不允许创建指定的目录和所有必需的父目录</p>
 <p><code>boolean renameTo(File dest)</code>: 重新命名此抽象路径名表示的文件。</p>
 <p>​    抛出：<code>SecurityException</code> - 如果存在安全管理器，且其 <code>SecurityManager.checkWrite(java.lang.String)</code> 方法拒绝对原路径名和新路径名进行写访问                        <code>NullPointerException`` - 如果参数</code>dest<code>为</code>null</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
-import java.io.File;
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 
-public class FileTest01 {
-    public static void main(String[] args) throws Exception {
-        // 创建一个File对象
-        File f1 = new File("D:\\file");
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FileTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建一个File对象</span>
+        File f1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\file"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 判断是否存在！
-        System.out.println(f1.exists());
+        <span class="token comment" spellcheck="true">// 判断是否存在！</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>f1<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 如果D:\file不存在，则以文件的形式创建出来
-        /*if(!f1.exists()) {
+        <span class="token comment" spellcheck="true">// 如果D:\file不存在，则以文件的形式创建出来</span>
+        <span class="token comment" spellcheck="true">/*if(!f1.exists()) {
             // 以文件形式新建
             f1.createNewFile();
-        }*/
+        }*/</span>
 
-        // 如果D:\file不存在，则以目录的形式创建出来
-        /*if(!f1.exists()) {
+        <span class="token comment" spellcheck="true">// 如果D:\file不存在，则以目录的形式创建出来</span>
+        <span class="token comment" spellcheck="true">/*if(!f1.exists()) {
             // 以目录的形式新建。
             f1.mkdir();
-        }*/
+        }*/</span>
 
-        // 可以创建多重目录吗？
-        File f2 = new File("D:/a/b/c/d/e/f");
-        /*if(!f2.exists()) {
+        <span class="token comment" spellcheck="true">// 可以创建多重目录吗？</span>
+        File f2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:/a/b/c/d/e/f"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/*if(!f2.exists()) {
             // 多重目录的形式新建。
             f2.mkdirs();
-        }*/
+        }*/</span>
 
-        File f3 = new File("D:\\course\\01-开课\\学习方法.txt");
-        // 获取文件的父路径
-        String parentPath = f3.getParent();
-        System.out.println(parentPath); //D:\course\01-开课
-        File parentFile = f3.getParentFile();
-        System.out.println("获取绝对路径：" + parentFile.getAbsolutePath());
+        File f3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\course\\01-开课\\学习方法.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 获取文件的父路径</span>
+        String parentPath <span class="token operator">=</span> f3<span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>parentPath<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//D:\course\01-开课</span>
+        File parentFile <span class="token operator">=</span> f3<span class="token punctuation">.</span><span class="token function">getParentFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"获取绝对路径："</span> <span class="token operator">+</span> parentFile<span class="token punctuation">.</span><span class="token function">getAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        File f4 = new File("copy");
-        System.out.println("绝对路径：" + f4.getAbsolutePath()); // C:\Users\Administrator\IdeaProjects\javase\copy
+        File f4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"copy"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"绝对路径："</span> <span class="token operator">+</span> f4<span class="token punctuation">.</span><span class="token function">getAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// C:\Users\Administrator\IdeaProjects\javase\copy</span>
 
-    }
-}
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>String getName()</code>: 返回由此抽象路径名表示的文件或目录的名称。该名称是路径名名称序列中的最后一个名称。如果路径名名称序列为空，则返回空字符串。</p>
 <p><code>boolean isDirectory()</code>:  测试此抽象路径名表示的文件是否是一个目录。当且仅当此抽象路径名表示的文件存在 <em>且</em> 是一个目录时，返回 <code>true</code>；否则返回                                         <code>false</code></p>
@@ -719,61 +720,61 @@ public class FileTest01 {
 <p>​    抛出：<code>SecurityException</code> - 如果存在安全管理器，且其 <code>SecurityManager.checkRead(java.lang.String)</code> 方法拒绝对文件进行读访问</p>
 <p><code>long length()</code>: 此抽象路径名表示的文件的长度，以字节为单位；如果文件不存在，则返回 <code>0L</code>。对于表示特定于系统的实体（比如设备或管道）的路径名，某                            些操作系统可能返回 <code>0L</code>。如果此路径名表示一个目录，则返回值是不确定的。</p>
 <p>​    抛出：<code>SecurityException</code> - 如果存在安全管理器，且其 <code>SecurityManager.checkRead(java.lang.String)</code> 方法拒绝对文件进行读访问</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>text<span class="token punctuation">.</span>SimpleDateFormat<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Date<span class="token punctuation">;</span>
 
 
-public class FileTest02 {
-    public static void main(String[] args) {
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FileTest02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        File f1 = new File("D:\\course\\01-开课\\开学典礼.ppt");
-        // 获取文件名
-        System.out.println("文件名：" + f1.getName());
+        File f1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\course\\01-开课\\开学典礼.ppt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 获取文件名</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件名："</span> <span class="token operator">+</span> f1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 判断是否是一个目录
-        System.out.println(f1.isDirectory()); // false
+        <span class="token comment" spellcheck="true">// 判断是否是一个目录</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>f1<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
 
-        // 判断是否是一个文件
-        System.out.println(f1.isFile()); // true
+        <span class="token comment" spellcheck="true">// 判断是否是一个文件</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>f1<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 
-        // 获取文件最后一次修改时间
-        long haoMiao = f1.lastModified(); // 这个毫秒是从1970年到现在的总毫秒数。
-        // 将总毫秒数转换成日期?????
-        Date time = new Date(haoMiao);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
-        String strTime = sdf.format(time);
-        System.out.println(strTime);
+        <span class="token comment" spellcheck="true">// 获取文件最后一次修改时间</span>
+        <span class="token keyword">long</span> haoMiao <span class="token operator">=</span> f1<span class="token punctuation">.</span><span class="token function">lastModified</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这个毫秒是从1970年到现在的总毫秒数。</span>
+        <span class="token comment" spellcheck="true">// 将总毫秒数转换成日期?????</span>
+        Date time <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>haoMiao<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        SimpleDateFormat sdf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd HH:mm:ss SSS"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String strTime <span class="token operator">=</span> sdf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>strTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 获取文件大小
-        System.out.println(f1.length()); //216064字节。
-    }
-}
+        <span class="token comment" spellcheck="true">// 获取文件大小</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>f1<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//216064字节。</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>File[] listFiles()</code>: 获取当前目录下所有的子文件。返回一个抽象路径名数组，这些路径名表示此抽象路径名表示的目录中的文件。</p>
 <p>​    抛出：<code>SecurityException</code> - 如果存在安全管理器，且其 <code>SecurityManager.checkRead(java.lang.String)</code> 方法拒绝对目录进行读访问</p>
-<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
-import java.io.File;
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
 
-/*
+<span class="token comment" spellcheck="true">/*
 File中的listFiles方法。
- */
-public class FileTest03 {
-    public static void main(String[] args) {
-        // File[] listFiles()
-        // 获取当前目录下所有的子文件。
-        File f = new File("D:\\course\\01-开课");
-        File[] files = f.listFiles();
-        // foreach
-        for(File file : files){
-            //System.out.println(file.getAbsolutePath());
-            System.out.println(file.getName());
-        }
-    }
-}
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FileTest03</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// File[] listFiles()</span>
+        <span class="token comment" spellcheck="true">// 获取当前目录下所有的子文件。</span>
+        File f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\course\\01-开课"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        File<span class="token punctuation">[</span><span class="token punctuation">]</span> files <span class="token operator">=</span> f<span class="token punctuation">.</span><span class="token function">listFiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// foreach</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>File file <span class="token operator">:</span> files<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//System.out.println(file.getAbsolutePath());</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
@@ -1632,7 +1633,7 @@ public class FileTest03 {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.2k</span>
+                        class="white-color">29.5k</span>
             
             
             
@@ -1913,13 +1914,13 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 <script type="text/javascript">
     //只在桌面版网页启用特效
     var windowWidth = $(window).width();
