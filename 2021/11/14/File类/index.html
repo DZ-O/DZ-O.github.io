@@ -622,9 +622,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
@@ -667,7 +664,7 @@
 <p>抛出：<code>SecurityException</code> - 如果存在安全管理器，且其 <code>SecurityManager.checkRead(java.lang.String)</code> 方法不允许验证指定目录和所有必需的父目录是否存            在；或者 <code>SecurityManager.checkWrite(java.lang.String)</code> 方法不允许创建指定的目录和所有必需的父目录</p>
 <p><code>boolean renameTo(File dest)</code>: 重新命名此抽象路径名表示的文件。</p>
 <p>​    抛出：<code>SecurityException</code> - 如果存在安全管理器，且其 <code>SecurityManager.checkWrite(java.lang.String)</code> 方法拒绝对原路径名和新路径名进行写访问                        <code>NullPointerException`` - 如果参数</code>dest<code>为</code>null</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.File;
 
@@ -722,7 +719,7 @@ public class FileTest01 {
 <p>​    抛出：<code>SecurityException</code> - 如果存在安全管理器，且其 <code>SecurityManager.checkRead(java.lang.String)</code> 方法拒绝对文件进行读访问</p>
 <p><code>long length()</code>: 此抽象路径名表示的文件的长度，以字节为单位；如果文件不存在，则返回 <code>0L</code>。对于表示特定于系统的实体（比如设备或管道）的路径名，某                            些操作系统可能返回 <code>0L</code>。如果此路径名表示一个目录，则返回值是不确定的。</p>
 <p>​    抛出：<code>SecurityException</code> - 如果存在安全管理器，且其 <code>SecurityManager.checkRead(java.lang.String)</code> 方法拒绝对文件进行读访问</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -757,7 +754,7 @@ public class FileTest02 {
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>File[] listFiles()</code>: 获取当前目录下所有的子文件。返回一个抽象路径名数组，这些路径名表示此抽象路径名表示的目录中的文件。</p>
 <p>​    抛出：<code>SecurityException</code> - 如果存在安全管理器，且其 <code>SecurityManager.checkRead(java.lang.String)</code> 方法拒绝对目录进行读访问</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.File;
 
@@ -776,7 +773,8 @@ public class FileTest03 {
             System.out.println(file.getName());
         }
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1348,54 +1346,36 @@ public class FileTest03 {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/14/File%E7%B1%BB/">
+                <a href="/2021/11/15/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/4.jpg" class="responsive-img" alt="File类">
+                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">File类</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java File类的基本使用
+                            
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JavaSE/" class="post-category">
-                                    JavaSE
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Dozen
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/File%E6%96%87%E4%BB%B6%E7%B1%BB/">
-                        <span class="chip bg-color">File文件类</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1652,7 +1632,7 @@ public class FileTest03 {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.9k</span>
+                        class="white-color">25.2k</span>
             
             
             
@@ -1933,13 +1913,13 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
 <script type="text/javascript">
     //只在桌面版网页启用特效
     var windowWidth = $(window).width();

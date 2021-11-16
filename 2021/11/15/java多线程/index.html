@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基于Django的个人博客, python,Django,java,Heox,Matery,后端">
+    <meta name="keywords" content="java多线程, python,Django,java,Heox,Matery,后端">
     <meta name="description" content="闲里偷忙第一人，懒癌重度患者">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基于Django的个人博客 | BeiKJie</title>
+    <title>java多线程 | BeiKJie</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -438,12 +438,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基于Django的个人博客</h1>
+                    <h1 class="description center-align post-title">java多线程</h1>
                 </div>
             </div>
         </div>
@@ -562,12 +562,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Django/">
-                                <span class="chip bg-color">Django</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                                <span class="chip bg-color">java多线程</span>
                             </a>
                         
                     </div>
@@ -578,8 +578,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                后端开发
+                            <a href="/categories/javaSE/" class="post-category">
+                                javaSE
                             </a>
                         
                     </div>
@@ -591,7 +591,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-05
+                    2021-11-15
                 </div>
                 
 
@@ -600,14 +600,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    3.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    14 分
                 </div>
                 
 
@@ -627,124 +627,484 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基于Django的个人博客项目使用"><a href="#基于Django的个人博客项目使用" class="headerlink" title="基于Django的个人博客项目使用"></a>基于Django的个人博客项目使用</h1><blockquote>
-<p> 基于Django的个人博客，前端方面比较普通，没有用什么框架，所以看着比较随意。</p>
-<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/DZ-O/DjangoBlog">https://github.com/DZ-O/DjangoBlog</a></p>
-</blockquote>
-<h2 id="模型层"><a href="#模型层" class="headerlink" title="模型层"></a>模型层</h2><p>​    由于，Django自带的orm语法，使得我们可以不用书写SQL语句也能操作数据库，并且不用事先创建好数据库，只需要在项目应用目录下的models.py中写下每张表所对用的类，而类中的属性则是表中的字段。可根据需要自行修改，代码：</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">import time
-
-from django.db import models
-
-
-# Create your models here.
-
-class Article(models.Model):    # 文章表
-    title = models.CharField(max_length=64, verbose_name='文章标题')
-    content = models.TextField(verbose_name='文章内容')
-
-    create_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
-    revise_time = models.DateTimeField(verbose_name='修改时间', auto_now=True)
-    like_count = models.IntegerField(default=0,verbose_name='点赞数')
-    article_types = models.ForeignKey(to='ArticleType')
-    introduction = models.CharField(max_length=250,verbose_name='文章简介',default='这是一段简介')
-
-    # 文章与文章标签多对多关系通过第三张表Article2ArticleTag建立链接
-    # 这是半自动创建多对多表关系方式，方便拓展。第三张表的类需要自己手动写。
-    # 也可以直接使用，自动多对多关系，就不需要手动创建第三张表
-    article_Tag = models.ManyToManyField(to='ArticleTag',
-                                         through='Article2ArticleTag',
-                                         through_fields=('article', 'article_tag')
-                                         )
-
-# 文章分类表
-class ArticleType(models.Model):
-    types = models.CharField(max_length=32, verbose_name='文章分类')  # 日常、技术、分享.....
-
-# 文章标签表
-class ArticleTag(models.Model):
-    tag = models.CharField(max_length=32, verbose_name='文章标签')  # java、pyhon.....
-
-# 文章留言表
-class Message(models.Model):
-    user = models.CharField(max_length=10, verbose_name='留言人')
-    message_content = models.CharField(max_length=255, verbose_name='留言')
-    message_create_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
-    article = models.ForeignKey(to='Article')
-
-
-# 文章与文章标签多对多关系表
-class Article2ArticleTag(models.Model):
-    article = models.ForeignKey(to='Article')
-    article_tag = models.ForeignKey(to='ArticleTag')
-
-
-# 显示在首页的个人目标，可以不写，在首页的页面写死
-class Target(models.Model):
-    target = models.CharField(max_length=100, verbose_name='目标')
-
-# 显示在首页的文本句子，可以不写，在首页的页面写死
-class Text(models.Model):
-    text = models.CharField(max_length=100, verbose_name='文本')
-
-# 首页留言表，这里偷了懒，直接新起了一个表，可以修改文章留言表，就不用创建这张表
-class HomeMessage(models.Model):
-    home_message = models.CharField(max_length=100, verbose_name='首页留言')
-    home_article = models.CharField(max_length=10, verbose_name='作者')
-    creat_time = models.DateTimeField(verbose_name='留言时间', auto_now_add=True, )
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>​    表模型文件创建完毕后，此时的系统是没有对应的数据库的，需要我们只需数据库迁移命令，在此之前，记得修改项目的<code>settings.py</code>文件中的<code>DATABASES</code>中的内容为自己的数据库配置，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211006004633739.png" alt="image-20211006004633739"></p>
-<p>​    如果数据库使用的是MySQL则在项目中的任意<code>__init.py__</code>文件下加入如下内容,:</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">import pymysql
-pymysql.install_as_MySQLdb()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>​    项目根目录下的控制台执行数据库迁移命令：</p>
+                <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
+<li><p><strong><em>什么是进程？什么是线程？</em></strong></p>
+<p>​    进程是一个应用程序（1个进程是一个软件）。</p>
+<p>​    线程是一个进程中的执行场景/执行单元。</p>
+<p>​    一个进程可以启动多个线程。</p>
+</li>
+<li><p>对于java程序来说，当在DOS命令窗口中输入：</p>
+</li>
+</ol>
+<p>​            java HelloWorld 回车之后。会先启动JVM，而JVM就是一个进程。</p>
+<p>​            JVM再启动一个主线程调用main方法。同时再启动一个垃圾回收线程负责看护，回收垃圾。</p>
+<p>​            最起码，现在的java程序中至少有两个线程并发，一个是垃圾回收线程，一个是执行main方法的主线程。</p>
+<ol>
+<li><strong><em>进程和线程是什么关系？</em></strong></li>
+</ol>
+<p>​            阿里巴巴：进程</p>
+<p>​                马云：阿里巴巴的一个线程</p>
+<p>​                童文红:阿里巴巴的一个线程</p>
+<p>​        进程可以看做是现实生活当中的公司。线程可以看做是公司当中的某个员工。</p>
 <blockquote>
-<p>python <a target="_blank" rel="noopener" href="http://manage.py/">manage.py</a> makemigrations</p>
-<p>python <a target="_blank" rel="noopener" href="http://manage.py/">manage.py</a> migrate</p>
+<p>注意：</p>
+<p>​    进程A和进程B的内存独立不共享。（阿里巴巴和京东资源不会共享的！）<br>​        魔兽游戏是一个进程<br>​        酷狗音乐是一个进程<br>​        这两个进程是独立的，不共享资源。</p>
+<p>​    线程A和线程B呢？<br>​        在java语言中：<br>​              线程A和线程B，堆内存和方法区内存共享。<br>​              但是栈内存独立，一个线程一个栈。</p>
+<p>假设启动10个线程，会有10个栈空间，每个栈和每个栈之间，互不干扰，各自执行各自的，这就是多线程并发。</p>
+<p>火车站，可以看做是一个进程。火车站中的每一个售票窗口可以看做是一个线程。我在窗口1购票，你可以在窗口2购票，你不需要等我，我也不需要等你。所以多线程并发可以提高效率。</p>
+<p> java中之所以有多线程机制，目的就是为了提高程序的处理效率。</p>
 </blockquote>
-<p>​    执行完毕后你的数据库下将会出现如下几张表：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211006004519973.png" alt="image-20211006004519973"></p>
-<h2 id="用户登录及后台管理问题"><a href="#用户登录及后台管理问题" class="headerlink" title="用户登录及后台管理问题"></a>用户登录及后台管理问题</h2><blockquote>
-<p>这里有人就发现，我们模型层并没有创建用户类，怎么实现登陆到后台，对自己文章进行发布和管理呢？</p>
-</blockquote>
-<p>​    在这里我们使用Django的Auth模块，他会自动帮我们创建user表。而这个user表中的用户就是Django默认自带的路由<code>admin/</code>登录页面中所需要验证的用户，其中user表中的超级用户既可以登录到admin后台。</p>
-<p>超级用户创建命令：</p>
+<ol>
+<li><p><strong><em>使用了多线程机制之后，main方法结束，是不是有可能程序也不会结束?</em></strong></p>
+<p>​        main方法结束只是主线程结束了，主栈空了，其它的栈(线程)可能还在压栈弹栈。</p>
+</li>
+</ol>
+<h2 id="Java语言中，实现线程有两种方式"><a href="#Java语言中，实现线程有两种方式" class="headerlink" title="Java语言中，实现线程有两种方式"></a>Java语言中，实现线程有两种方式</h2><p>​    java支持多线程机制。并且java已经将多线程实现了，我们只需要继承就行了。</p>
+<p>​    第一种方式：编写一个类，直接继承<code>java.lang.Thread</code>，重写run方法。</p>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">// 定义线程类
+        public class MyThread extends Thread{
+            public void run(){
+
+            }
+        }
+        // 创建线程对象
+        MyThread t = new MyThread();
+        // 启动线程。
+        t.start();
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>实现线程的第一种方式：<br>    编写一个类，直接继承<code>java.lang.Thread</code>，重写run方法。</p>
+<p>​    怎么创建线程对象？ new就行了。<br>​    怎么启动线程呢？ 调用线程对象的start()方法。</p>
 <blockquote>
-<p>python3 manage.py createsuperuser</p>
+<p>注意：<br>    亘古不变的道理：方法体当中的代码永远都是自上而下的顺序依次逐行执行的。</p>
 </blockquote>
-<p>​    而这个后台页面，是Django自动生成的，在这里我们可对数据库进行可视化操作。前提是在配置文件中将数据库注册进去。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211006005526886.png" alt="image-20211006005526886"></p>
-<p>​    当然，这个后台页面肯定不是我们需要的，这里我自己手动搭建了一个后台页面，老样子界面依旧简陋：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211006005952683.png" alt="image-20211006005952683"></p>
-<p>​    在这里，就能够对文章进行发布及管理等操作了。</p>
-<p>​    当然登录后台的url路由地址也不是使用的Django自动生成admin页面，这里我也自己新建了一个页面：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211006010313354.png" alt="image-20211006010313354"></p>
-<p>​    验证码这一块，我并没有使用画图模块之类的，偷了个懒，使用的是smtplib模块，使用QQ邮箱发送随机验证码邮件到手上，修改<code>app01/views.py</code>下大概314行左右代码：</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python"> code += tmp
-    # 随机验证码在登陆的视图函数里面需要用到 要比对 所以要找地方存起来并且其他视图函数也能拿到
-    request.session['code'] = code
-    email_from = "@qq.com"  # 改为自己的发送邮箱
-    email_to = "@qq.com"  # 接收邮箱
-    hostname = "smtp.qq.com"  # 不变，QQ邮箱的smtp服务器地址
-    login = "@qq.com"  # 发送邮箱的用户名
-    password = ""  # 发送邮箱的密码，即开启smtp服务得到的授权码。注：不是QQ密码。
-    subject = "贝克街验证码"  # 邮件主题
-    text = "贝克街验证码:" + code  # 邮件正文内容
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.thread;
 
-    smtp = SMTP_SSL(hostname)  # SMTP_SSL默认使用465端口
-    smtp.login(login, password)
+public class ThreadTest02 {
+    public static void main(String[] args) {
+        // 这里是main方法，这里的代码属于主线程，在主栈中运行。
+        // 新建一个分支线程对象
+        MyThread t = new MyThread();
+        // 启动线程
+        //t.run(); // 不会启动线程，不会分配新的分支栈。（这种方式就是单线程。）
+        // start()方法的作用是：启动一个分支线程，在JVM中开辟一个新的栈空间，这段代码任务完成之后，瞬间就结束了。
+        // 这段代码的任务只是为了开启一个新的栈空间，只要新的栈空间开出来，start()方法就结束了。线程就启动成功了。
+        // 启动成功的线程会自动调用run方法，并且run方法在分支栈的栈底部（压栈）。
+        // run方法在分支栈的栈底部，main方法在主栈的栈底部。run和main是平级的。
+        t.start();
+        // 这里的代码还是运行在主线程中。
+        for(int i = 0; i < 1000; i++){
+            System.out.println("主线程--->" + i);
+        }
+    }
+}
 
-    msg = MIMEText(text, "plain", "utf-8")
-    msg["Subject"] = Header(subject, "utf-8")
-    msg["from"] = email_from
-    msg["to"] = email_to
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        // 编写程序，这段程序运行在分支线程中（分支栈）。
+        for(int i = 0; i < 1000; i++){
+            System.out.println("分支线程--->" + i);
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第二种方式：编写一个类，实现<code>java.lang.Runnable</code>接口，实现run方法。</p>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java"> // 定义一个可运行的类
+        public class MyRunnable implements Runnable {
+            public void run(){
 
-    smtp.sendmail(email_from, email_to, msg.as_string())
-    smtp.quit()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="静态资源收集"><a href="#静态资源收集" class="headerlink" title="静态资源收集"></a>静态资源收集</h2><p>​    项目部署在服务器之前，记得执行项目的静态资源文件收集操作，否则可能会出现静态资源无法访问现象，参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/BGONE/article/details/91410220">django项目收集静态文件</a></p>
+            }
+        }
+        // 创建线程对象
+        Thread t = new Thread(new MyRunnable());
+        // 启动线程
+        t.start();
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>注意：第二种方式实现接口比较常用，因为一个类实现了接口，它还可以去继承其它的类，更灵活。</p>
+</blockquote>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class ThreadTest03 {
+    public static void main(String[] args) {
+        // 创建一个可运行的对象
+        //MyRunnable r = new MyRunnable();
+        // 将可运行的对象封装成一个线程对象
+        //Thread t = new Thread(r);
+        Thread t = new Thread(new MyRunnable()); // 合并代码
+        // 启动线程
+        t.start();
+
+        for(int i = 0; i < 100; i++){
+            System.out.println("主线程--->" + i);
+        }
+    }
+}
+
+// 这并不是一个线程类，是一个可运行的类。它还不是一个线程。
+class MyRunnable implements Runnable {
+
+    @Override
+    public void run() {
+        for(int i = 0; i < 100; i++){
+            System.out.println("分支线程--->" + i);
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>采用匿名内部类方式：</p>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.thread;
+
+public class ThreadTest04 {
+    public static void main(String[] args) {
+        // 创建线程对象，采用匿名内部类方式。
+        // 这是通过一个没有名字的类，new出来的对象。
+        Thread t = new Thread(new Runnable(){
+            @Override
+            public void run() {
+                for(int i = 0; i < 100; i++){
+                    System.out.println("t线程---> " + i);
+                }
+            }
+        });
+
+        // 启动线程
+        t.start();
+
+        for(int i = 0; i < 100; i++){
+            System.out.println("main线程---> " + i);
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="线程生命周期"><a href="#线程生命周期" class="headerlink" title="线程生命周期"></a>线程生命周期</h2><p>新建状态、  就绪状态、  运行状态、  阻塞状态 、死亡状态</p>
+<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211116214736429.png" alt="image-20211116214736429"></p>
+<h2 id="获取和设置线程名"><a href="#获取和设置线程名" class="headerlink" title="获取和设置线程名"></a>获取和设置线程名</h2><p>获取当前线程对象：</p>
+<p>​    <code>Thread t = Thread.currentThread();</code>   返回值t就是当前线程。</p>
+<p>获取线程对象的名字：</p>
+<p>​    <code>String name = 线程对象.getName();</code></p>
+<p>修改线程对象的名字：</p>
+<p>​    <code>线程对象.setName("线程名字");</code></p>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.thread;
+
+    public static void main(String[] args) {
+        //currentThread就是当前线程对象
+        // 这个代码出现在main方法当中，所以当前线程就是主线程。
+        Thread currentThread = Thread.currentThread();
+        System.out.println(currentThread.getName()); //main
+
+        // 创建线程对象
+        MyThread2 t = new MyThread2();
+        // 设置线程的名字
+        t.setName("t1");
+        // 获取线程的名字
+        String tName = t.getName();
+        System.out.println(tName); //Thread-0
+
+        MyThread2 t2 = new MyThread2();
+        t2.setName("t2");
+        System.out.println(t2.getName()); //Thread-1\
+        t2.start();
+
+        // 启动线程
+        t.start();
+    }
+}
+
+class MyThread2 extends Thread {
+    public void run(){
+        for(int i = 0; i < 100; i++){
+            // currentThread就是当前线程对象。当前线程是谁呢？
+            // 当t1线程执行run方法，那么这个当前线程就是t1
+            // 当t2线程执行run方法，那么这个当前线程就是t2
+            Thread currentThread = Thread.currentThread();
+            System.out.println(currentThread.getName() + "-->" + i);
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="线程休眠"><a href="#线程休眠" class="headerlink" title="线程休眠"></a>线程休眠</h2><p><code>static void sleep(long millis)</code>： 在指定的毫秒数内让当前正在执行的线程休眠（暂停执行），此操作受到系统计时器和调度程序精度和准确性的影响。该线程不丢失任何监视器的所属权。</p>
+<p>​    抛出：<code>InterruptedException</code> - 如果任何线程中断了当前线程。当抛出该异常时，当前线程的 <em>中断状态</em> 被清除。</p>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.thread;
+/*
+关于线程的sleep方法：
+    static void sleep(long millis)
+    1、静态方法：Thread.sleep(1000);
+    2、参数是毫秒
+    3、作用：让当前线程进入休眠，进入“阻塞状态”，放弃占有CPU时间片，让给其它线程使用。
+        这行代码出现在A线程中，A线程就会进入休眠。
+        这行代码出现在B线程中，B线程就会进入休眠。
+    4、Thread.sleep()方法，可以做到这种效果：
+        间隔特定的时间，去执行一段特定的代码，每隔多久执行一次。
+ */
+public class ThreadTest06 {
+    public static void main(String[] args) {
+
+        // 让当前线程进入休眠，睡眠5秒
+        // 当前线程是主线程！！！
+        /*try {
+            Thread.sleep(1000 * 5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
+
+        // 5秒之后执行这里的代码
+        //System.out.println("hello world!");
+
+        for(int i = 0; i < 10; i++){
+            System.out.println(Thread.currentThread().getName() + "--->" + i);
+
+            // 睡眠1秒
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.thread;
+/*
+关于Thread.sleep()方法的一个面试题：
+ */
+public class ThreadTest07 {
+    public static void main(String[] args) {
+        // 创建线程对象
+        Thread t = new MyThread3();
+        t.setName("t");
+        t.start();
+
+        // 调用sleep方法
+        try {
+            // 问题：这行代码会让线程t进入休眠状态吗？
+            t.sleep(1000 * 5); // 在执行的时候还是会转换成：Thread.sleep(1000 * 5);
+                                     // 这行代码的作用是：让当前线程进入休眠，也就是说main线程进入休眠。
+                                     // 这样代码出现在main方法中，main线程睡眠。
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // 5秒之后这里才会执行。
+        System.out.println("hello World!");
+    }
+}
+
+class MyThread3 extends Thread {
+    public void run(){
+        for(int i = 0; i < 10000; i++){
+            System.out.println(Thread.currentThread().getName() + "--->" + i);
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="中止线程休眠"><a href="#中止线程休眠" class="headerlink" title="中止线程休眠"></a>中止线程休眠</h3><p>sleep睡眠太久了，如果希望半道上醒来，你应该怎么办？也就是说怎么叫醒一个正在睡眠的线程？？<br>    注意：这个不是终断线程的执行，是终止线程的睡眠。调用<code>interrupt</code>方法</p>
+<p><code>void interrupt()</code>：</p>
+<p>​    中断线程。</p>
+<p>如果当前线程没有中断它自己（这在任何情况下都是允许的），则该线程的 <code>checkAccess</code> 方法就会被调用，这可能抛出 <code>SecurityException</code>。</p>
+<p>如果线程在调用 Object 类的 <code>wait()</code>、<code>wait(long)</code> 或 <code>wait(long, int)</code>方法，或者该类的 <code>join()</code>、<code>join(long)</code>、<code>join(long, int)</code>、<code>sleep(long)</code>或 <code>sleep(long, int)</code>方法过程中受阻，则其中断状态将被清除，它还将收到一个 <code>InterruptedException</code>。</p>
+<p>如果该线程在可中断的通道上的 I/O 操作中受阻，则该通道将被关闭，该线程的中断状态将被设置并且该线程将收到一个 <code>ClosedByInterruptException</code>。</p>
+<p>如果该线程在一个 <code>Selector</code> 中受阻，则该线程的中断状态将被设置，它将立即从选择操作返回，并可能带有一个非零值，就好像调用了选择器的 <code>wakeup</code> 方法一样。</p>
+<p>如果以前的条件都没有保存，则该线程的中断状态将被设置。</p>
+<p>中断一个不处于活动状态的线程不需要任何作用。</p>
+<p>​    抛出：<code>SecurityException</code> - 如果当前线程无法修改该线程</p>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.thread;
+
+public class ThreadTest08 {
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyRunnable2());
+        t.setName("t");
+        t.start();
+
+        // 希望5秒之后，t线程醒来（5秒之后主线程手里的活儿干完了。）
+        try {
+            Thread.sleep(1000 * 5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        // 终断t线程的睡眠（这种终断睡眠的方式依靠了java的异常处理机制。）
+        t.interrupt(); // 干扰，一盆冷水过去！
+    }
+}
+
+class MyRunnable2 implements Runnable {
+
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + "---> begin");
+        try {
+            // 睡眠1年
+            Thread.sleep(1000 * 60 * 60 * 24 * 365);
+        } catch (InterruptedException e) {
+            // 打印异常信息
+            //e.printStackTrace();
+        }
+        //1年之后才会执行这里
+        System.out.println(Thread.currentThread().getName() + "---> end");
+
+    }
+
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="强行终止线程"><a href="#强行终止线程" class="headerlink" title="强行终止线程"></a>强行终止线程</h2><p><strong><em>在java中怎么强行终止一个线程的执行?</em></strong></p>
+<ol>
+<li><code>final void stop()</code>方法强迫线程停止执行。（已过时）</li>
+</ol>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class ThreadTest09 {
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyRunnable3());
+        t.setName("t");
+        t.start();
+
+        // 模拟5秒
+        try {
+            Thread.sleep(1000 * 5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        // 5秒之后强行终止t线程
+        t.stop(); // 已过时（不建议使用。）
+    }
+}
+
+class MyRunnable3 implements Runnable {
+
+    @Override
+    public void run() {
+        for(int i = 0; i < 10; i++){
+            System.out.println(Thread.currentThread().getName() + "--->" + i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p> 这种方式存在很大的缺点：容易丢失数据。因为这种方式是直接将线程杀死了，线程没有保存的数据将会丢失。不建议使用。</p>
+</blockquote>
+<ol>
+<li>打一个boolean标记</li>
+</ol>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.thread;
+
+public class ThreadTest10 {
+    public static void main(String[] args) {
+        MyRunable4 r = new MyRunable4();
+        Thread t = new Thread(r);
+        t.setName("t");
+        t.start();
+
+        // 模拟5秒
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        // 终止线程
+        // 你想要什么时候终止t的执行，那么你把标记修改为false，就结束了。
+        r.run = false;
+    }
+}
+
+class MyRunable4 implements Runnable {
+
+    // 打一个布尔标记
+    boolean run = true;
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 10; i++){
+            if(run){
+                System.out.println(Thread.currentThread().getName() + "--->" + i);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                // return就结束了，你在结束之前还有什么没保存的。
+                // 在这里可以保存呀。
+                //save....
+
+                //终止当前线程
+                return;
+            }
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="线程调度"><a href="#线程调度" class="headerlink" title="线程调度"></a>线程调度</h2><p><strong><em>常见的线程调度模型有哪些？</em></strong></p>
+<p>​    抢占式调度模型：</p>
+<p>​        那个线程的优先级比较高，抢到的CPU时间片的概率就高一些/多一些。java采用的就是抢占式调度模型。</p>
+<p>​    均分式调度模型：</p>
+<p>​        平均分配CPU时间片。每个线程占有的CPU时间片时间长度一样。平均分配，一切平等。</p>
+<p><strong><em>java中提供了哪些方法是和线程调度有关系的呢？</em></strong></p>
+<p>实例方法：</p>
+<p>​        <code>void setPriority(int newPriority)</code> 设置线程的优先级</p>
+<p>​        <code>int getPriority()</code> 获取线程优先级</p>
+<p>​            最低优先级1，默认优先级是5，最高优先级10，优先级比较高的获取CPU时间片可能会多一些。（但也不完全是，大概率是多的。）</p>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.thread;
+
+public class ThreadTest11 {
+    public static void main(String[] args) {
+        // 设置主线程的优先级为1
+        Thread.currentThread().setPriority(1);
+
+        /*System.out.println("最高优先级" + Thread.MAX_PRIORITY);
+        System.out.println("最低优先级" + Thread.MIN_PRIORITY);
+        System.out.println("默认优先级" + Thread.NORM_PRIORITY);*/
+
+        // 获取当前线程对象，获取当前线程的优先级
+        Thread currentThread = Thread.currentThread();
+        // main线程的默认优先级是：5
+        //System.out.println(currentThread.getName() + "线程的默认优先级是：" + currentThread.getPriority());
+
+        Thread t = new Thread(new MyRunnable5());
+        t.setPriority(10);
+        t.setName("t");
+        t.start();
+
+        // 优先级较高的，只是抢到的CPU时间片相对多一些。
+        // 大概率方向更偏向于优先级比较高的。
+        for(int i = 0; i < 10000; i++){
+            System.out.println(Thread.currentThread().getName() + "-->" + i);
+        }
+
+
+    }
+}
+
+class MyRunnable5 implements Runnable {
+
+    @Override
+    public void run() {
+        // 获取线程优先级
+        //System.out.println(Thread.currentThread().getName() + "线程的默认优先级：" + Thread.currentThread().getPriority());
+        for(int i = 0; i < 10000; i++){
+            System.out.println(Thread.currentThread().getName() + "-->" + i);
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>静态方法：</p>
+<p>​        <code>static void yield()</code>  让位方法</p>
+<p>​            暂停当前正在执行的线程对象，并执行其他线程，<code>yield()</code>方法不是阻塞方法。让当前线程让位，让给其它线程使用。yield()方法的执行会让当前线程从“运行状态”回到“就绪状态”。<code>注意</code>：在回到就绪之后，有可能还会再次抢到。</p>
+<p>​    </p>
+<p>实例方法：</p>
+<p>​        <code>void join()</code>   等待该线程终止。合并线程</p>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">class MyThread1 extends Thread {
+                public void doSome(){
+                    MyThread2 t = new MyThread2();
+                    t.join(); // 当前线程进入阻塞，t线程执行，直到t线程结束。当前线程才可以继续。
+                }
+            }
+
+            class MyThread2 extends Thread{
+                 .....
+            }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>关于线程的优先级:</p>
 
                 
             </div>
@@ -771,7 +1131,7 @@ pymysql.install_as_MySQLdb()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://daizhen.top/2021/10/05/DjiangoBlog/">https://daizhen.top/2021/10/05/DjiangoBlog/</a>
+                    <a href="https://daizhen.top/2021/11/15/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">https://daizhen.top/2021/11/15/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -809,12 +1169,12 @@ pymysql.install_as_MySQLdb()
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Django/">
-                                    <span class="chip bg-color">Django</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
                                 </a>
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                                    <span class="chip bg-color">java多线程</span>
                                 </a>
                             
                         </div>
@@ -1316,84 +1676,36 @@ pymysql.install_as_MySQLdb()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/10/13/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                <a href="/2021/11/15/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1.jpg" class="responsive-img" alt="java面向对象">
+                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/6.jpg" class="responsive-img" alt="java多线程">
                         
-                        <span class="card-title">java面向对象</span>
+                        <span class="card-title">java多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java面向对象基础
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JavaSE/" class="post-category">
-                                    JavaSE
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/10/05/DjiangoBlog/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/3.jpg" class="responsive-img" alt="基于Django的个人博客">
-                        
-                        <span class="card-title">基于Django的个人博客</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            基于Django的个人博客，前端方面能力有限，所以前端样式比较普通,望包涵
+                            java多线程使用
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                    后端开发
+                            <a href="/categories/javaSE/" class="post-category">
+                                    javaSE
                                 </a>
                             
                             
@@ -1404,14 +1716,51 @@ pymysql.install_as_MySQLdb()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Django/">
-                        <span class="chip bg-color">Django</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                        <span class="chip bg-color">java多线程</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/11/15/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Dozen
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>

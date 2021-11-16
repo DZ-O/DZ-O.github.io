@@ -600,14 +600,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.8k
+                    4.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    36 分
+                    17 分
                 </div>
                 
 
@@ -622,9 +622,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
@@ -637,7 +634,8 @@
 <p>​    集合是一个容器，是一个载体,可以一次容纳多个对象。在实际开发中，假设连接数据库，数据库当中有10条记录，那么假设把这10条记录查询出来，在java程序中会将10条数据封装成10个java对象，然后将10个java对象放到某一个集合当中，将集合传到前端，然后遍历集合，将一个数据一个数据展现出来。</p>
 </li>
 <li><p>集合不能直接存储基本数据类型，另外集合也不能直接存储java对象，集合当中存储的都是java对象的内存地址。(或者说集合中存储的是引用。)</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">list.add (100) ; //自动装箱integer<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">list.add (100) ; //自动装箱integer
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ol>
 <blockquote>
@@ -677,7 +675,7 @@
 <li>Properties: 是线程安全的，并且 key 和value只能存储字符串String。</li>
 <li>TreeMap: 底层是二叉树。TreeMap集合的 key可以自动按照大小顺序排序。</li>
 </ul>
-<h1 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h1><h2 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">/*关于java.util.Collection接口中常用的方法。
+<h1 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h1><h2 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h2><pre class="line-numbers language-lang-java"><code class="language-lang-java">/*关于java.util.Collection接口中常用的方法。
     1、Collection中能存放什么元素？
         没有使用“泛型”之前，Collection中可以存储Object的所有子类型。
         使用了“泛型”之后，Collection中只能存储某个具体的类型。
@@ -747,15 +745,14 @@ public class CollectionTest01 {
 
         // 转换成数组（了解，使用不多。）
         Object[] objs = c.toArray();
-        for(int i = 0; i &lt; objs.length; i++){
+        for(int i = 0; i < objs.length; i++){
             // 遍历数组
             Object o = objs[i];
             System.out.println(o);
         }
     }
 }
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Iterator迭代器"><a href="#Iterator迭代器" class="headerlink" title="Iterator迭代器"></a>Iterator迭代器</h2><p><strong>迭代</strong>∶即Collection集合元素的通用获取方式。在取元素之前先要判断集合中有没有元素,如果有，就把这个元素取出来，继续在判断，如果还有就再取出出来。一直把集合中的所有元素全部取出。这种取出方式专业术语称为迭代。</p>
 <p>在程序开发中，经常需要遍历集合中的所有元素。针对这种需求，JDK专门提供了一个接口<code>java.util.Iterator</code>。Iterator 接口也是Java集合中的一员，但它与Collection 、Map接口有所不同，Collection,接口与Map接口主要用于存储元素，而Iterator主要用于迭代访问(即遍历) Collection 中的元素，因此Iterator对象也被称为迭代器。</p>
 <p>想要遍历Collection集合，那么就要获取该集合迭代器完成迭代操作，下面介绍一下获取迭代器的方法︰</p>
@@ -773,7 +770,7 @@ public class CollectionTest01 {
 <blockquote>
 <p>注意：Iterator<e>接口也是有泛型的,迭代器的泛型跟着集合走,集合是什么泛型,迭代器就是什么泛型</e></p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.javase.collection;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.javase.collection;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -834,7 +831,7 @@ public class CollectionTest02 {
 <p>​        <code>c.remove(o);</code> 迭代过程中不能这样。会出现：<code>java.util.ConcurrentModificationException</code></p>
 <p>​     重点：在迭代元素的过程当中，一定要使用迭代器Iterator的remove方法，删除元素，不要使用集合自带的remove方法删除元素。</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class CollectionTest06 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class CollectionTest06 {
     public static void main(String[] args) {
         // 创建集合
         Collection c = new ArrayList();
@@ -893,7 +890,7 @@ public class CollectionTest02 {
 <p>​      <code>int indexOf(Object o)</code>：返回此列表中第一次出现的指定元素的索引;如果此列表不包含该元素，则返回-1。</p>
 <p>​      <code>int lastIndexOf(Object o)</code>：返回此列表中最后出现的指定元素的索引;如果列表不包含此元素，则返回-1。</p>
 <p>​      <code>E remove(int index)</code>：移除列表中指定位置的元素。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class ListTest01 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class ListTest01 {
     public static void main(String[] args) {
         // 创建List类型的集合。
         //List myList = new LinkedList();
@@ -924,7 +921,7 @@ public class CollectionTest02 {
 
         // 因为有下标，所以List集合有自己比较特殊的遍历方式
         // 通过下标遍历。【List集合特有的方式，Set没有。】
-        for(int i = 0; i &lt; myList.size(); i++){
+        for(int i = 0; i < myList.size(); i++){
             Object obj = myList.get(i);
             System.out.println(obj);
         }
@@ -946,12 +943,13 @@ public class CollectionTest02 {
         myList.set(2, "Soft");
 
         // 遍历集合
-        for(int i = 0; i &lt; myList.size(); i++){
+        for(int i = 0; i < myList.size(); i++){
             Object obj = myList.get(i);
             System.out.println(obj);
         }
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h1><blockquote>
 <ol>
 <li><p>默认初始化容量10（底层先创建了一个长度为0的数组，当添加第一个元素的时候，初始化容量10。）</p>
@@ -984,7 +982,7 @@ public class CollectionTest02 {
 </li>
 </ol>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class ArrayListTest02 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class ArrayListTest02 {
     public static void main(String[] args) {
 
         // 默认初始化容量10
@@ -1003,11 +1001,12 @@ public class CollectionTest02 {
 
         // 通过这个构造方法就可以将HashSet集合转换成List集合。
         List myList3 = new ArrayList(c);
-        for(int i = 0; i &lt; myList3.size(); i++){
+        for(int i = 0; i < myList3.size(); i++){
             System.out.println(myList3.get(i));
         }
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="LinkedList集合"><a href="#LinkedList集合" class="headerlink" title="LinkedList集合"></a><strong>LinkedList集合</strong></h1><p>LinkedList集合的特点∶</p>
 <ol>
 <li><p>底层是一个链表结构;查询慢,增删快</p>
@@ -1038,14 +1037,14 @@ public class CollectionTest02 {
 <li><code>public E pop()</code>: 从此列表所表示的堆栈处弹出一个元素。</li>
 <li><code>public boolean isEmpty()</code>: 如果列表不包含元素，则返回true。</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class LinkedListDemo {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class LinkedListDemo {
     public static void main(String[] args) {
 
         show03();
     }
 
     private static void show03() {
-        LinkedList&lt;String&gt; linkedList = new LinkedList&lt;&gt;();
+        LinkedList<String> linkedList = new LinkedList<>();
         linkedList.add("a");
         linkedList.add("b");
         linkedList.add("c");
@@ -1059,7 +1058,7 @@ public class CollectionTest02 {
     }
 
     private static void show02() {
-        LinkedList&lt;String&gt; linkedList = new LinkedList&lt;&gt;();
+        LinkedList<String> linkedList = new LinkedList<>();
         linkedList.add("a");
         linkedList.add("b");
         linkedList.add("c");
@@ -1072,7 +1071,7 @@ public class CollectionTest02 {
     }
 
     private static void show01() {
-        LinkedList&lt;String&gt; linkedList = new LinkedList&lt;&gt;();
+        LinkedList<String> linkedList = new LinkedList<>();
         linkedList.add("a");
         linkedList.add("b");
         linkedList.add("c");
@@ -1085,7 +1084,7 @@ public class CollectionTest02 {
     }
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class LinkedListTest01 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class LinkedListTest01 {
     public static void main(String[] args) {
         // LinkedList集合底层也是有下标的。
         // 注意：ArrayList之所以检索效率比较高，不是单纯因为下标的原因。是因为底层数组发挥的作用。
@@ -1095,7 +1094,7 @@ public class CollectionTest02 {
         list.add("b");
         list.add("c");
 
-        for(int i = 0; i &lt;list.size(); i++){
+        for(int i = 0; i <list.size(); i++){
             Object obj = list.get(i);
             System.out.println(obj);
         }
@@ -1112,12 +1111,13 @@ public class CollectionTest02 {
         list2.add("456");
         list2.add("789");
 
-        for(int i = 0; i &lt; list2.size(); i++){
+        for(int i = 0; i < list2.size(); i++){
             System.out.println(list2.get(i));
         }
 
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="Vector集合"><a href="#Vector集合" class="headerlink" title="Vector集合"></a>Vector集合</h1><ol>
 <li><p>底层也是一个数组。</p>
 </li>
@@ -1136,7 +1136,7 @@ public class CollectionTest02 {
 <p>​    java.util.Collections 是集合工具类。</p>
 </li>
 </ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class VectorTest {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class VectorTest {
     public static void main(String[] args) {
         // 创建一个Vector集合
         List vector = new Vector();
@@ -1175,12 +1175,13 @@ public class CollectionTest02 {
         myList.add("222");
         myList.add("333");
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="HashSet集合"><a href="#HashSet集合" class="headerlink" title="HashSet集合"></a>HashSet集合</h1><p>HashSet集合在new的时候,底层实际上new了一个HashMap集合。向Hashset集合中存储元紊,实际上是存储到HashMap集合中了。</p>
 <p>HashMap集合是一个哈希表数据结构Hashset集合初始化容量16</p>
 <p>初始化容量建议是2的倍数。</p>
 <p>扩容: 扩容之后是原容量2倍。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.javase.collection;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.javase.collection;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -1192,7 +1193,7 @@ HashSet集合：
 public class HashSetTest01 {
     public static void main(String[] args) {
         // 演示一下HashSet集合特点
-        Set&lt;String&gt; strs = new HashSet&lt;&gt;();
+        Set<String> strs = new HashSet<>();
 
         // 添加元素
         strs.add("hello3");
@@ -1296,10 +1297,10 @@ public class HashSetTest01 {
 <p>【Map.Entry和String一样，都是一种类型的名字，只不过：Map.Entry是静态内部类，是Map中的静态内部类】</p>
 <p> 4=zhaoliu —-&gt; 这个东西是个什么？ Map.Entry</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class MapTest01 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class MapTest01 {
     public static void main(String[] args) {
         // 创建Map集合对象
-        Map&lt;Integer, String&gt; map = new HashMap&lt;&gt;();
+        Map<Integer, String> map = new HashMap<>();
         // 向Map集合中添加键值对
         map.put(1, "zhangsan"); // 1在这里进行了自动装箱。
         map.put(2, "lisi");
@@ -1320,7 +1321,7 @@ public class HashSetTest01 {
         System.out.println(map.containsValue(new String("wangwu"))); // true
 
         // 获取所有的value
-        Collection&lt;String&gt; values = map.values();
+        Collection<String> values = map.values();
         // foreach
         for(String s : values){
             System.out.println(s);
@@ -1334,21 +1335,21 @@ public class HashSetTest01 {
     }
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Map集合遍历"><a href="#Map集合遍历" class="headerlink" title="Map集合遍历"></a>Map集合遍历</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class MapTest02 {
+<h2 id="Map集合遍历"><a href="#Map集合遍历" class="headerlink" title="Map集合遍历"></a>Map集合遍历</h2><pre class="line-numbers language-lang-java"><code class="language-lang-java">public class MapTest02 {
     public static void main(String[] args) {
 
         // 第一种方式：获取所有的key，通过遍历key，来遍历value
-        Map&lt;Integer, String&gt; map = new HashMap&lt;&gt;();
+        Map<Integer, String> map = new HashMap<>();
         map.put(1, "zhangsan");
         map.put(2, "lisi");
         map.put(3, "wangwu");
         map.put(4, "zhaoliu");
         // 遍历Map集合
         // 获取所有的key，所有的key是一个Set集合
-        Set&lt;Integer&gt; keys = map.keySet();
+        Set<Integer> keys = map.keySet();
         // 遍历key，通过key获取value
         // 迭代器可以
-        /*Iterator&lt;Integer&gt; it = keys.iterator();
+        /*Iterator<Integer> it = keys.iterator();
         while(it.hasNext()){
             // 取出其中一个key
             Integer key = it.next();
@@ -1361,15 +1362,15 @@ public class HashSetTest01 {
             System.out.println(key + "=" + map.get(key));
         }
 
-        // 第二种方式：Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()
+        // 第二种方式：Set<Map.Entry<K,V>> entrySet()
         // 以上这个方法是把Map集合直接全部转换成Set集合。
         // Set集合中元素的类型是：Map.Entry
-        Set&lt;Map.Entry&lt;Integer,String&gt;&gt; set = map.entrySet();
+        Set<Map.Entry<Integer,String>> set = map.entrySet();
         // 遍历Set集合，每一次取出一个Node
         // 迭代器
-        /*Iterator&lt;Map.Entry&lt;Integer,String&gt;&gt; it2 = set.iterator();
+        /*Iterator<Map.Entry<Integer,String>> it2 = set.iterator();
         while(it2.hasNext()){
-            Map.Entry&lt;Integer,String&gt; node = it2.next();
+            Map.Entry<Integer,String> node = it2.next();
             Integer key = node.getKey();
             String value = node.getValue();
             System.out.println(key + "=" + value);
@@ -1378,8 +1379,8 @@ public class HashSetTest01 {
         // foreach
         // 这种方式效率比较高，因为获取key和value都是直接从node对象中获取的属性值。
         // 这种方式比较适合于大数据量。
-        for(Map.Entry&lt;Integer,String&gt; node : set){
-            System.out.println(node.getKey() + "---&gt;" + node.getValue());
+        for(Map.Entry<Integer,String> node : set){
+            System.out.println(node.getKey() + "--->" + node.getValue());
         }
     }
 }
@@ -1398,27 +1399,28 @@ public class HashSetTest01 {
 <ol>
 <li>HashMap集合底层的源代码：</li>
 </ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HashMap{
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">    public class HashMap{
 
-  // HashMap底层实际上就是一个数组。（一维数组）
+      // HashMap底层实际上就是一个数组。（一维数组）
 
-  Node&lt;K,V&gt;[] table;
+      Node<K,V>[] table;
 
-  // 静态的内部类HashMap.Node
+      // 静态的内部类HashMap.Node
 
-  static class Node&lt;K,V&gt; {
+      static class Node<K,V> {
 
-    final int hash; // 哈希值（哈希值是key的hashCode()方法的执行结果。hash值通过哈希函数/算法，可以转换存储成数组的下标。）
+        final int hash; // 哈希值（哈希值是key的hashCode()方法的执行结果。hash值通过哈希函数/算法，可以转换存储成数组的下标。）
 
-    final K key; // 存储到Map集合中的那个key
+        final K key; // 存储到Map集合中的那个key
 
-    V value; // 存储到Map集合中的那个value
+        V value; // 存储到Map集合中的那个value
 
-    Node&lt;K,V&gt; next; // 下一个节点的内存地址。
+        Node<K,V> next; // 下一个节点的内存地址。
 
-  }
+      }
 
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​    哈希表/散列表：一维数组，这个数组中每一个元素是一个单向链表。（数组和链表的结合体。）</p>
 <ol>
 <li>最主要掌握的是：</li>
@@ -1456,11 +1458,11 @@ public class HashSetTest01 {
 <blockquote>
 <p>重点，记住：HashMap集合初始化容量必须是2的倍数，这也是官方推荐的， 这是因为达到散列均匀，为了提高HashMap集合的存取效率，所必须的。 </p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HashMapTest01 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class HashMapTest01 {
     public static void main(String[] args) {
         // 测试HashMap集合key部分的元素特点
         // Integer是key，它的hashCode和equals都重写了。
-        Map&lt;Integer,String&gt; map = new HashMap&lt;&gt;();
+        Map<Integer,String> map = new HashMap<>();
         map.put(1111, "zhangsan");
         map.put(6666, "lisi");
         map.put(7777, "wangwu");
@@ -1470,8 +1472,8 @@ public class HashSetTest01 {
         System.out.println(map.size()); // 4
 
         // 遍历Map集合
-        Set&lt;Map.Entry&lt;Integer,String&gt;&gt; set = map.entrySet();
-        for(Map.Entry&lt;Integer,String&gt; entry : set){
+        Set<Map.Entry<Integer,String>> set = map.entrySet();
+        for(Map.Entry<Integer,String> entry : set){
             // 验证结果：HashMap集合key部分元素：无序不可重复。
             System.out.println(entry.getKey() + "=" + entry.getValue());
         }
@@ -1482,7 +1484,7 @@ public class HashSetTest01 {
 <p><strong><em>HashMap集合key部分允许null吗？</em></strong></p>
 <p>  允许,但是要注意：HashMap集合的key null值只能有一个。</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HashMapTest03 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class HashMapTest03 {
     public static void main(String[] args) {
 
         Map map = new HashMap();
@@ -1498,7 +1500,8 @@ public class HashSetTest01 {
         // 通过key获取value
         System.out.println(map.get(null)); // 100
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h1><p><strong><em>Hashtable的key可以为null吗？</em></strong></p>
 <p>​    Hashtable的key和value都是不能为null的。</p>
 <p>​    HashMap集合的key和value都是可以为null的。</p>
@@ -1506,19 +1509,20 @@ public class HashSetTest01 {
 <p>Hashtable和HashMap一样，底层都是哈希表数据结构。</p>
 <p>Hashtable的初始化容量是11，默认加载因子是：0.75</p>
 <p>Hashtable的扩容是：原容量 * 2 + 1</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HashtableTest01 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class HashtableTest01 {
     public static void main(String[] args) {
         Map map = new Hashtable();
-	//java.lang.Nul1PointerException
+    //java.lang.Nul1PointerException
         map.put(null, "123");
         map.put(100, null);
 
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="Properties属性类"><a href="#Properties属性类" class="headerlink" title="Properties属性类"></a>Properties属性类</h1><p>Properties是一个Map集合，继承Hashtable，Properties的key和value都是String类型。</p>
 <p>Properties被称为属性类对象。</p>
 <p>Properties是线程安全的。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class PropertiesTest01 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class PropertiesTest01 {
     public static void main(String[] args) {
 
         // 创建一个Properties对象
@@ -1542,7 +1546,8 @@ public class HashSetTest01 {
         System.out.println(password);
 
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="TreeSet集合"><a href="#TreeSet集合" class="headerlink" title="TreeSet集合"></a>TreeSet集合</h1><p>TreeSet集合存储元素特点：</p>
 <ol>
 <li><p>无序不可重复的，但是存储的元素可以自动按照大小顺序排序！称为：可排序集合。</p>
@@ -1550,10 +1555,10 @@ public class HashSetTest01 {
 <li><p>无序：这里的无序指的是存进去的顺序和取出来的顺序不同。并且没有下标。</p>
 </li>
 </ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class TreeSetTest01 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class TreeSetTest01 {
     public static void main(String[] args) {
         // 创建集合对象
-        Set&lt;String&gt; strs = new TreeSet&lt;&gt;();
+        Set<String> strs = new TreeSet<>();
         // 添加元素
         strs.add("A");
         strs.add("B");
@@ -1597,7 +1602,7 @@ public class HashSetTest01 {
 <p>​          <code>class com.bjpowernode.javase.collection.Person</code></p>
 <p>​          <code>cannot be cast to class java.lang.Comparable</code></p>
 <p>  出现这个异常的原因是Person类没有实现<code>java.lang.Comparable</code>接口。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class TreeSetTest03 {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class TreeSetTest03 {
     public static void main(String[] args) {
         Person p1 = new Person(32);
         //System.out.println(p1);
@@ -1606,7 +1611,7 @@ public class HashSetTest01 {
         Person p4 = new Person(25);
 
         // 创建TreeSet集合
-        TreeSet&lt;Person&gt; persons = new TreeSet&lt;&gt;();
+        TreeSet<Person> persons = new TreeSet<>();
         // 添加元素
         persons.add(p1);
         persons.add(p2);
@@ -1633,7 +1638,7 @@ class Person {
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="实现Comparable接口实现自定义类型排序："><a href="#实现Comparable接口实现自定义类型排序：" class="headerlink" title="实现Comparable接口实现自定义类型排序："></a>实现Comparable接口实现自定义类型排序：</h3><p>自定义类型实现Comparable接口，并重写Comparable接口的compareTo方法，自定义排序规则。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.javase.collection;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.javase.collection;
 
 import java.util.TreeSet;
 
@@ -1642,7 +1647,7 @@ import java.util.TreeSet;
  */
 public class TreeSetTest05 {
     public static void main(String[] args) {
-        TreeSet&lt;Vip&gt; vips = new TreeSet&lt;&gt;();
+        TreeSet<Vip> vips = new TreeSet<>();
         vips.add(new Vip("zhangsi", 20));
         vips.add(new Vip("zhangsan", 20));
         vips.add(new Vip("king", 18));
@@ -1653,7 +1658,7 @@ public class TreeSetTest05 {
     }
 }
 
-class Vip implements Comparable&lt;Vip&gt;{
+class Vip implements Comparable<Vip>{
     String name;
     int age;
 
@@ -1673,8 +1678,8 @@ class Vip implements Comparable&lt;Vip&gt;{
     /*
     compareTo方法的返回值很重要：
         返回0表示相同，value会覆盖。
-        返回&gt;0，会继续在右子树上找。【10 - 9 = 1 ，1 &gt; 0的说明左边这个数字比较大。所以在右子树上找。】
-        返回&lt;0，会继续在左子树上找。
+        返回>0，会继续在右子树上找。【10 - 9 = 1 ，1 > 0的说明左边这个数字比较大。所以在右子树上找。】
+        返回<0，会继续在左子树上找。
      */
     @Override
     public int compareTo(Vip v) {
@@ -1691,7 +1696,7 @@ class Vip implements Comparable&lt;Vip&gt;{
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="使用比较器的方式"><a href="#使用比较器的方式" class="headerlink" title="使用比较器的方式"></a>使用比较器的方式</h3><p>单独在这里编写一个比较器,比较器实现<code>java.util.Comparator</code>接口。（Comparable是java.lang包下的。Comparator是java.util包下的。）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.javase.collection;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.javase.collection;
 
 import java.util.Comparator;
 import java.util.TreeSet;
@@ -1702,13 +1707,13 @@ TreeSet集合中元素可排序的第二种方式：使用比较器的方式。
 public class TreeSetTest06 {
     public static void main(String[] args) {
         // 创建TreeSet集合的时候，需要使用这个比较器。
-        // TreeSet&lt;WuGui&gt; wuGuis = new TreeSet&lt;&gt;();//这样不行，没有通过构造方法传递一个比较器进去。
+        // TreeSet<WuGui> wuGuis = new TreeSet<>();//这样不行，没有通过构造方法传递一个比较器进去。
 
         // 给构造方法传递一个比较器。
-        //TreeSet&lt;WuGui&gt; wuGuis = new TreeSet&lt;&gt;(new WuGuiComparator());
+        //TreeSet<WuGui> wuGuis = new TreeSet<>(new WuGuiComparator());
 
         // 大家可以使用匿名内部类的方式（这个类没有名字。直接new接口。）
-        TreeSet&lt;WuGui&gt; wuGuis = new TreeSet&lt;&gt;(new Comparator&lt;WuGui&gt;() {
+        TreeSet<WuGui> wuGuis = new TreeSet<>(new Comparator<WuGui>() {
             @Override
             public int compare(WuGui o1, WuGui o2) {
                 return o1.age - o2.age;
@@ -1745,7 +1750,7 @@ class WuGui{
 // 单独在这里编写一个比较器
 // 比较器实现java.util.Comparator接口。（Comparable是java.lang包下的。Comparator是java.util包下的。）
 /*
-class WuGuiComparator implements Comparator&lt;WuGui&gt; {
+class WuGuiComparator implements Comparator<WuGui> {
 
     @Override
     public int compare(WuGui o1, WuGui o2) {
@@ -1767,7 +1772,7 @@ class WuGuiComparator implements Comparator&lt;WuGui&gt; {
 </blockquote>
 <h1 id="Collections集合工具类"><a href="#Collections集合工具类" class="headerlink" title="Collections集合工具类"></a>Collections集合工具类</h1><p><code>java.util.Collection</code> 集合接口</p>
 <p><code>java.util.Collections</code> 集合工具类，方便集合的操作。</p>
-<h3 id="常用方法：-1"><a href="#常用方法：-1" class="headerlink" title="常用方法："></a>常用方法：</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.javase.collection;
+<h3 id="常用方法：-1"><a href="#常用方法：-1" class="headerlink" title="常用方法："></a>常用方法：</h3><pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.javase.collection;
 
 import java.util.*;
 
@@ -1779,7 +1784,7 @@ public class CollectionsTest {
     public static void main(String[] args) {
 
         // ArrayList集合不是线程安全的。
-        List&lt;String&gt; list = new ArrayList&lt;&gt;();
+        List<String> list = new ArrayList<>();
 
         // 变成线程安全的
         Collections.synchronizedList(list);
@@ -1795,7 +1800,7 @@ public class CollectionsTest {
             System.out.println(s);
         }
 
-        List&lt;WuGui2&gt; wuGuis = new ArrayList&lt;&gt;();
+        List<WuGui2> wuGuis = new ArrayList<>();
         wuGuis.add(new WuGui2(1000));
         wuGuis.add(new WuGui2(8000));
         wuGuis.add(new WuGui2(500));
@@ -1806,13 +1811,13 @@ public class CollectionsTest {
         }
 
         // 对Set集合怎么排序呢？
-        Set&lt;String&gt; set = new HashSet&lt;&gt;();
+        Set<String> set = new HashSet<>();
         set.add("king");
         set.add("kingsoft");
         set.add("king2");
         set.add("king1");
         // 将Set集合转换成List集合
-        List&lt;String&gt; myList = new ArrayList&lt;&gt;(set);
+        List<String> myList = new ArrayList<>(set);
         Collections.sort(myList);
         for(String s : myList) {
             System.out.println(s);
@@ -1823,7 +1828,7 @@ public class CollectionsTest {
     }
 }
 
-class WuGui2 implements Comparable&lt;WuGui2&gt;{
+class WuGui2 implements Comparable<WuGui2>{
     int age;
     public WuGui2(int age){
         this.age = age;
@@ -1841,9 +1846,7 @@ class WuGui2 implements Comparable&lt;WuGui2&gt;{
                 '}';
     }
 }
-
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -2713,7 +2716,7 @@ class WuGui2 implements Comparable&lt;WuGui2&gt;{
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.9k</span>
+                        class="white-color">25.2k</span>
             
             
             
@@ -2994,13 +2997,13 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
 <script type="text/javascript">
     //只在桌面版网页启用特效
     var windowWidth = $(window).width();

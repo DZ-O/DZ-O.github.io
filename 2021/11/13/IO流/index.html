@@ -607,7 +607,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    32 分
+                    31 分
                 </div>
                 
 
@@ -621,9 +621,6 @@
         </div>
         <hr class="clearfix">
 
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -697,7 +694,7 @@
 <p><code>int read()</code>: 从此输入流中读取一个数据字节。如果没有输入可用，则此方法将阻塞。</p>
 <p>​    返回：下一个数据字节;如果已到达文件末尾，则返回-1。</p>
 <p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -747,7 +744,7 @@ public class FileInputStreamTest02 {
 
  抛出：`IOException` - 如果发生 I/O 错误。
 </code></pre><p>一次最多读取 b.length 个字节。减少硬盘和内存的交互，提高程序的执行效率。往byte[]数组当中读。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -802,7 +799,7 @@ public class FileInputStreamTest03 {
 <p>​    参数：<code>n</code> - 要跳过的字节数。</p>
 <p>​    返回：实际跳过的字节数。</p>
 <p>​    抛出：<code>IOException</code> - 如果 n 为负，如果该流不支持查找操作，或者发生 I/O 错误。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -848,7 +845,8 @@ public class FileInputStreamTest05 {
             }
         }
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h2><p>文件字节输出流，负责写。从内存到硬盘。</p>
 <h3 id="常用方法：-1"><a href="#常用方法：-1" class="headerlink" title="常用方法："></a>常用方法：</h3><p><code>FileOutputStream(File file)</code>：构造方法，创建一个向指定 <code>File</code> 对象表示的文件中写入数据的文件输出流。创建一个新 <code>FileDescriptor</code> 对象来表示此文件连                                                    接。</p>
 <p>​    抛出：</p>
@@ -873,7 +871,7 @@ public class FileInputStreamTest05 {
 <p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误。</p>
 <p><code>void flush()</code>： 刷新此输出流并强制写出所有缓冲的输出字节。</p>
 <p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -922,7 +920,7 @@ public class FileOutputStreamTest01 {
     }
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="文件复制"><a href="#文件复制" class="headerlink" title="文件复制"></a>文件复制</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<h3 id="文件复制"><a href="#文件复制" class="headerlink" title="文件复制"></a>文件复制</h3><pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -1002,7 +1000,7 @@ public class Copy01 {
 <p>​        <code>IOException</code> - 如果发生 I/O 错误</p>
 <p><code>void close()</code>： 关闭该流并释放与之关联的所有资源。在关闭该流后，再调用 read()、ready()、mark()、reset() 或 skip() 将抛出 IOException。关闭以前关闭的                            流无效。</p>
 <p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -1058,7 +1056,7 @@ public class FileReaderTest {
 <p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
 <p><code>void close()</code>： 关闭此流，但要先刷新它。在关闭该流之后，再调用 write() 或 flush() 将导致抛出 IOException。关闭以前关闭的流无效。</p>
 <p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -1097,7 +1095,7 @@ public class FileWriterTest {
     }
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="普通文本文件复制"><a href="#普通文本文件复制" class="headerlink" title="普通文本文件复制"></a>普通文本文件复制</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<h3 id="普通文本文件复制"><a href="#普通文本文件复制" class="headerlink" title="普通文本文件复制"></a>普通文本文件复制</h3><pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -1156,7 +1154,7 @@ public class Copy02 {
 <p><code>String readLine()</code>： 读取一个文本行。通过下列字符之一即可认为某行已终止：换行 (‘\n’)、回车 (‘\r’) 或回车后直接跟着换行。</p>
 <p>​    返回：包含该行内容的字符串，不包含任何行终止符，如果已到达流末尾，则返回 null</p>
 <p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -1192,7 +1190,7 @@ public class BufferedReaderTest01 {
     }
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="转换流转换"><a href="#转换流转换" class="headerlink" title="转换流转换"></a>转换流转换</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<h3 id="转换流转换"><a href="#转换流转换" class="headerlink" title="转换流转换"></a>转换流转换</h3><pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -1228,9 +1226,10 @@ public class BufferedReaderTest02 {
         br.close();
     }
 }
-```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+```
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h2><p>BufferedWriter：带有缓冲的字符输出流。<br>OutputStreamWriter：转换流</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -1257,7 +1256,7 @@ public class BufferedWriterTest {
 <h1 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h1><h2 id="DataOutputStream"><a href="#DataOutputStream" class="headerlink" title="DataOutputStream"></a>DataOutputStream</h2><p><code>java.io.DataOutputStream</code>：数据字节输字节输出流。</p>
 <p>这个流可以将数据连同数据的类型一并写入文件。</p>
 <p>注意：这个文件不是普通文本文档。（这个文件使用记事本打不开。）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
@@ -1296,7 +1295,7 @@ public class DataOutputStreamTest {
 <h2 id="DataInputStream"><a href="#DataInputStream" class="headerlink" title="DataInputStream"></a>DataInputStream</h2><p>数据字节输入流。</p>
 <p>DataOutputStream写的文件，只能使用DataInputStream去读。并且读的时候你需要提前知道写入的顺序。</p>
 <p>读的顺序需要和写的顺序一致。才可以正常取出数据。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.DataInputStream;
 import java.io.FileInputStream;
@@ -1329,7 +1328,7 @@ public class DataInputStreamTest01 {
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="标准输出流"><a href="#标准输出流" class="headerlink" title="标准输出流"></a>标准输出流</h1><h2 id="PrintStream"><a href="#PrintStream" class="headerlink" title="PrintStream"></a>PrintStream</h2><p><code>java.io.PrintStream</code>：标准的字节输出流。默认输出到控制台。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.FileOutputStream;
 import java.io.PrintStream;
@@ -1366,7 +1365,7 @@ public class PrintStreamTest {
 <p><code>ObjectOutputStream</code></p>
 <h2 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h2><p>序列化：将类保存到硬盘</p>
 <p>反序列化： 将序列化后的类还原成java类</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import com.bjpowernode.java.bean.Student;
 
@@ -1406,7 +1405,7 @@ public class ObjectOutputStreamTest01 {
 </code></pre></li>
 </ol>
 <p>Student类：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.bean;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.bean;
 
 import java.io.Serializable;
 
@@ -1415,7 +1414,7 @@ public class Student implements Serializable {
     private int no;
     private String name;
 
-    
+
 
     public Student() {
     }
@@ -1455,7 +1454,7 @@ public class Student implements Serializable {
 <blockquote>
 <p>提示： 参与序列化的ArrayList集合以及集合中的元素User都需要实现 java.io.Serializable接口。</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import com.bjpowernode.java.bean.User;
 
@@ -1466,7 +1465,7 @@ import java.util.List;
 
 public class ObjectOutputStreamTest02 {
     public static void main(String[] args) throws Exception{
-        List&lt;User&gt; userList = new ArrayList&lt;&gt;();
+        List<User> userList = new ArrayList<>();
         userList.add(new User(1,"zhangsan"));
         userList.add(new User(2, "lisi"));
         userList.add(new User(3, "wangwu"));
@@ -1481,7 +1480,7 @@ public class ObjectOutputStreamTest02 {
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>反序列化集合: </p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import com.bjpowernode.java.bean.User;
 
@@ -1495,7 +1494,7 @@ public class ObjectInputStreamTest02 {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("users"));
         //Object obj = ois.readObject();
         //System.out.println(obj instanceof List);
-        List&lt;User&gt; userList = (List&lt;User&gt;)ois.readObject();
+        List<User> userList = (List<User>)ois.readObject();
         for(User user : userList){
             System.out.println(user);
         }
@@ -1514,13 +1513,13 @@ public class ObjectInputStreamTest02 {
 <p>java语言中是采用什么机制来区分类的？<br>    第一：首先通过类名进行比对，如果类名不一样，肯定不是同一个类。<br>    第二：如果类名一样，再怎么进行类的区别？靠序列化版本号进行区分。</p>
 <p>小鹏编写了一个类：<code>com.bjpowernode.java.bean.Student implements Serializable</code><br>胡浪编写了一个类：<code>com.bjpowernode.java.bean.Student implements Serializable</code><br>不同的人编写了同一个类，但“这两个类确实不是同一个类”。这个时候序列化版本就起上作用了。<br>对于java虚拟机来说，java虚拟机是可以区分开这两个类的，因为这两个类都实现了Serializable接口，<br>都有默认的序列化版本号，他们的序列化版本号不一样。所以区分开了。（这是自动生成序列化版本号的好处）</p>
 <p>  <strong><em>这种自动生成序列化版本号有什么缺陷？</em></strong><br>        这种自动生成的序列化版本号缺点是：一旦代码确定之后，不能进行后续的修改，<br>        因为只要修改，必然会重新编译，此时会生成全新的序列化版本号，这个时候java<br>        虚拟机会认为这是一个全新的类。（这样就不好了！）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.bean;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.bean;
 
 import java.io.Serializable;
 
 public class Student implements Serializable {
 
-   
+
     private static final long serialVersionUID = 1L; // java虚拟机识别一个类的时候先通过类名，如果类名一致，再通过序列化版本号。
 
     private int no;
@@ -1586,7 +1585,7 @@ public class Student implements Serializable {
 <h2 id="IO-Properties联合使用"><a href="#IO-Properties联合使用" class="headerlink" title="IO + Properties联合使用"></a>IO + Properties联合使用</h2><p>​    IO流：文件的读和写。</p>
 <p>​    Properties:是一个Map集合，key和value都是String类型。</p>
 <p>准备一个userinfo.pro</p>
-<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties">#建议key和value之间使用=的方式。
+<pre class="line-numbers language-lang-properties"><code class="language-lang-properties">#建议key和value之间使用=的方式。
 #=左边是key，=右边是value
 username=admin
 ########################在属性配置文件中井号是注释#############################
@@ -1597,7 +1596,8 @@ password=456456
 data                   =     abc
 
 #不建议使用:
-#usernamex:admin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+#usernamex:admin
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>非常好的一个设计理念：</p>
 <p>  以后经常改变的数据，可以单独写到一个文件中，使用程序动态读取。将来只需要修改这个文件的内容，java代码不需要改动，不需要重新编译，服务器也不需要重启。就可以拿到动态的信息。</p>
 <p>  类似于以上机制的这种文件被称为配置文件。并且当配置文件中的内容格式是：</p>
@@ -1605,7 +1605,7 @@ data                   =     abc
 <p>​    key2=value</p>
 <p>  的时候，我们把这种配置文件叫做属性配置文件。</p>
 <p>获取配置文件数据：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.bjpowernode.java.io;
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">package com.bjpowernode.java.io;
 
 import java.io.FileReader;
 import java.util.Properties;
@@ -2514,7 +2514,7 @@ public class IoPropertiesTest01 {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.9k</span>
+                        class="white-color">25.2k</span>
             
             
             
@@ -2795,13 +2795,13 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
 <script type="text/javascript">
     //只在桌面版网页启用特效
     var windowWidth = $(window).width();

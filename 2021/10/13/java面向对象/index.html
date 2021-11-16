@@ -618,9 +618,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
@@ -642,11 +639,13 @@
 </blockquote>
 <h2 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a><strong>类与对象</strong></h2><p>​    类：类是一种分类，一个类别，一个模板，它描述一类对象的行为和状态，是一组具有相同特性（属性）与行为（方法）的事物集合</p>
 <p>​    对象：是一个个性的产物，是一个个体的特征，是类的一个实例，有状态和行为</p>
-<h3 id="类的定义："><a href="#类的定义：" class="headerlink" title="类的定义："></a>类的定义：</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class 类名{
+<h3 id="类的定义："><a href="#类的定义：" class="headerlink" title="类的定义："></a>类的定义：</h3><pre class="line-numbers language-lang-java"><code class="language-lang-java">public class 类名{
     //成员变量
     //成员方法
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="对象的定义："><a href="#对象的定义：" class="headerlink" title="对象的定义："></a>对象的定义：</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">类名 对象名 = new 类名();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="对象的定义："><a href="#对象的定义：" class="headerlink" title="对象的定义："></a>对象的定义：</h3><pre class="line-numbers language-lang-java"><code class="language-lang-java">类名 对象名 = new 类名();
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>调用成员变量：</p>
 <blockquote>
 <p>对象名.成员变量；</p>
@@ -686,12 +685,13 @@
 <p>封装的缺点：会影响执行效率</p>
 </blockquote>
 <p>封装之前：属性都可以直接访问和修改</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">class Person{
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">class Person{
 　　String name;
 　　int age;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>封装之后：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">class Person{
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">class Person{
 　　//属性是成员变量，私有化属性，使得其他对象不能直接访问属性
 　　private String name;
 　　private int age;
@@ -700,7 +700,8 @@
 　　this.name = name;}
 　　public String getName(){
 　　return name;}
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a><strong>构造方法</strong></h2><blockquote>
 <p>（1）构造方法名称与类名相同，没有返回值声明（包括 void）</p>
 <p>（2）构造方法用于初始化数据（属性）</p>
@@ -715,18 +716,20 @@
 <p>（11）private Dog(){}，构造方法私有化，当我们的需求是为了 保正该类只有一个对象时（单例模式就是私有化构造器）。</p>
 </blockquote>
 <p>无参构造方法：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public Dog(){
-    
-} //如果一个类没有定义构造方法，则默认无无参构造，如果有定义有参构造，最好再显示定义一个无参构造方法<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public Dog(){
+
+} //如果一个类没有定义构造方法，则默认无无参构造，如果有定义有参构造，最好再显示定义一个无参构造方法
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>带参构造方法：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public Dog(String name){
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public Dog(String name){
 this.name = name;
 }
 
 public Dog(String name,int age){
 this.name = name;
 this.age = age;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="值传递与引用传递？"><a href="#值传递与引用传递？" class="headerlink" title="值传递与引用传递？"></a><strong>值传递与引用传递？</strong></h2><blockquote>
 <p><strong>首先，注意：在java中只有按值传递，并没有所谓的按引用传递</strong></p>
 </blockquote>
@@ -735,7 +738,7 @@ this.age = age;
 <ul>
 <li>基本数据类型的按值传递</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Swap {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class Swap {
 public static void main(String[] args) {
 　　int x = 10;
 　　int y = 20;
@@ -756,7 +759,8 @@ x(1) = 20
 y(1) = 10
 x(2) = 10
 y(2) = 20
-*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+*/
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​    main函数调用swap函数来交换 x，y的值，然而调用函数之后发现main中x，y的值并未交换。包括在Java api中找不到一个可以交换两个变量的方法。这与Java语言的特性有关。通过一个图就可以知道上面程序的运行结果了。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/1271254-20190701153455043-1779820622.png" alt="img"></p>
 <p>​    main函数中的x，y和swap函数中的x，y分别存放在不同的区域，在main中调用swap函数的时候，会将main中的x，y的值赋给swap中的x，y。当swap函数中对x，y交换时只是对swap帧中的x，y做交换，并不会改变main中的x，y。所以当函数返回时main中的x，y并不会改变.</p>
@@ -764,7 +768,7 @@ y(2) = 20
 <li>引用数据类型的按值传递</li>
 </ul>
 <p>引用数据数据类型分为三种：①接口 ②类 ③数组</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public static void main(String[] args) {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public static void main(String[] args) {
 　　int []a={10,20};
 　　System.out.println("a[0] :"a[0]+"a[1] : "+a[1]);//a[0]=10,a[1]=20;
 　　swap(a, 0, 1);
@@ -780,7 +784,8 @@ public static void swap(int []a,int i,int j){
 /*a[0]=10 a[1]=20
 a[0]=20 a[1]=10
 a[0]=20 a[1]=10
-*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+*/
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​    运行程序后发现，swap函数对a[0] ,a[1]的操作竟然影响到了main函数中的a[0] ,a[1]的值，真是不可思议。为什么会产生如此之结果。<strong>原来引用类型的按值传递，传递的是对象的地址</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/1271254-20190701154246890-805492877.png" alt="img"></p>
 <p>​    由图可以看出在swap中仅仅是得到了数组的地址，并没有对数组的元素进行复制，在swap中对数组的操作是直接对main函数中数组的操作，因此swap函数返回后main函数中的a[0] ,a[1]的值发生交换</p>
@@ -809,11 +814,12 @@ a[0]=20 a[1]=10
 </ol>
 </blockquote>
 <h3 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h3><p>静态代码块格式：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class 类名{
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class 类名{
     static {
         //内容
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>特点：</p>
 <p>​    当第一次用到本类时，静态代码块执行唯一的一次。静态内容总是优先于非静态，所以静态代码块比构造方法先执行。</p>
@@ -831,7 +837,7 @@ a[0]=20 a[1]=10
 <p>对于继承而已，子类会默认调用父类的构造器，但是如果没有默认的父类构造器，子类必须要显示的指定父类的构造器（通过super（）），而且必须是在子类构造器中做的第一件事(第一行代码)。</p>
 <p>对于protected而言，它指明就类用户而言，他是private，但是对于任何继承与此类的子类而言或者其他任何位于同一个包的类而言，他却是可以访问的</p>
 <p><code>Java 的继承是单继承，但是可以多重继承</code></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Dog{
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class Dog{
 private String name;
 private String sex;
 public void eat(){System.out.println(“吃饭”);}
@@ -841,7 +847,8 @@ public class HomeDog extends Dog{
 }
 public class HuskyDog extends Dog{
 　　//类的定义
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>继承的好处：</p>
 <ul>
@@ -859,7 +866,7 @@ public class HuskyDog extends Dog{
 </blockquote>
 <h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a><strong>this关键字</strong></h3><p>this关键字指向的是当前对象的引用</p>
 <p>调用类中的属性：this.属性名称，指的是访问类中的成员变量，用来区分成员变量和局部变量（重名问题）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Student{
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class Student{
     //成员变量
     String name;
     int age;
@@ -871,7 +878,7 @@ public class HuskyDog extends Dog{
         this.age = age;
         this.classNum = classNum;
     }
-    
+
     public static void main(String[] args){
         Student s1 = new Student("张三",18,1);
         System.out.println(s1.name);//打印 张三
@@ -880,8 +887,8 @@ public class HuskyDog extends Dog{
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>调用类中的方法：this.方法名称，用来访问本类的成员方法</p>
 <p>调用类构造方法：this();访问本类的构造方法，()中可以有参数的 如果有参数 就是调用指定的有参构造</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Test1 {
-    
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class Test1 {
+
     public Test1(){
         this("张三",18);
     }
@@ -938,12 +945,13 @@ public class HuskyDog extends Dog{
 <p>or</p>
 <p>接口名 对象名 = new 实现类名称();</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Demo01Multi {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">public class Demo01Multi {
     public static void main(String[] args){
         //左侧父类的引用，指向了右侧子类的对象
         Fu obj = new Zi()
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211013211226566.png" alt="image-20211013211226566"></p>
 <p>访问成员变量的两种方式：</p>
 <ol>
@@ -972,7 +980,7 @@ public class HuskyDog extends Dog{
 <p>a、方法的重载与重写就是方法的多态性表现<br>b、多个子类就是父类中的多种形态<br>c、父类引用可以指向子类对象，自动转换<br>d、子类对象指向父类引用需要强制转换（注意：类型不对会报异常）<br>e、在实际开发中尽量使用父类引用（更利于扩展）</p>
 </blockquote>
 <p>指向子类的父类引用由于向上转型了，它只能访问父类中拥有的方法和属性，而对于子类中存在而父类中不存在的方法，<br>该引用是不能使用的，尽管是重载该方法。若子类重写了父类中的某些方法，在调用该些方法的时候，<br>必定是使用子类中定义的这些方法（动态连接、动态调用）。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">class A{
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">class A{
 　　void fun1(){}
 　　void fun2(){}
 }
@@ -988,7 +996,8 @@ class C{
 　　a.fun1(); //这里会调用A类的fun1方法，由于向上转型，B的fun1(String a) 会被丢弃
 　　a.fun2(); //这里调用B的fun2方法，由于是new 的B对象，而B重写了fun2，所以会调用B的fun2
 }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="instanceof-关键字"><a href="#instanceof-关键字" class="headerlink" title="instanceof 关键字"></a>instanceof 关键字</h3><p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211013212213006.png" alt="image-20211013212213006"></p>
 <p>该语句一般用于判断一个对象是否为某个类的实例，是返回true，否返回false</p>
 <p>父类的设计法则<br>    通过instanceof关键字，我们可以很方便的检查对象的类型，但如果一个父类的子类过多，这样的判断还是显得很繁琐，那么如何去设计一个父类呢？<br>        a、父类通常情况下都设计为抽象类或接口，其中优先考虑接口，如接口不能满足才考虑抽象类。</p>
@@ -996,9 +1005,10 @@ class C{
 <h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><p>内部类就是在一个类的内部定义的类。</p>
 <p>成员内部类：内部类对象依赖外部类对象而存在，即在创建一个普通内部类对象时首先需要创建其外部类对象</p>
 <p>内部类对象可以访问外部类对象中所有访问权限的字段，同时，外部类对象也可以通过内部类的对象引用来访问内部类中定义的所有访问权限的字段</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">class Outer {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">class Outer {
 　　class Inner{}
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>编译上述代码会产生两个文件：Outer.class和Outer$Inner.class。</p>
 <p>在外部创建内部类对象</p>
 <p>内部类除了可以在外部类中产生实例化对象，也可以在外部类的外部来实例化。</p>
@@ -1006,34 +1016,37 @@ class C{
 <p>所以内部类的访问：通过“外部类.内部类”的形式表示。</p>
 <p>内部类实例化对象：</p>
 <p>​    外部类.内部类 内部类对象 = new 外部类().new 内部类();</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">Outer out = new Outer() ;// 产生外部类实例
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">Outer out = new Outer() ;// 产生外部类实例
 Outer.Inner in = null; // 声明内部类对象
-in = out.new Inner() ; // 实例化内部类对象<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+in = out.new Inner() ; // 实例化内部类对象
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="局部内部类："><a href="#局部内部类：" class="headerlink" title="局部内部类："></a>局部内部类：</h3><p>内部类可以作为一个类的成员外，还可以把类放在方法内定义（不常用，匿名内部类可以显示局部内部类的功能）。</p>
 <p>在局部内部类里面可以访问外部类对象的所有访问权限的字段，而外部类却不能访问局部内部类中定义的字段</p>
 <blockquote>
 <p>注意：<br>    a、局部内部类只能在定义该内部类的方法内实例化，不可以在此方法外对其实例化。</p>
 <p>​    b、局部内部类对象不能使用该内部类所在方法的非final局部变量。</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">class Outer {
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">class Outer {
 　　public void doSomething(){
 　　class Inner{
 　　　　public void seeOuter(){}
 　　}
 　　}
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类:"></a>静态内部类:</h3><p>​    在一个类内部定义一个静态内部类：</p>
 <blockquote>
 <p>注意：static定义的不管是类或方法只能访问static成员，所以static定义的内部类只能访问外部类当中的static属性或者方法。</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">class Outer{
+<pre class="line-numbers language-lang-java"><code class="language-lang-java">class Outer{
 　　static class Inner{}
 }
 class Test {
 　　public static void main(String[] args){
 　　Outer.Inner n = new Outer.Inner();
 }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这个时候Inner内是一个独立的类，如果此时想要实例化Inner类对象，只需要根据“外部类.内部类”的结构实例化对象</p>
 <p>​    外部内.内部类 内部类对象 = new 外部类.内部类();</p>
 <h3 id="匿名内部类："><a href="#匿名内部类：" class="headerlink" title="匿名内部类："></a>匿名内部类：</h3><p>匿名内部类就是没有名字的内部类。</p>
@@ -1915,7 +1928,7 @@ class Test {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.9k</span>
+                        class="white-color">25.2k</span>
             
             
             
@@ -2196,13 +2209,13 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
 <script type="text/javascript">
     //只在桌面版网页启用特效
     var windowWidth = $(window).width();
