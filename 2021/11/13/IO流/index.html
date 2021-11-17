@@ -173,9 +173,9 @@
 })()
  </script><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="BeiKJie" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="BeiKJie" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -628,7 +628,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="IO流概述"><a href="#IO流概述" class="headerlink" title="IO流概述"></a>IO流概述</h1><p><strong><em>IO流，什么是IO？</em></strong></p>
+                <h2 id="IO流概述"><a href="#IO流概述" class="headerlink" title="IO流概述"></a>IO流概述</h2><p><strong><em>IO流，什么是IO？</em></strong></p>
 <p>​    I : Input ；  O : Output</p>
 <p>通过IO可以完成硬盘文件的读和写。</p>
 <h3 id="IO流的分类？"><a href="#IO流的分类？" class="headerlink" title="IO流的分类？"></a>IO流的分类？</h3><p>有多种分类方式：</p>
@@ -679,14 +679,14 @@
 <p>  <em>对象专属流：</em></p>
 <p>​        <code>java.io.ObjectInputStream</code>（掌握）</p>
 <p>​        <code>java.io.ObjectOutputStream</code>（掌握）</p>
-<h1 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h1><h2 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h2><p>java.io.FileInputStream:</p>
+<h2 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h2><h3 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h3><p>java.io.FileInputStream:</p>
 <ol>
 <li><p>文件字节输入流，万能的，任何类型的文件都可以采用这个流来读。</p>
 </li>
 <li><p>字节的方式，完成输入的操作，完成读的操作（硬盘—-&gt; 内存）</p>
 </li>
 </ol>
-<h3 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h3><p><code>FileInputStream(File file)</code> : 构造方法，通过打开与File类对象代表的实际文件的链接来创建FileInputStream流对象。<code>file</code> - 为了进行读取而打开的文件。</p>
+<h4 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h4><p><code>FileInputStream(File file)</code> : 构造方法，通过打开与File类对象代表的实际文件的链接来创建FileInputStream流对象。<code>file</code> - 为了进行读取而打开的文件。</p>
 <p>​    抛出异常：</p>
 <p>​        <code>FileNotFoundException</code> - 如果该文件不存在，或者它是一个目录，而不是一个常规文件，抑或因为其他某些原因而无法打开进行读取。</p>
 <p>​        <code>SecurityException</code> - 如果存在安全管理器，且其 <code>checkRead</code> 方法拒绝对文件进行读取访问。</p>
@@ -848,8 +848,8 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h2><p>文件字节输出流，负责写。从内存到硬盘。</p>
-<h3 id="常用方法：-1"><a href="#常用方法：-1" class="headerlink" title="常用方法："></a>常用方法：</h3><p><code>FileOutputStream(File file)</code>：构造方法，创建一个向指定 <code>File</code> 对象表示的文件中写入数据的文件输出流。创建一个新 <code>FileDescriptor</code> 对象来表示此文件连                                                    接。</p>
+<h3 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h3><p>文件字节输出流，负责写。从内存到硬盘。</p>
+<h4 id="常用方法：-1"><a href="#常用方法：-1" class="headerlink" title="常用方法："></a>常用方法：</h4><p><code>FileOutputStream(File file)</code>：构造方法，创建一个向指定 <code>File</code> 对象表示的文件中写入数据的文件输出流。创建一个新 <code>FileDescriptor</code> 对象来表示此文件连                                                    接。</p>
 <p>​    抛出：</p>
 <p>​        <code>FileNotFoundException</code> - 如果该文件存在，但它是一个目录，而不是一个常规文件；或者该文件不存在，但无法创建它；抑或因为其他某些原因而无法打开</p>
 <p>​        <code>SecurityException</code> - 如果存在安全管理器，且其 <code>checkWrite</code> 方法拒绝对文件进行写入访问。</p>
@@ -921,7 +921,7 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="文件复制"><a href="#文件复制" class="headerlink" title="文件复制"></a>文件复制</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
+<h4 id="文件复制"><a href="#文件复制" class="headerlink" title="文件复制"></a>文件复制</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileNotFoundException<span class="token punctuation">;</span>
@@ -977,8 +977,8 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h2><p>文件字符输入流，只能读取普通文本。读取文本内容时，比较方便，快捷。</p>
-<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p><code>FileReader(String fileName)</code>：构造方法， 在给定从中读取数据的文件名的情况下创建一个新 <code>FileReader</code>。</p>
+<h3 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h3><p>文件字符输入流，只能读取普通文本。读取文本内容时，比较方便，快捷。</p>
+<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><p><code>FileReader(String fileName)</code>：构造方法， 在给定从中读取数据的文件名的情况下创建一个新 <code>FileReader</code>。</p>
 <p>​    抛出：<code>FileNotFoundException</code> - 如果指定文件不存在，或者它是一个目录，而不是一个常规文件，抑或因为其他某些原因而无法打开进行读取。</p>
 <p><code>int read()</code>：读取单个字符。</p>
 <p>​    返回：读取的字符，如果已到达流的末尾，则返回 -1</p>
@@ -1044,8 +1044,8 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h2><p>文件字符输出流。写。只能输出普通文本。</p>
-<h3 id="常用方法：-2"><a href="#常用方法：-2" class="headerlink" title="常用方法："></a>常用方法：</h3><p><code>FileWriter(File file)</code>：构造方法，根据给定的 File 对象构造一个 FileWriter 对象。</p>
+<h3 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h3><p>文件字符输出流。写。只能输出普通文本。</p>
+<h4 id="常用方法：-2"><a href="#常用方法：-2" class="headerlink" title="常用方法："></a>常用方法：</h4><p><code>FileWriter(File file)</code>：构造方法，根据给定的 File 对象构造一个 FileWriter 对象。</p>
 <p>​    抛出：<code>IOException</code> - 如果该文件存在，但它是一个目录，而不是一个常规文件；或者该文件不存在，但无法创建它；抑或因为其他某些原因而无法打开它</p>
 <p><code>void write(int c)</code>： 写入单个字符。</p>
 <p>​    抛出：<code>IOException</code> - 如果发生 I/O 错误</p>
@@ -1096,7 +1096,7 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="普通文本文件复制"><a href="#普通文本文件复制" class="headerlink" title="普通文本文件复制"></a>普通文本文件复制</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
+<h4 id="普通文本文件复制"><a href="#普通文本文件复制" class="headerlink" title="普通文本文件复制"></a>普通文本文件复制</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileNotFoundException<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileReader<span class="token punctuation">;</span>
@@ -1149,8 +1149,8 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h1><h2 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h2><p> 带有缓冲区的字符输入流。使用这个流的时候不需要自定义char数组，或者说不需要自定义byte数组。自带缓冲。</p>
-<h3 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h3><p><code>BufferedReader(Reader in)</code>： 构造方法，创建一个使用默认大小输入缓冲区的缓冲字符输入流。</p>
+<h2 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h2><h3 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h3><p> 带有缓冲区的字符输入流。使用这个流的时候不需要自定义char数组，或者说不需要自定义byte数组。自带缓冲。</p>
+<h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><p><code>BufferedReader(Reader in)</code>： 构造方法，创建一个使用默认大小输入缓冲区的缓冲字符输入流。</p>
 <p>​    参数：<code>in</code> - 一个 Reader</p>
 <p><code>String readLine()</code>： 读取一个文本行。通过下列字符之一即可认为某行已终止：换行 (‘\n’)、回车 (‘\r’) 或回车后直接跟着换行。</p>
 <p>​    返回：包含该行内容的字符串，不包含任何行终止符，如果已到达流末尾，则返回 null</p>
@@ -1191,7 +1191,7 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="转换流转换"><a href="#转换流转换" class="headerlink" title="转换流转换"></a>转换流转换</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
+<h4 id="转换流转换"><a href="#转换流转换" class="headerlink" title="转换流转换"></a>转换流转换</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedReader<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
@@ -1229,7 +1229,7 @@ FileInputStream类的其它常用方法：
 <span class="token punctuation">}</span>
 ```
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h2><p>BufferedWriter：带有缓冲的字符输出流。<br>OutputStreamWriter：转换流</p>
+<h3 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h3><p>BufferedWriter：带有缓冲的字符输出流。<br>OutputStreamWriter：转换流</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedWriter<span class="token punctuation">;</span>
@@ -1254,7 +1254,7 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h1><h2 id="DataOutputStream"><a href="#DataOutputStream" class="headerlink" title="DataOutputStream"></a>DataOutputStream</h2><p><code>java.io.DataOutputStream</code>：数据字节输字节输出流。</p>
+<h2 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h2><h3 id="DataOutputStream"><a href="#DataOutputStream" class="headerlink" title="DataOutputStream"></a>DataOutputStream</h3><p><code>java.io.DataOutputStream</code>：数据字节输字节输出流。</p>
 <p>这个流可以将数据连同数据的类型一并写入文件。</p>
 <p>注意：这个文件不是普通文本文档。（这个文件使用记事本打不开。）</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
@@ -1293,7 +1293,7 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="DataInputStream"><a href="#DataInputStream" class="headerlink" title="DataInputStream"></a>DataInputStream</h2><p>数据字节输入流。</p>
+<h3 id="DataInputStream"><a href="#DataInputStream" class="headerlink" title="DataInputStream"></a>DataInputStream</h3><p>数据字节输入流。</p>
 <p>DataOutputStream写的文件，只能使用DataInputStream去读。并且读的时候你需要提前知道写入的顺序。</p>
 <p>读的顺序需要和写的顺序一致。才可以正常取出数据。</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
@@ -1328,7 +1328,7 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="标准输出流"><a href="#标准输出流" class="headerlink" title="标准输出流"></a>标准输出流</h1><h2 id="PrintStream"><a href="#PrintStream" class="headerlink" title="PrintStream"></a>PrintStream</h2><p><code>java.io.PrintStream</code>：标准的字节输出流。默认输出到控制台。</p>
+<h2 id="标准输出流"><a href="#标准输出流" class="headerlink" title="标准输出流"></a>标准输出流</h2><h3 id="PrintStream"><a href="#PrintStream" class="headerlink" title="PrintStream"></a>PrintStream</h3><p><code>java.io.PrintStream</code>：标准的字节输出流。默认输出到控制台。</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileOutputStream<span class="token punctuation">;</span>
@@ -1362,9 +1362,9 @@ FileInputStream类的其它常用方法：
 <blockquote>
 <p><em>注意</em>：标准输出流不需要手动close()关闭。</p>
 </blockquote>
-<h1 id="对象流"><a href="#对象流" class="headerlink" title="对象流"></a>对象流</h1><p><code>ObjectInputStream</code></p>
+<h2 id="对象流"><a href="#对象流" class="headerlink" title="对象流"></a>对象流</h2><p><code>ObjectInputStream</code></p>
 <p><code>ObjectOutputStream</code></p>
-<h2 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h2><p>序列化：将类保存到硬盘</p>
+<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><p>序列化：将类保存到硬盘</p>
 <p>反序列化： 将序列化后的类还原成java类</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>io<span class="token punctuation">;</span>
 
@@ -1451,7 +1451,7 @@ FileInputStream类的其它常用方法：
 
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="一次性序列化多个对象"><a href="#一次性序列化多个对象" class="headerlink" title="一次性序列化多个对象"></a>一次性序列化多个对象</h2><p>一次序列化多个对象，可以将对象放到集合当中，序列化集合。</p>
+<h3 id="一次性序列化多个对象"><a href="#一次性序列化多个对象" class="headerlink" title="一次性序列化多个对象"></a>一次性序列化多个对象</h3><p>一次序列化多个对象，可以将对象放到集合当中，序列化集合。</p>
 <blockquote>
 <p>提示： 参与序列化的ArrayList集合以及集合中的元素User都需要实现 java.io.Serializable接口。</p>
 </blockquote>
@@ -1503,13 +1503,12 @@ FileInputStream类的其它常用方法：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="transient关键字"><a href="#transient关键字" class="headerlink" title="transient关键字"></a>transient关键字</h2><p>在实际开发过程中，我们常常会遇到这样的问题，这个类的有些属性需要序列化，而其他属性不需要被序列化，打个比方，如果一个用户有一些敏感信息（如密码，银行卡号等），为了安全起见，不希望在网络操作（主要涉及到序列化操作，本地序列化缓存也适用）中被传输，这些信息对应的变量就可以加上transient关键字。换句话说，这个字段的生命周期仅存于调用者的内存中而不会写到磁盘里持久化。</p>
+<h3 id="transient关键字"><a href="#transient关键字" class="headerlink" title="transient关键字"></a>transient关键字</h3><p>在实际开发过程中，我们常常会遇到这样的问题，这个类的有些属性需要序列化，而其他属性不需要被序列化，打个比方，如果一个用户有一些敏感信息（如密码，银行卡号等），为了安全起见，不希望在网络操作（主要涉及到序列化操作，本地序列化缓存也适用）中被传输，这些信息对应的变量就可以加上transient关键字。换句话说，这个字段的生命周期仅存于调用者的内存中而不会写到磁盘里持久化。</p>
 <p>   总之，java 的transient关键字为我们提供了便利，你只需要实现Serilizable接口，将不需要序列化的属性前添加关键字transient，序列化对象的时候，这个属性就不会序列化到指定的目的地中。</p>
 <p>1）一旦变量被transient修饰，变量将不再是对象持久化的一部分，该变量内容在序列化后无法获得访问。</p>
 <p>2）transient关键字只能修饰变量，而不能修饰方法和类。注意，本地变量是不能被transient关键字修饰的。变量如果是用户自定义类变量，则该类需要实现Serializable接口。</p>
 <p>3）被transient关键字修饰的变量不再能被序列化，一个静态变量不管是否被transient修饰，均不能被序列化。</p>
-<h2 id="序列化版号"><a href="#序列化版号" class="headerlink" title="序列化版号"></a>序列化版号</h2><p><strong><em>序列化版本号有什么用呢？</em></strong></p>
-<p>​    当类的原代码发生变动，通过原来的序列化文件进行反序列化，则会报错：</p>
+<h3 id="序列化版号"><a href="#序列化版号" class="headerlink" title="序列化版号"></a>序列化版号</h3><h4 id="序列化版本号有什么用呢？"><a href="#序列化版本号有什么用呢？" class="headerlink" title="序列化版本号有什么用呢？"></a><strong><em>序列化版本号有什么用呢？</em></strong></h4><p>​    当类的原代码发生变动，通过原来的序列化文件进行反序列化，则会报错：</p>
 <p>​    <code>java.io.InvalidClassException:</code><br>​        <code>com.bjpowernode.java.bean.Student;</code><br>​        <code>local class incompatible:</code><br>​            <code>stream classdesc serialVersionUID = -684255398724514298（改动后）,</code><br>​            <code>local class serialVersionUID = -3463447116624555755（改动前）</code></p>
 <p>java语言中是采用什么机制来区分类的？<br>    第一：首先通过类名进行比对，如果类名不一样，肯定不是同一个类。<br>    第二：如果类名一样，再怎么进行类的区别？靠序列化版本号进行区分。</p>
 <p>小鹏编写了一个类：<code>com.bjpowernode.java.bean.Student implements Serializable</code><br>胡浪编写了一个类：<code>com.bjpowernode.java.bean.Student implements Serializable</code><br>不同的人编写了同一个类，但“这两个类确实不是同一个类”。这个时候序列化版本就起上作用了。<br>对于java虚拟机来说，java虚拟机是可以区分开这两个类的，因为这两个类都实现了Serializable接口，<br>都有默认的序列化版本号，他们的序列化版本号不一样。所以区分开了。（这是自动生成序列化版本号的好处）</p>
@@ -2515,7 +2514,7 @@ FileInputStream类的其它常用方法：
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">34.2k</span>
+                        class="white-color">34.1k</span>
             
             
             
@@ -2796,13 +2795,13 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 <script type="text/javascript">
     //只在桌面版网页启用特效
     var windowWidth = $(window).width();

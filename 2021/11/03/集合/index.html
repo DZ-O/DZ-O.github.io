@@ -173,9 +173,9 @@
 })()
  </script><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="BeiKJie" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="BeiKJie" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -676,7 +676,7 @@
 <li>Properties: 是线程安全的，并且 key 和value只能存储字符串String。</li>
 <li>TreeMap: 底层是二叉树。TreeMap集合的 key可以自动按照大小顺序排序。</li>
 </ul>
-<h1 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h1><h2 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*关于java.util.Collection接口中常用的方法。
+<h2 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h2><h3 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*关于java.util.Collection接口中常用的方法。
     1、Collection中能存放什么元素？
         没有使用“泛型”之前，Collection中可以存储Object的所有子类型。
         使用了“泛型”之后，Collection中只能存储某个具体的类型。
@@ -754,7 +754,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Iterator迭代器"><a href="#Iterator迭代器" class="headerlink" title="Iterator迭代器"></a>Iterator迭代器</h2><p><strong>迭代</strong>∶即Collection集合元素的通用获取方式。在取元素之前先要判断集合中有没有元素,如果有，就把这个元素取出来，继续在判断，如果还有就再取出出来。一直把集合中的所有元素全部取出。这种取出方式专业术语称为迭代。</p>
+<h3 id="Iterator迭代器"><a href="#Iterator迭代器" class="headerlink" title="Iterator迭代器"></a>Iterator迭代器</h3><p><strong>迭代</strong>∶即Collection集合元素的通用获取方式。在取元素之前先要判断集合中有没有元素,如果有，就把这个元素取出来，继续在判断，如果还有就再取出出来。一直把集合中的所有元素全部取出。这种取出方式专业术语称为迭代。</p>
 <p>在程序开发中，经常需要遍历集合中的所有元素。针对这种需求，JDK专门提供了一个接口<code>java.util.Iterator</code>。Iterator 接口也是Java集合中的一员，但它与Collection 、Map接口有所不同，Collection,接口与Map接口主要用于存储元素，而Iterator主要用于迭代访问(即遍历) Collection 中的元素，因此Iterator对象也被称为迭代器。</p>
 <p>想要遍历Collection集合，那么就要获取该集合迭代器完成迭代操作，下面介绍一下获取迭代器的方法︰</p>
 <p><code>public Iterator iterator():获取集合对应的迭代器，用来遍历集合中的元素的。</code></p>
@@ -879,7 +879,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h1><p>List集合存储元素特点：有序可重复</p>
+<h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><p>List集合存储元素特点：有序可重复</p>
 <p>​    有序：List集合中的元素有下标。</p>
 <p>​    从0开始，以1递增。</p>
 <p>​    可重复：存储一个1，还可以再存储1.</p>
@@ -951,7 +951,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h1><blockquote>
+<h2 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h2><blockquote>
 <ol>
 <li><p>默认初始化容量10（底层先创建了一个长度为0的数组，当添加第一个元素的时候，初始化容量10。）</p>
 </li>
@@ -1008,7 +1008,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="LinkedList集合"><a href="#LinkedList集合" class="headerlink" title="LinkedList集合"></a><strong>LinkedList集合</strong></h1><p>LinkedList集合的特点∶</p>
+<h2 id="LinkedList集合"><a href="#LinkedList集合" class="headerlink" title="LinkedList集合"></a><strong>LinkedList集合</strong></h2><p>LinkedList集合的特点∶</p>
 <ol>
 <li><p>底层是一个链表结构;查询慢,增删快</p>
 </li>
@@ -1119,7 +1119,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="Vector集合"><a href="#Vector集合" class="headerlink" title="Vector集合"></a>Vector集合</h1><ol>
+<h2 id="Vector集合"><a href="#Vector集合" class="headerlink" title="Vector集合"></a>Vector集合</h2><ol>
 <li><p>底层也是一个数组。</p>
 </li>
 <li><p>初始化容量：10</p>
@@ -1178,7 +1178,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="HashSet集合"><a href="#HashSet集合" class="headerlink" title="HashSet集合"></a>HashSet集合</h1><p>HashSet集合在new的时候,底层实际上new了一个HashMap集合。向Hashset集合中存储元紊,实际上是存储到HashMap集合中了。</p>
+<h2 id="HashSet集合"><a href="#HashSet集合" class="headerlink" title="HashSet集合"></a>HashSet集合</h2><p>HashSet集合在new的时候,底层实际上new了一个HashMap集合。向Hashset集合中存储元紊,实际上是存储到HashMap集合中了。</p>
 <p>HashMap集合是一个哈希表数据结构Hashset集合初始化容量16</p>
 <p>初始化容量建议是2的倍数。</p>
 <p>扩容: 扩容之后是原容量2倍。</p>
@@ -1223,13 +1223,13 @@ HashSet集合：
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h1 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h1><ol>
+<h2 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h2><ol>
 <li>Map集合和Collection集合没有关系。</li>
 <li>Map集合以key和value的这种键值对的方式存储元素。</li>
 <li>key和value都是存储java对象的内存地址。</li>
 <li>所有Map集合的key特点:无序不可重复的。Map集合的key和Set集合存储元素特点相同。</li>
 </ol>
-<h2 id="Map常用方法"><a href="#Map常用方法" class="headerlink" title="Map常用方法"></a>Map常用方法</h2><p>​    <code>V put(K key, V value)</code> 向Map集合中添加键值对</p>
+<h3 id="Map常用方法"><a href="#Map常用方法" class="headerlink" title="Map常用方法"></a>Map常用方法</h3><p>​    <code>V put(K key, V value)</code> 向Map集合中添加键值对</p>
 <p>​    <code>V get(Object key)</code> 通过key获取value</p>
 <p>​    <code>void clear()</code>   清空Map集合</p>
 <p>​    <code>boolean containsKey(Object key)</code> 判断Map中是否包含某个key</p>
@@ -1336,7 +1336,7 @@ HashSet集合：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Map集合遍历"><a href="#Map集合遍历" class="headerlink" title="Map集合遍历"></a>Map集合遍历</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapTest02</span> <span class="token punctuation">{</span>
+<h3 id="Map集合遍历"><a href="#Map集合遍历" class="headerlink" title="Map集合遍历"></a>Map集合遍历</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapTest02</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
         <span class="token comment" spellcheck="true">// 第一种方式：获取所有的key，通过遍历key，来遍历value</span>
@@ -1386,7 +1386,7 @@ HashSet集合：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="HashMap集合"><a href="#HashMap集合" class="headerlink" title="HashMap集合"></a>HashMap集合</h1><p>HashMap集合：</p>
+<h2 id="HashMap集合"><a href="#HashMap集合" class="headerlink" title="HashMap集合"></a>HashMap集合</h2><p>HashMap集合：</p>
 <ol>
 <li><p>HashMap集合底层是哈希表/散列表的数据结构。</p>
 </li>
@@ -1503,7 +1503,7 @@ HashSet集合：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h1><p><strong><em>Hashtable的key可以为null吗？</em></strong></p>
+<h2 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h2><p><strong><em>Hashtable的key可以为null吗？</em></strong></p>
 <p>​    Hashtable的key和value都是不能为null的。</p>
 <p>​    HashMap集合的key和value都是可以为null的。</p>
 <p>Hashtable方法都带有synchronized：线程安全的。线程安全有其它的方案，这个Hashtable对线程的处理导致效率较低，使用较少了。</p>
@@ -1520,7 +1520,7 @@ HashSet集合：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="Properties属性类"><a href="#Properties属性类" class="headerlink" title="Properties属性类"></a>Properties属性类</h1><p>Properties是一个Map集合，继承Hashtable，Properties的key和value都是String类型。</p>
+<h2 id="Properties属性类"><a href="#Properties属性类" class="headerlink" title="Properties属性类"></a>Properties属性类</h2><p>Properties是一个Map集合，继承Hashtable，Properties的key和value都是String类型。</p>
 <p>Properties被称为属性类对象。</p>
 <p>Properties是线程安全的。</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PropertiesTest01</span> <span class="token punctuation">{</span>
@@ -1549,7 +1549,7 @@ HashSet集合：
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="TreeSet集合"><a href="#TreeSet集合" class="headerlink" title="TreeSet集合"></a>TreeSet集合</h1><p>TreeSet集合存储元素特点：</p>
+<h2 id="TreeSet集合"><a href="#TreeSet集合" class="headerlink" title="TreeSet集合"></a>TreeSet集合</h2><p>TreeSet集合存储元素特点：</p>
 <ol>
 <li><p>无序不可重复的，但是存储的元素可以自动按照大小顺序排序！称为：可排序集合。</p>
 </li>
@@ -1771,7 +1771,7 @@ class WuGuiComparator implements Comparator&lt;WuGui> {
 <p>​    如果比较规则有多个，并且需要多个比较规则之间频繁切换，建议使用Comparator接口。</p>
 <p>​    Comparator接口的设计符合<em>OCP</em>原则。</p>
 </blockquote>
-<h1 id="Collections集合工具类"><a href="#Collections集合工具类" class="headerlink" title="Collections集合工具类"></a>Collections集合工具类</h1><p><code>java.util.Collection</code> 集合接口</p>
+<h2 id="Collections集合工具类"><a href="#Collections集合工具类" class="headerlink" title="Collections集合工具类"></a>Collections集合工具类</h2><p><code>java.util.Collection</code> 集合接口</p>
 <p><code>java.util.Collections</code> 集合工具类，方便集合的操作。</p>
 <h3 id="常用方法：-1"><a href="#常用方法：-1" class="headerlink" title="常用方法："></a>常用方法：</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>javase<span class="token punctuation">.</span>collection<span class="token punctuation">;</span>
 
@@ -2717,7 +2717,7 @@ java.util.Collections 集合工具类，方便集合的操作。
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">34.2k</span>
+                        class="white-color">34.1k</span>
             
             
             
@@ -2998,13 +2998,13 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 <script type="text/javascript">
     //只在桌面版网页启用特效
     var windowWidth = $(window).width();
