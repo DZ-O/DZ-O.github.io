@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="基于Django的个人博客, python,Django,java,Heox,Matery,后端">
+    <meta name="keywords" content="获取类路径下文件的绝对路径、资源绑定器, python,Django,java,Heox,Matery,后端">
     <meta name="description" content="闲里偷忙第一人，懒癌重度患者">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基于Django的个人博客 | BeiKJie</title>
+    <title>获取类路径下文件的绝对路径、资源绑定器 | BeiKJie</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -444,7 +444,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基于Django的个人博客</h1>
+                    <h1 class="description center-align post-title">获取类路径下文件的绝对路径、资源绑定器</h1>
                 </div>
             </div>
         </div>
@@ -563,12 +563,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Django/">
-                                <span class="chip bg-color">Django</span>
-                            </a>
-                        
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -579,8 +575,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                后端开发
+                            <a href="/categories/JavaSE/" class="post-category">
+                                JavaSE
                             </a>
                         
                     </div>
@@ -592,7 +588,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-05
+                    2021-11-19
                 </div>
                 
 
@@ -601,14 +597,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    974
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -628,124 +624,109 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基于Django的个人博客项目使用"><a href="#基于Django的个人博客项目使用" class="headerlink" title="基于Django的个人博客项目使用"></a>基于Django的个人博客项目使用</h1><blockquote>
-<p> 基于Django的个人博客，前端方面比较普通，没有用什么框架，所以看着比较随意。</p>
-<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/DZ-O/DjangoBlog">https://github.com/DZ-O/DjangoBlog</a></p>
-</blockquote>
-<h2 id="模型层"><a href="#模型层" class="headerlink" title="模型层"></a>模型层</h2><p>​    由于，Django自带的orm语法，使得我们可以不用书写SQL语句也能操作数据库，并且不用事先创建好数据库，只需要在项目应用目录下的models.py中写下每张表所对用的类，而类中的属性则是表中的字段。可根据需要自行修改，代码：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> time
-
-<span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
-
-
-<span class="token comment" spellcheck="true"># Create your models here.</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Article</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token comment" spellcheck="true"># 文章表</span>
-    title <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">64</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'文章标题'</span><span class="token punctuation">)</span>
-    content <span class="token operator">=</span> models<span class="token punctuation">.</span>TextField<span class="token punctuation">(</span>verbose_name<span class="token operator">=</span><span class="token string">'文章内容'</span><span class="token punctuation">)</span>
-
-    create_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>verbose_name<span class="token operator">=</span><span class="token string">'创建时间'</span><span class="token punctuation">,</span> auto_now_add<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    revise_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>verbose_name<span class="token operator">=</span><span class="token string">'修改时间'</span><span class="token punctuation">,</span> auto_now<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    like_count <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span><span class="token string">'点赞数'</span><span class="token punctuation">)</span>
-    article_types <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>to<span class="token operator">=</span><span class="token string">'ArticleType'</span><span class="token punctuation">)</span>
-    introduction <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">250</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span><span class="token string">'文章简介'</span><span class="token punctuation">,</span>default<span class="token operator">=</span><span class="token string">'这是一段简介'</span><span class="token punctuation">)</span>
-
-    <span class="token comment" spellcheck="true"># 文章与文章标签多对多关系通过第三张表Article2ArticleTag建立链接</span>
-    <span class="token comment" spellcheck="true"># 这是半自动创建多对多表关系方式，方便拓展。第三张表的类需要自己手动写。</span>
-    <span class="token comment" spellcheck="true"># 也可以直接使用，自动多对多关系，就不需要手动创建第三张表</span>
-    article_Tag <span class="token operator">=</span> models<span class="token punctuation">.</span>ManyToManyField<span class="token punctuation">(</span>to<span class="token operator">=</span><span class="token string">'ArticleTag'</span><span class="token punctuation">,</span>
-                                         through<span class="token operator">=</span><span class="token string">'Article2ArticleTag'</span><span class="token punctuation">,</span>
-                                         through_fields<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'article'</span><span class="token punctuation">,</span> <span class="token string">'article_tag'</span><span class="token punctuation">)</span>
-                                         <span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 文章分类表</span>
-<span class="token keyword">class</span> <span class="token class-name">ArticleType</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    types <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'文章分类'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 日常、技术、分享.....</span>
-
-<span class="token comment" spellcheck="true"># 文章标签表</span>
-<span class="token keyword">class</span> <span class="token class-name">ArticleTag</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    tag <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'文章标签'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># java、pyhon.....</span>
-
-<span class="token comment" spellcheck="true"># 文章留言表</span>
-<span class="token keyword">class</span> <span class="token class-name">Message</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    user <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'留言人'</span><span class="token punctuation">)</span>
-    message_content <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'留言'</span><span class="token punctuation">)</span>
-    message_create_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>verbose_name<span class="token operator">=</span><span class="token string">'创建时间'</span><span class="token punctuation">,</span> auto_now_add<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    article <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>to<span class="token operator">=</span><span class="token string">'Article'</span><span class="token punctuation">)</span>
-
-
-<span class="token comment" spellcheck="true"># 文章与文章标签多对多关系表</span>
-<span class="token keyword">class</span> <span class="token class-name">Article2ArticleTag</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    article <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>to<span class="token operator">=</span><span class="token string">'Article'</span><span class="token punctuation">)</span>
-    article_tag <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>to<span class="token operator">=</span><span class="token string">'ArticleTag'</span><span class="token punctuation">)</span>
-
-
-<span class="token comment" spellcheck="true"># 显示在首页的个人目标，可以不写，在首页的页面写死</span>
-<span class="token keyword">class</span> <span class="token class-name">Target</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    target <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'目标'</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 显示在首页的文本句子，可以不写，在首页的页面写死</span>
-<span class="token keyword">class</span> <span class="token class-name">Text</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    text <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'文本'</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 首页留言表，这里偷了懒，直接新起了一个表，可以修改文章留言表，就不用创建这张表</span>
-<span class="token keyword">class</span> <span class="token class-name">HomeMessage</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    home_message <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'首页留言'</span><span class="token punctuation">)</span>
-    home_article <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'作者'</span><span class="token punctuation">)</span>
-    creat_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>verbose_name<span class="token operator">=</span><span class="token string">'留言时间'</span><span class="token punctuation">,</span> auto_now_add<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>​    表模型文件创建完毕后，此时的系统是没有对应的数据库的，需要我们只需数据库迁移命令，在此之前，记得修改项目的<code>settings.py</code>文件中的<code>DATABASES</code>中的内容为自己的数据库配置，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211006004633739.png" alt="image-20211006004633739"></p>
-<p>​    如果数据库使用的是MySQL则在项目中的任意<code>__init.py__</code>文件下加入如下内容,:</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pymysql
-pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>​    项目根目录下的控制台执行数据库迁移命令：</p>
+                <h2 id="获取类路径下文件的绝对路径"><a href="#获取类路径下文件的绝对路径" class="headerlink" title="获取类路径下文件的绝对路径"></a>获取类路径下文件的绝对路径</h2><p>怎么获取一个文件的绝对路径。以下讲解的这种方式是通用的。但前提是：文件需要在类路径下。才能用这种方式。</p>
+<p>假设文件的结构如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211119175736627.png" alt="目录结构"></p>
+<p>在IDEA中使用普通的相对路径获取<code>classinfo2.properties</code>如下：`FileReader reader = new FileReader(“chapter25/classinfo2.properties”);</p>
+<p>这种方式的路径缺点是：移植性差，在IDEA中默认的当前路径是project的根。这个代码假设离开了IDEA，换到了其它位置，可能当前路径就不是project的根了，这时这个路径就无效了。</p>
+<p>接下来说一种比较通用的一种路径。即使代码换位置了，这样编写仍然是通用的。</p>
 <blockquote>
-<p>python <a target="_blank" rel="noopener" href="http://manage.py/">manage.py</a> makemigrations</p>
-<p>python <a target="_blank" rel="noopener" href="http://manage.py/">manage.py</a> migrate</p>
+<p>注意：使用以下通用方式的前提是：这个文件必须在类路径下。</p>
 </blockquote>
-<p>​    执行完毕后你的数据库下将会出现如下几张表：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211006004519973.png" alt="image-20211006004519973"></p>
-<h2 id="用户登录及后台管理问题"><a href="#用户登录及后台管理问题" class="headerlink" title="用户登录及后台管理问题"></a>用户登录及后台管理问题</h2><blockquote>
-<p>这里有人就发现，我们模型层并没有创建用户类，怎么实现登陆到后台，对自己文章进行发布和管理呢？</p>
-</blockquote>
-<p>​    在这里我们使用Django的Auth模块，他会自动帮我们创建user表。而这个user表中的用户就是Django默认自带的路由<code>admin/</code>登录页面中所需要验证的用户，其中user表中的超级用户既可以登录到admin后台。</p>
-<p>超级用户创建命令：</p>
-<blockquote>
-<p>python3 manage.py createsuperuser</p>
-</blockquote>
-<p>​    而这个后台页面，是Django自动生成的，在这里我们可对数据库进行可视化操作。前提是在配置文件中将数据库注册进去。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211006005526886.png" alt="image-20211006005526886"></p>
-<p>​    当然，这个后台页面肯定不是我们需要的，这里我自己手动搭建了一个后台页面，老样子界面依旧简陋：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211006005952683.png" alt="image-20211006005952683"></p>
-<p>​    在这里，就能够对文章进行发布及管理等操作了。</p>
-<p>​    当然登录后台的url路由地址也不是使用的Django自动生成admin页面，这里我也自己新建了一个页面：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211006010313354.png" alt="image-20211006010313354"></p>
-<p>​    验证码这一块，我并没有使用画图模块之类的，偷了个懒，使用的是smtplib模块，使用QQ邮箱发送随机验证码邮件到手上，修改<code>app01/views.py</code>下大概314行左右代码：</p>
-<pre class="line-numbers language-python"><code class="language-python"> code <span class="token operator">+=</span> tmp
-    <span class="token comment" spellcheck="true"># 随机验证码在登陆的视图函数里面需要用到 要比对 所以要找地方存起来并且其他视图函数也能拿到</span>
-    request<span class="token punctuation">.</span>session<span class="token punctuation">[</span><span class="token string">'code'</span><span class="token punctuation">]</span> <span class="token operator">=</span> code
-    email_from <span class="token operator">=</span> <span class="token string">"@qq.com"</span>  <span class="token comment" spellcheck="true"># 改为自己的发送邮箱</span>
-    email_to <span class="token operator">=</span> <span class="token string">"@qq.com"</span>  <span class="token comment" spellcheck="true"># 接收邮箱</span>
-    hostname <span class="token operator">=</span> <span class="token string">"smtp.qq.com"</span>  <span class="token comment" spellcheck="true"># 不变，QQ邮箱的smtp服务器地址</span>
-    login <span class="token operator">=</span> <span class="token string">"@qq.com"</span>  <span class="token comment" spellcheck="true"># 发送邮箱的用户名</span>
-    password <span class="token operator">=</span> <span class="token string">""</span>  <span class="token comment" spellcheck="true"># 发送邮箱的密码，即开启smtp服务得到的授权码。注：不是QQ密码。</span>
-    subject <span class="token operator">=</span> <span class="token string">"贝克街验证码"</span>  <span class="token comment" spellcheck="true"># 邮件主题</span>
-    text <span class="token operator">=</span> <span class="token string">"贝克街验证码:"</span> <span class="token operator">+</span> code  <span class="token comment" spellcheck="true"># 邮件正文内容</span>
+<p><em>什么类路径下？</em></p>
+<p>​    方在src下的都是类路径下。【记住它】src是类的根路径。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>reflect<span class="token punctuation">;</span>
 
-    smtp <span class="token operator">=</span> SMTP_SSL<span class="token punctuation">(</span>hostname<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># SMTP_SSL默认使用465端口</span>
-    smtp<span class="token punctuation">.</span>login<span class="token punctuation">(</span>login<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileReader<span class="token punctuation">;</span>
 
-    msg <span class="token operator">=</span> MIMEText<span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token string">"plain"</span><span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">)</span>
-    msg<span class="token punctuation">[</span><span class="token string">"Subject"</span><span class="token punctuation">]</span> <span class="token operator">=</span> Header<span class="token punctuation">(</span>subject<span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">)</span>
-    msg<span class="token punctuation">[</span><span class="token string">"from"</span><span class="token punctuation">]</span> <span class="token operator">=</span> email_from
-    msg<span class="token punctuation">[</span><span class="token string">"to"</span><span class="token punctuation">]</span> <span class="token operator">=</span> email_to
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AboutPath</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
 
-    smtp<span class="token punctuation">.</span>sendmail<span class="token punctuation">(</span>email_from<span class="token punctuation">,</span> email_to<span class="token punctuation">,</span> msg<span class="token punctuation">.</span>as_string<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    smtp<span class="token punctuation">.</span>quit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        String path <span class="token operator">=</span> Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getContextClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"classinfo2.properties"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这种方式获取文件绝对路径是通用的。</span>
+
+        <span class="token comment" spellcheck="true">// 采用以上的代码可以拿到一个文件的绝对路径。</span>
+        <span class="token comment" spellcheck="true">// /C:/Users/Administrator/IdeaProjects/javase/out/production/chapter25/classinfo2.properties</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 获取db.properties文件的绝对路径（从类的根路径下作为起点开始）</span>
+        String path2 <span class="token operator">=</span> Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getContextClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"com/bjpowernode/java/bean/db.properties"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>path2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="静态资源收集"><a href="#静态资源收集" class="headerlink" title="静态资源收集"></a>静态资源收集</h2><p>​    项目部署在服务器之前，记得执行项目的静态资源文件收集操作，否则可能会出现静态资源无法访问现象，参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/BGONE/article/details/91410220">django项目收集静态文件</a></p>
+<p> 解释：<br>            <code>Thread.currentThread()</code> 当前线程对象<br>            <code>getContextClassLoader()</code> 是线程对象的方法，可以获取到当前线程的类加载器对象。<br>            <code>getResource()</code> 【获取资源】这是类加载器对象的方法，当前线程的类加载器默认从类的根路径下加载资源。</p>
+<h2 id="直接以流的形式返回"><a href="#直接以流的形式返回" class="headerlink" title="直接以流的形式返回"></a>直接以流的形式返回</h2><p><code>Thread.currentThread().getContextClassLoader().getResourceAsStream(路径)</code>方法，可以直接返回一个流，其中<code>getResourceAsStream</code>的路劲也是默认以src为根路径</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>reflect<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileReader<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>InputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Properties<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">IoPropertiesTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">// 获取一个文件的绝对路径了！！！！！</span>
+        <span class="token comment" spellcheck="true">/*String path = Thread.currentThread().getContextClassLoader()
+                .getResource("classinfo2.properties").getPath();
+        FileReader reader = new FileReader(path);*/</span>
+
+        <span class="token comment" spellcheck="true">// 直接以流的形式返回。</span>
+        InputStream reader <span class="token operator">=</span> Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getContextClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">"classinfo2.properties"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Properties pro <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pro<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>reader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        reader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 通过key获取value</span>
+        String className <span class="token operator">=</span> pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"className"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>className<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="资源绑定器"><a href="#资源绑定器" class="headerlink" title="资源绑定器"></a>资源绑定器</h2><p><code>java.util</code>包下提供了一个资源绑定器，便于获取属性配置文件中的内容。使用以下这种方式的时候，属性配置文件xxx.properties必须放到类路径下。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bjpowernode<span class="token punctuation">.</span>java<span class="token punctuation">.</span>reflect<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ResourceBundle<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ResourceBundleTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+
+        <span class="token comment" spellcheck="true">//ResourceBundle bundle = ResourceBundle.getBundle("classinfo2");</span>
+
+        ResourceBundle bundle <span class="token operator">=</span> ResourceBundle<span class="token punctuation">.</span><span class="token function">getBundle</span><span class="token punctuation">(</span><span class="token string">"com/bjpowernode/java/bean/db"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        String className <span class="token operator">=</span> bundle<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"className"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>className<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>资源绑定器，只能绑定<code>xxx.properties</code>文件。并且这个文件必须在类路径下。文件扩展名也必须是properties并且在写路径的时候，路径后面的扩展名不能写。</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><pre class="line-numbers language-java"><code class="language-java">String path <span class="token operator">=</span> Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getContextClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"写相对路径，但是这个相对路径从src出发开始找"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Java"><code class="language-Java">String path = Thread.currentThread().getContextClassLoader().getResource("abc").getPath();  //必须保证src下有abc文件。
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">String path <span class="token operator">=</span> Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getContextClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"a/db"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//必须保证src下有a目录，a目录下有db文件。</span>
+String path <span class="token operator">=</span> Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getContextClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"com/bjpowernode/test.properties"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token comment" spellcheck="true">//必须保证src下有com目录，com目录下有bjpowernode目录。</span>
+<span class="token comment" spellcheck="true">//bjpowernode目录下有test.properties文件。</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p> 这种方式是为了获取一个文件的绝对路径。（通用方式，不会受到环境移植的影响。）但是该文件要求放在类路径下，换句话说：也就是放到src下面。src下是类的根路径。</p>
+<p>直接以流的形式返回：</p>
+<pre class="line-numbers language-java"><code class="language-java">InputStream in <span class="token operator">=</span> Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getContextClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">"com/bjpowernode/test.properties"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p> <strong><em>IO + Properties，怎么快速绑定属性资源文件？</em></strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//要求：第一这个文件必须在类路径下</span>
+<span class="token comment" spellcheck="true">//第二这个文件必须是以.properties结尾。</span>
+ResourceBundle bundle <span class="token operator">=</span> ResourceBundle<span class="token punctuation">.</span><span class="token function">getBundle</span><span class="token punctuation">(</span><span class="token string">"com/bjpowernode/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String value <span class="token operator">=</span> bundle<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -772,7 +753,7 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://daizhen.top/2021/10/05/DjiangoBlog/">https://daizhen.top/2021/10/05/DjiangoBlog/</a>
+                    <a href="https://daizhen.top/2021/11/19/%E8%8E%B7%E5%8F%96%E7%B1%BB%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/">https://daizhen.top/2021/11/19/%E8%8E%B7%E5%8F%96%E7%B1%BB%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -810,12 +791,8 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Django/">
-                                    <span class="chip bg-color">Django</span>
-                                </a>
-                            
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -1321,24 +1298,24 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/13/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                <a href="/2021/11/19/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1.jpg" class="responsive-img" alt="java面向对象">
+                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/5.jpg" class="responsive-img" alt="类加载器">
                         
-                        <span class="card-title">java面向对象</span>
+                        <span class="card-title">类加载器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java面向对象基础
+                            Java 类加载器基本使用
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
                         </span>
                         <span class="publish-author">
                             
@@ -1367,50 +1344,49 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/05/DjiangoBlog/">
+                <a href="/2021/11/17/java%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/3.jpg" class="responsive-img" alt="基于Django的个人博客">
+                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/4.jpg" class="responsive-img" alt="java反射机制">
                         
-                        <span class="card-title">基于Django的个人博客</span>
+                        <span class="card-title">java反射机制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基于Django的个人博客，前端方面能力有限，所以前端样式比较普通,望包涵
+                            java 反射机制
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                    后端开发
+                            <a href="/categories/JavaSE/" class="post-category">
+                                    JavaSE
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Django/">
-                        <span class="chip bg-color">Django</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E5%8F%8D%E5%B0%84/">
+                        <span class="chip bg-color">反射</span>
                     </a>
                     
                 </div>

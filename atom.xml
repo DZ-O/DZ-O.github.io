@@ -6,7 +6,7 @@
   <link href="https://daizhen.top/atom.xml" rel="self"/>
   
   <link href="https://daizhen.top/"/>
-  <updated>2021-11-17T13:31:02.688Z</updated>
+  <updated>2021-11-19T12:33:17.527Z</updated>
   <id>https://daizhen.top/</id>
   
   <author>
@@ -17,11 +17,92 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>类加载器</title>
+    <link href="https://daizhen.top/2021/11/19/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/"/>
+    <id>https://daizhen.top/2021/11/19/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</id>
+    <published>2021-11-19T12:09:21.000Z</published>
+    <updated>2021-11-19T12:33:17.527Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;什么是类加载器？&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;专门负责加载类的命令/工具。&lt;code&gt;ClassLoader&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JDK中自带了3个类加载器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​   </summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="https://daizhen.top/categories/JavaSE/"/>
+    
+    
+    <category term="Java" scheme="https://daizhen.top/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>获取类路径下文件的绝对路径、资源绑定器</title>
+    <link href="https://daizhen.top/2021/11/19/%E8%8E%B7%E5%8F%96%E7%B1%BB%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/"/>
+    <id>https://daizhen.top/2021/11/19/%E8%8E%B7%E5%8F%96%E7%B1%BB%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/</id>
+    <published>2021-11-19T09:51:13.000Z</published>
+    <updated>2021-11-19T12:17:44.724Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;获取类路径下文件的绝对路径&quot;&gt;&lt;a href=&quot;#获取类路径下文件的绝对路径&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="https://daizhen.top/categories/JavaSE/"/>
+    
+    
+    <category term="Java" scheme="https://daizhen.top/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java反射机制</title>
+    <link href="https://daizhen.top/2021/11/17/java%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/"/>
+    <id>https://daizhen.top/2021/11/17/java%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/</id>
+    <published>2021-11-17T13:43:53.000Z</published>
+    <updated>2021-11-19T14:40:09.877Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;&lt;em&gt;反射机制有什么用？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;​   </summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="https://daizhen.top/categories/JavaSE/"/>
+    
+    
+    <category term="Java" scheme="https://daizhen.top/tags/Java/"/>
+    
+    <category term="反射" scheme="https://daizhen.top/tags/%E5%8F%8D%E5%B0%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>java多线程</title>
     <link href="https://daizhen.top/2021/11/15/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <id>https://daizhen.top/2021/11/15/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</id>
     <published>2021-11-15T15:14:11.000Z</published>
-    <updated>2021-11-17T13:31:02.688Z</updated>
+    <updated>2021-11-17T13:52:01.254Z</updated>
     
     
       
@@ -34,7 +115,7 @@
     
     
     
-    <category term="javaSE" scheme="https://daizhen.top/categories/javaSE/"/>
+    <category term="JavaSE" scheme="https://daizhen.top/categories/JavaSE/"/>
     
     
     <category term="java" scheme="https://daizhen.top/tags/java/"/>
@@ -48,7 +129,7 @@
     <link href="https://daizhen.top/2021/11/14/File%E7%B1%BB/"/>
     <id>https://daizhen.top/2021/11/14/File%E7%B1%BB/</id>
     <published>2021-11-14T09:35:37.000Z</published>
-    <updated>2021-11-17T13:34:04.131Z</updated>
+    <updated>2021-11-17T13:51:50.135Z</updated>
     
     
       
@@ -75,7 +156,7 @@
     <link href="https://daizhen.top/2021/11/13/IO%E6%B5%81/"/>
     <id>https://daizhen.top/2021/11/13/IO%E6%B5%81/</id>
     <published>2021-11-13T08:17:37.000Z</published>
-    <updated>2021-11-17T13:35:54.901Z</updated>
+    <updated>2021-11-17T13:51:56.632Z</updated>
     
     
       
@@ -103,7 +184,7 @@
     <link href="https://daizhen.top/2021/11/03/%E9%9B%86%E5%90%88/"/>
     <id>https://daizhen.top/2021/11/03/%E9%9B%86%E5%90%88/</id>
     <published>2021-11-03T09:59:21.000Z</published>
-    <updated>2021-11-17T13:33:44.049Z</updated>
+    <updated>2021-11-17T13:51:44.352Z</updated>
     
     
       
@@ -130,7 +211,7 @@
     <link href="https://daizhen.top/2021/10/13/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <id>https://daizhen.top/2021/10/13/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</id>
     <published>2021-10-13T13:34:58.000Z</published>
-    <updated>2021-11-17T13:37:04.239Z</updated>
+    <updated>2021-11-17T13:52:10.726Z</updated>
     
     
       
