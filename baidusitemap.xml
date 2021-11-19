@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://daizhen.top/2021/11/17/java%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/</loc>
+    <loc>https://daizhen.top/2021/11/13/IO%E6%B5%81/</loc>
+    <lastmod>2021-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://daizhen.top/2021/11/19/%E8%8E%B7%E5%8F%96%E7%B1%BB%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/</loc>
     <lastmod>2021-11-19</lastmod>
   </url>
   <url>
@@ -9,7 +13,11 @@
     <lastmod>2021-11-19</lastmod>
   </url>
   <url>
-    <loc>https://daizhen.top/2021/11/19/%E8%8E%B7%E5%8F%96%E7%B1%BB%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/</loc>
+    <loc>https://daizhen.top/2021/11/03/%E9%9B%86%E5%90%88/</loc>
+    <lastmod>2021-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://daizhen.top/2021/11/17/java%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/</loc>
     <lastmod>2021-11-19</lastmod>
   </url>
   <url>
@@ -21,15 +29,7 @@
     <lastmod>2021-11-17</lastmod>
   </url>
   <url>
-    <loc>https://daizhen.top/2021/11/13/IO%E6%B5%81/</loc>
-    <lastmod>2021-11-17</lastmod>
-  </url>
-  <url>
     <loc>https://daizhen.top/2021/11/14/File%E7%B1%BB/</loc>
-    <lastmod>2021-11-17</lastmod>
-  </url>
-  <url>
-    <loc>https://daizhen.top/2021/11/03/%E9%9B%86%E5%90%88/</loc>
     <lastmod>2021-11-17</lastmod>
   </url>
   <url>
