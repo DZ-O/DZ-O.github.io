@@ -6,7 +6,7 @@
   <link href="https://daizhen.top/atom.xml" rel="self"/>
   
   <link href="https://daizhen.top/"/>
-  <updated>2021-11-21T08:23:41.850Z</updated>
+  <updated>2021-11-21T13:59:40.637Z</updated>
   <id>https://daizhen.top/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>java网络编程</title>
+    <link href="https://daizhen.top/2021/11/21/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <id>https://daizhen.top/2021/11/21/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</id>
+    <published>2021-11-21T08:29:56.000Z</published>
+    <updated>2021-11-21T13:59:40.637Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;ip&quot;&gt;&lt;a href=&quot;#ip&quot; class=&quot;headerlink&quot; title=&quot;ip&quot;&gt;&lt;/a&gt;ip&lt;/h2&gt;&lt;p&gt;IP 地址是 IP 使用的 32 位或 128 位无符号数字，它是一种低级协议，UDP 和 TCP 协议都是在它的基础上构建的。IP</summary>
+        
+      
+    
+    
+    
+    <category term="网络编程" scheme="https://daizhen.top/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Java" scheme="https://daizhen.top/tags/Java/"/>
+    
+    <category term="Socket" scheme="https://daizhen.top/tags/Socket/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JDBC</title>
     <link href="https://daizhen.top/2021/11/20/JDBC/"/>
     <id>https://daizhen.top/2021/11/20/JDBC/</id>
     <published>2021-11-20T09:40:29.000Z</published>
-    <updated>2021-11-21T08:23:41.850Z</updated>
+    <updated>2021-11-21T08:25:27.684Z</updated>
     
     
       
@@ -34,7 +61,7 @@
     
     
     
-    <category term="JavaSE" scheme="https://daizhen.top/categories/JavaSE/"/>
+    <category term="JDBC" scheme="https://daizhen.top/categories/JDBC/"/>
     
     
     <category term="Java" scheme="https://daizhen.top/tags/Java/"/>
