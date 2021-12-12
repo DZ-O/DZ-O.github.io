@@ -151,20 +151,6 @@
 
   
   <url>
-    <loc>https://daizhen.top/tags/Django/</loc>
-    <lastmod>2021-12-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://daizhen.top/tags/python/</loc>
-    <lastmod>2021-12-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://daizhen.top/tags/Java/</loc>
     <lastmod>2021-12-12</lastmod>
     <changefreq>daily</changefreq>
@@ -179,6 +165,27 @@
   </url>
   
   <url>
+    <loc>https://daizhen.top/tags/Django/</loc>
+    <lastmod>2021-12-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://daizhen.top/tags/python/</loc>
+    <lastmod>2021-12-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://daizhen.top/tags/%E6%B3%A8%E8%A7%A3/</loc>
+    <lastmod>2021-12-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://daizhen.top/tags/Socket/</loc>
     <lastmod>2021-12-12</lastmod>
     <changefreq>daily</changefreq>
@@ -187,13 +194,6 @@
   
   <url>
     <loc>https://daizhen.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2021-12-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://daizhen.top/tags/%E6%B3%A8%E8%A7%A3/</loc>
     <lastmod>2021-12-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -221,13 +221,6 @@
   </url>
   
   <url>
-    <loc>https://daizhen.top/tags/%E9%9B%86%E5%90%88/</loc>
-    <lastmod>2021-12-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://daizhen.top/tags/java/</loc>
     <lastmod>2021-12-12</lastmod>
     <changefreq>daily</changefreq>
@@ -241,17 +234,24 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://daizhen.top/tags/%E9%9B%86%E5%90%88/</loc>
+    <lastmod>2021-12-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
-    <loc>https://daizhen.top/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
+    <loc>https://daizhen.top/categories/JavaSE/</loc>
     <lastmod>2021-12-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://daizhen.top/categories/JavaSE/</loc>
+    <loc>https://daizhen.top/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2021-12-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
