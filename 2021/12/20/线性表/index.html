@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="类加载器, python,Django,java,Heox,Matery,后端">
+    <meta name="keywords" content="数据结构-算法效率, python,Django,java,Heox,Matery,后端">
     <meta name="description" content="闲里偷忙第一人，懒癌重度患者">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>类加载器 | BeiKJie</title>
+    <title>数据结构-算法效率 | BeiKJie</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -439,12 +439,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/bgbg4.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/DZ-O/CDN/bg/1.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">类加载器</h1>
+                    <h1 class="description center-align post-title">数据结构-算法效率</h1>
                 </div>
             </div>
         </div>
@@ -563,8 +563,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
                     </div>
@@ -575,8 +575,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JavaSE/" class="post-category">
-                                JavaSE
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
                             </a>
                         
                     </div>
@@ -588,7 +588,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-19
+                    2021-12-20
                 </div>
                 
 
@@ -597,14 +597,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    358
+                    851
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -624,22 +624,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong><em>什么是类加载器？</em></strong></p>
-<p>专门负责加载类的命令/工具。<code>ClassLoader</code></p>
-<p><strong>JDK中自带了3个类加载器</strong></p>
-<p>​    启动类加载器:<code>rt.jar</code></p>
-<p>​    扩展类加载器:<code>ext/*.jar</code></p>
-<p>​    应用类加载器:<code>classpath</code></p>
-<p><strong>假设有这样一段代码：</strong></p>
-<p> <code>String s = "abc";</code></p>
-<p>代码在开始执行之前，会将所需要类全部加载到JVM当中。通过类加载器加载，看到以上代码类加载器会找<code>String.class</code>文件，找到就加载，那么是怎么进行加载的呢？</p>
-<p>​    首先通过“启动类加载器”加载。</p>
-<p>​        注意：<em>启动类加载器专门加载：<code>C:\Program Files\Java\jdk1.8.0_101\jre\lib\rt.jarrt.jar</code>中都是JDK最核心的类库。</em></p>
-<p>​    如果通过“启动类加载器”加载不到的时候，会通过”扩展类加载器”加载。</p>
-<p>​        注意：<em>扩展类加载器专门加载：`C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\</em>.jar`*</p>
-<p>​    如果“扩展类加载器”没有加载到，那么会通过“应用类加载器”加载。</p>
-<p>​        注意：<em>应用类加载器专门加载：classpath中的类。</em></p>
-<p>java中为了保证类加载的安全，使用了双亲委派机制。优先从启动类加载器中加载，这个称为“父”。“父”无法加载到，再从扩展类加载器中加载，这个称为“母”。双亲委派。如果都加载不到，才会考虑从应用类加载器中加载。直到加载到为止。</p>
+                <h2 id="定义和特点"><a href="#定义和特点" class="headerlink" title="定义和特点"></a>定义和特点</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>由n(n≥O)个数据特性相同的元素构成的有限序列称为线性表。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/bg/image-20211213204904091.png" alt="线性表定义"></p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>线性表中元素的个数n(n≥O)定义为线性表的长度，n=O时称为空表。</p>
+<p>将非空的线性表(n&gt;O)记作(a1，a2，a3，…，an)</p>
+<p>这里的数据元素ai(1≤i≤n)只是个抽象的符号，其具体含义在不同情况下可以不同。</p>
+<p>在非空的线性表，有且仅有一个开始结点a1,它没有直接前趋，而仅有一个直接后继a2;</p>
+<p>有且仅有一个终端结点an,它没有直接后继，而仅有一个直接前趋an-1;</p>
+<p>其余的内部结点ai,(2&lt;i&lt;n-1)都有且仅有一个直接前趋ai-1和一个直接后继ai+1</p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p><code>InitList(&amp;L)</code>:初始化表。构造一个空的线性表L，分配内存空间。</p>
+<p><code>DestroyList(&amp;L)</code>:销毁操作。销毁线性表，并释放线性表L所占用的内存空间。</p>
+<p><code>ListInsert(&amp;L,i,e)</code>:插入操作。在表L中的第i个位置上插入指定元素e。</p>
+<p><code>ListDelete(&amp;L,i,&amp;e)</code>:删除操作。删除表L中第i个位置的元素，并用e返回删除元素的值。</p>
+<p><code>LocateElem(L,e)</code>:按值查找操作。在表L中查找具有给定关键字值的元素。</p>
+<p><code>GetElem(L,i)</code>:按位查找操作。获取表L中第i个位置的元素的值。</p>
+<p><code>Length(L)</code>:求表长。返回线性表L的长度，即L中数据元素的个数。</p>
+<p><code>PrintList(L)</code>:输出操作。按前后顺序输出线性表L的所有元素值。</p>
+<p><code>Empty(L)</code>:判空操作。若L为空表，则返回true，否则返回false。</p>
+<blockquote>
+<p> 注意：</p>
+<ol>
+<li>对数据的操作（记忆思路）――创销、增删改查</li>
+<li>C语言函数的定义—&lt;返回值类型&gt;函数名(&lt;参数1类型&gt;参数1，&lt;参数2类型&gt;参数2，..….）实际开发中，可根据实际需求定义其他的基本操作</li>
+<li>函数名和参数的形式、命名都可改变（ Reference:严蔚敏版《数据结构》)</li>
+<li>什么时候要传入引用“&amp;”—―对参数的修改结果需要“带回来”</li>
+</ol>
+</blockquote>
+<h2 id="顺序表示"><a href="#顺序表示" class="headerlink" title="顺序表示"></a>顺序表示</h2><p>顺序存储定义:把逻辑上相邻的数据元素存储在物理上相邻的存储单元中的存储结构。</p>
+<p>线性表的顺序存储结构是指用一段地址连续的存储单元依次存储线性表的数据元素。 </p>
+<h3 id="静态分配"><a href="#静态分配" class="headerlink" title="静态分配"></a>静态分配</h3><p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211221161628813.png" alt="静态分配"></p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211221161932086.png" alt="线性表初始化"></p>
+<h3 id="动态分配"><a href="#动态分配" class="headerlink" title="动态分配"></a>动态分配</h3><p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211221162052725.png" alt="动态分配"></p>
+<h4 id="初始化-1"><a href="#初始化-1" class="headerlink" title="初始化"></a>初始化</h4><p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211221162139659.png" alt="初始化"></p>
+<h3 id="基本操作-1"><a href="#基本操作-1" class="headerlink" title="基本操作"></a>基本操作</h3><h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211221162618638.png" alt="插入实现"></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211221162713095.png" alt="删除实现"></p>
+<h4 id="按位查找"><a href="#按位查找" class="headerlink" title="按位查找"></a>按位查找</h4><p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211221162807018.png" alt="按位查找"></p>
+<h4 id="按值查找"><a href="#按值查找" class="headerlink" title="按值查找"></a>按值查找</h4><p><img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/image-20211221163050818.png" alt="按值查找"></p>
+<blockquote>
+<p>查找、插入、删除的平均算法复杂度为O(n) </p>
+<p>空间复杂度显然顺序表操作没有占用辅助空间算法的空间复杂度O(1) </p>
+</blockquote>
+<h2 id="线性表的优缺点"><a href="#线性表的优缺点" class="headerlink" title="线性表的优缺点"></a>线性表的优缺点</h2><p><strong>优点</strong></p>
+<p>存储密度大(结点本身所占用的空间/结点结构所占存储量=1)无需为表示表中元素之间的逻辑关系，而增加额外的存储空间</p>
+<p>可以随机存取表中任意位置的元素</p>
+<p><strong>缺点</strong></p>
+<p>插入、删除某一元素需移动大量元素</p>
+<p>当线性表长度变化较大时，难以确定存储空间的容量，数据元素的个数不能自由扩充(存储空间不灵活)</p>
 
                 
             </div>
@@ -666,7 +696,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://daizhen.top/2021/11/19/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">https://daizhen.top/2021/11/19/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</a>
+                    <a href="https://daizhen.top/2021/12/20/%E7%BA%BF%E6%80%A7%E8%A1%A8/">https://daizhen.top/2021/12/20/%E7%BA%BF%E6%80%A7%E8%A1%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -704,8 +734,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
                         </div>
@@ -1207,49 +1237,47 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/11/20/java%E6%B3%A8%E8%A7%A3/">
+                <a href="/2021/12/20/%E7%BA%BF%E6%80%A7%E8%A1%A8/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/bgbg5.png" class="responsive-img" alt="java注解">
+                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/bg/1.png" class="responsive-img" alt="数据结构-算法效率">
                         
-                        <span class="card-title">java注解</span>
+                        <span class="card-title">数据结构-算法效率</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java 注解基本使用及笔记整理
+                            线性表
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaSE/" class="post-category">
-                                    JavaSE
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%B3%A8%E8%A7%A3/">
-                        <span class="chip bg-color">注解</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
@@ -1263,30 +1291,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/19/%E8%8E%B7%E5%8F%96%E7%B1%BB%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/">
+                <a href="/2021/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/bgbg1.png" class="responsive-img" alt="获取类路径下文件的绝对路径、资源绑定器">
+                        <img src="https://cdn.jsdelivr.net/gh/DZ-O/CDN/featureimages/1441607538164925.gif" data-original="https://cdn.jsdelivr.net/gh/DZ-O/CDN/img/bgbg3.png" class="responsive-img" alt="数据结构-基本概念">
                         
-                        <span class="card-title">获取类路径下文件的绝对路径、资源绑定器</span>
+                        <span class="card-title">数据结构-基本概念</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java 获取类路径下文件的绝对路径、资源绑定器
+                            数据结构中的一些基本概念
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaSE/" class="post-category">
-                                    JavaSE
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
@@ -1296,8 +1324,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
