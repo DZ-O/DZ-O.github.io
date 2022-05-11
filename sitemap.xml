@@ -200,6 +200,13 @@
   </url>
   
   <url>
+    <loc>https://daizhen.top/tags/Socket/</loc>
+    <lastmod>2022-05-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://daizhen.top/tags/%E6%B3%A8%E8%A7%A3/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>daily</changefreq>
@@ -208,13 +215,6 @@
   
   <url>
     <loc>https://daizhen.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2022-05-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://daizhen.top/tags/Socket/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -279,14 +279,14 @@
   </url>
   
   <url>
-    <loc>https://daizhen.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://daizhen.top/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://daizhen.top/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://daizhen.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
